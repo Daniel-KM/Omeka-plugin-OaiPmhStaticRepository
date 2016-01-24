@@ -2,9 +2,9 @@
 /**
  * Map metadata text files into Omeka elements for each item and file.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Mapping_Text extends ArchiveFolder_Mapping_Abstract
+class OaiPmhStaticRepository_Mapping_Text extends OaiPmhStaticRepository_Mapping_Abstract
 {
     protected $_checkMetadataFile = array('double extension');
     protected $_extension = 'metadata.txt';

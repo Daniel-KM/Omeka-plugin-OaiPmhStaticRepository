@@ -2,9 +2,9 @@
 /**
  * Utility class for dealing with identifiers.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Identifier_ShortName extends ArchiveFolder_Identifier_Abstract
+class OaiPmhStaticRepository_Identifier_ShortName extends OaiPmhStaticRepository_Identifier_Abstract
 {
     /**
      * Return the identifier of a record from a list of unique order / record.
@@ -20,7 +20,7 @@ class ArchiveFolder_Identifier_ShortName extends ArchiveFolder_Identifier_Abstra
         foreach ($data as $resource) {
             $record = reset($resource);
             if (!isset($record['name'])) {
-                throw new ArchiveFolder_BuilderException(__('A name is missing for record %s.', key($data[0])));
+                throw new OaiPmhStaticRepository_BuilderException(__('A name is missing for record %s.', key($data[0])));
             }
 
             $list[] = $record['name'];

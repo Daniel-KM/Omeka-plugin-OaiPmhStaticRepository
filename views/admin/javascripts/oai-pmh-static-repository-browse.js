@@ -2,12 +2,12 @@ if (!Omeka) {
     var Omeka = {};
 }
 
-Omeka.ArchiveFolderBrowse = {};
+Omeka.OaiPmhStaticRepositoryBrowse = {};
 
 (function ($) {
 
-    Omeka.ArchiveFolderBrowse.setupBatchEdit = function () {
-        var archiveFolderCheckboxes = $("table#archive-folders tbody input[type=checkbox]");
+    Omeka.OaiPmhStaticRepositoryBrowse.setupBatchEdit = function () {
+        var oaiPmhStaticRepositoryCheckboxes = $("table#oai-pmh-static-repositories tbody input[type=checkbox]");
         var globalCheckbox = $('th.batch-edit-heading').html('<input type="checkbox">').find('input');
         var batchEditSubmit = $('.batch-edit-option input');
         /**
@@ -17,18 +17,18 @@ Omeka.ArchiveFolderBrowse = {};
         batchEditSubmit.prop('disabled', true);
 
         /**
-         * Check all the archiveFolderCheckboxes if the globalCheckbox is checked.
+         * Check all the oaiPmhStaticRepositoryCheckboxes if the globalCheckbox is checked.
          */
         globalCheckbox.change(function() {
-            archiveFolderCheckboxes.prop('checked', !!this.checked);
+            oaiPmhStaticRepositoryCheckboxes.prop('checked', !!this.checked);
             checkBatchEditSubmitButton();
         });
 
         /**
-         * Uncheck the global checkbox if any of the archiveFolderCheckboxes are
+         * Uncheck the global checkbox if any of the oaiPmhStaticRepositoryCheckboxes are
          * unchecked.
          */
-        archiveFolderCheckboxes.change(function(){
+        oaiPmhStaticRepositoryCheckboxes.change(function(){
             if (!this.checked) {
                 globalCheckbox.prop('checked', false);
             }
@@ -37,12 +37,12 @@ Omeka.ArchiveFolderBrowse = {};
 
         /**
          * Check whether the batchEditSubmit button should be enabled.
-         * If any of the archiveFolderCheckboxes is checked, the batchEditSubmit button
+         * If any of the oaiPmhStaticRepositoryCheckboxes is checked, the batchEditSubmit button
          * is enabled.
          */
         function checkBatchEditSubmitButton() {
             var checked = false;
-            archiveFolderCheckboxes.each(function() {
+            oaiPmhStaticRepositoryCheckboxes.each(function() {
                 if (this.checked) {
                     checked = true;
                     return false;
@@ -55,18 +55,18 @@ Omeka.ArchiveFolderBrowse = {};
 
     $(document).ready(function() {
         // Delete a simple record.
-        $('.archive-folder input[name="submit-batch-delete"]').click(function(event) {
+        $('.oai-pmh-static-repository input[name="submit-batch-delete"]').click(function(event) {
             event.preventDefault();
-            if (!confirm(Omeka.messages.archiveFolder.confirmation)) {
+            if (!confirm(Omeka.messages.oaiPmhStaticRepository.confirmation)) {
                 return;
             }
-            $('table#archive-folders thead tr th.batch-edit-heading input').attr('checked', false);
+            $('table#oai-pmh-static-repositories thead tr th.batch-edit-heading input').attr('checked', false);
             $('.batch-edit-option input').prop('disabled', true);
-            $('table#archive-folders tbody input[type=checkbox]:checked').each(function(){
+            $('table#oai-pmh-static-repositories tbody input[type=checkbox]:checked').each(function(){
                 var checkbox = $(this);
-                var row = $(this).closest('tr.archive-folder');
-                var current = $('#archive-folder-' + this.value);
-                var ajaxUrl = current.attr('href') + '/archive-folder/ajax/delete';
+                var row = $(this).closest('tr.oai-pmh-static-repository');
+                var current = $('#oai-pmh-static-repository-' + this.value);
+                var ajaxUrl = current.attr('href') + '/oai-pmh-static-repository/ajax/delete';
                 checkbox.addClass('transmit');
                 $.post(ajaxUrl,
                     {
@@ -80,7 +80,7 @@ Omeka.ArchiveFolderBrowse = {};
         });
 
         // Toggle details for the current row.
-        $('.archive-folder-details').click(function (event) {
+        $('.oai-pmh-static-repository-details').click(function (event) {
             event.preventDefault();
             $(this).closest('td').find('.details').slideToggle('fast');
         });

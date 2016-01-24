@@ -2,9 +2,9 @@
 /**
  * Metadata format map for the mets METS format.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Format_Mets extends ArchiveFolder_Format_Abstract
+class OaiPmhStaticRepository_Format_Mets extends OaiPmhStaticRepository_Format_Abstract
 {
     const METADATA_PREFIX = 'mets';
     const METADATA_SCHEMA = 'http://www.loc.gov/standards/mets/mets.xsd';
@@ -161,7 +161,7 @@ class ArchiveFolder_Format_Mets extends ArchiveFolder_Format_Abstract
         $writer->writeAttribute('ROLE', 'CREATOR');
         // $writer->writeAttribute('ROLE', 'ORGANIZATION');
         $writer->writeElement('name', $emails);
-        $writer->writeElement('note', 'Archive Folder for Omeka');
+        $writer->writeElement('note', 'OAI-PMH Static Repository for Omeka');
         $writer->endElement();
         $writer->endElement();
     }

@@ -2,9 +2,9 @@
 /**
  * Ingest Alto metadata files into Omeka elements for a file.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Ingester_Alto extends ArchiveFolder_Ingester_Abstract
+class OaiPmhStaticRepository_Ingester_Alto extends OaiPmhStaticRepository_Ingester_Abstract
 {
     const XML_ROOT = 'alto';
     const XML_PREFIX = 'alto';
@@ -20,20 +20,20 @@ class ArchiveFolder_Ingester_Alto extends ArchiveFolder_Ingester_Abstract
     // Current doc for internal purposes.
     protected $_doc;
 
-    protected $_xslOcrText = 'libraries/ArchiveFolder/Ingester/alto2text.xsl';
-    protected $_xslOcrData = 'libraries/ArchiveFolder/Ingester/alto2json.xsl';
-    protected $_xslOcrProcess = 'libraries/ArchiveFolder/Ingester/alto2process.xsl';
+    protected $_xslOcrText = 'libraries/OaiPmhStaticRepository/Ingester/alto2text.xsl';
+    protected $_xslOcrData = 'libraries/OaiPmhStaticRepository/Ingester/alto2json.xsl';
+    protected $_xslOcrProcess = 'libraries/OaiPmhStaticRepository/Ingester/alto2process.xsl';
 
     public function __construct($uri, $parameters)
     {
         $this->_xslOcrText = PLUGIN_DIR
-            . DIRECTORY_SEPARATOR . 'ArchiveFolder'
+            . DIRECTORY_SEPARATOR . 'OaiPmhStaticRepository'
             . DIRECTORY_SEPARATOR . $this->_xslOcrText;
         $this->_xslOcrData = PLUGIN_DIR
-            . DIRECTORY_SEPARATOR . 'ArchiveFolder'
+            . DIRECTORY_SEPARATOR . 'OaiPmhStaticRepository'
             . DIRECTORY_SEPARATOR . $this->_xslOcrData;
         $this->_xslOcrProcess = PLUGIN_DIR
-            . DIRECTORY_SEPARATOR . 'ArchiveFolder'
+            . DIRECTORY_SEPARATOR . 'OaiPmhStaticRepository'
             . DIRECTORY_SEPARATOR . $this->_xslOcrProcess;
 
         parent::__construct($uri, $parameters);

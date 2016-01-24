@@ -1,19 +1,19 @@
 <?php
 /**
- * Archive Folder
+ * OAI-PMH Static Repository
  *
  * Automatically build a standard OAI-PMH archive from files and metadata of a
  * local or a distant folder.
  *
  * @copyright Copyright Daniel Berthereau, 2015
  * @license http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.txt
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
 
 /**
- * The Archive Folder plugin.
+ * The OAI-PMH Static Repository plugin.
  */
-class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
+class OaiPmhStaticRepositoryPlugin extends Omeka_Plugin_AbstractPlugin
 {
     /**
      * @var array This plugin's hooks.
@@ -34,23 +34,23 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
      */
     protected $_filters = array(
         'admin_navigation_main',
-        'archive_folder_oai_identifiers',
-        'archive_folder_mappings',
-        'archive_folder_ingesters',
-        'archive_folder_formats',
+        'oai_pmh_static_repository_oai_identifiers',
+        'oai_pmh_static_repository_mappings',
+        'oai_pmh_static_repository_ingesters',
+        'oai_pmh_static_repository_formats',
     );
 
     /**
      * @var array This plugin's options.
      */
     protected $_options = array(
-        'archive_folder_force_update' => true,
-        'archive_folder_memory_limit' => null,
-        'archive_folder_short_dispatcher' => null,
-        'archive_folder_static_dir' => 'repositories',
-        'archive_folder_processor' => '',
+        'oai_pmh_static_repository_force_update' => true,
+        'oai_pmh_static_repository_memory_limit' => null,
+        'oai_pmh_static_repository_short_dispatcher' => null,
+        'oai_pmh_static_repository_static_dir' => 'repositories',
+        'oai_pmh_static_repository_processor' => '',
         // With roles, in particular if Guest User is installed.
-        'archive_folder_allow_roles' => 'a:1:{i:0;s:5:"super";}',
+        'oai_pmh_static_repository_allow_roles' => 'a:1:{i:0;s:5:"super";}',
     );
 
     /**
@@ -63,10 +63,10 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
         // Get the backend settings from the security.ini file.
         // This simplifies tests too (use of local paths instead of urls).
         // TODO Probably a better location to set this.
-        if (!Zend_Registry::isRegistered('archive_folder')) {
+        if (!Zend_Registry::isRegistered('oai_pmh_static_repository')) {
             $iniFile = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'security.ini';
-            $settings = new Zend_Config_Ini($iniFile, 'archive-folder');
-            Zend_Registry::set('archive_folder', $settings);
+            $settings = new Zend_Config_Ini($iniFile, 'oai-pmh-static-repository');
+            Zend_Registry::set('oai_pmh_static_repository', $settings);
         }
     }
 
@@ -78,7 +78,7 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
         $db = $this->_db;
 
         $sql = "
-        CREATE TABLE IF NOT EXISTS `{$db->ArchiveFolder}` (
+        CREATE TABLE IF NOT EXISTS `{$db->OaiPmhStaticRepository}` (
             `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
             `uri` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
             `identifier` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -100,7 +100,7 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
 
         // Check if there is a folder for the static repositories files, else
         // create one and protect it.
-        $staticDir = FILES_DIR . DIRECTORY_SEPARATOR . get_option('archive_folder_static_dir');
+        $staticDir = FILES_DIR . DIRECTORY_SEPARATOR . get_option('oai_pmh_static_repository_static_dir');
         if (!file_exists($staticDir)) {
             mkdir($staticDir, 0755, true);
             copy(FILES_DIR . DIRECTORY_SEPARATOR . 'original' . DIRECTORY_SEPARATOR . 'index.html',
@@ -114,7 +114,7 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
     public function hookUninstall()
     {
         $db = $this->_db;
-        $sql = "DROP TABLE IF EXISTS `$db->ArchiveFolder`";
+        $sql = "DROP TABLE IF EXISTS `$db->OaiPmhStaticRepository`";
         $db->query($sql);
 
         $this->_uninstallOptions();
@@ -125,7 +125,7 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
      */
     public function hookUninstallMessage()
     {
-        echo __('The folder "%s" where the xml files of the static repositories are saved will not be removed automatically.', get_option('archive_folder_static_dir'));
+        echo __('The folder "%s" where the xml files of the static repositories are saved will not be removed automatically.', get_option('oai_pmh_static_repository_static_dir'));
     }
 
     /**
@@ -135,7 +135,7 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $view = get_view();
         echo $view->partial(
-            'plugins/archive-folder-config-form.php'
+            'plugins/oai-pmh-static-repository-config-form.php'
         );
     }
 
@@ -149,7 +149,7 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
         $post = $args['post'];
         foreach ($this->_options as $optionKey => $optionValue) {
             if (in_array($optionKey, array(
-                    'archive_folder_allow_roles',
+                    'oai_pmh_static_repository_allow_roles',
                 ))) {
                 $post[$optionKey] = serialize($post[$optionKey]) ?: serialize(array());
             }
@@ -175,7 +175,7 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
     public function hookDefineAcl($args)
     {
         $acl = $args['acl'];
-        $resource = 'ArchiveFolder_Index';
+        $resource = 'OaiPmhStaticRepository_Index';
 
         // TODO This is currently needed for tests for an undetermined reason.
         if (!$acl->has($resource)) {
@@ -189,7 +189,7 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
 
         // Check that all the roles exist, in case a plugin-added role has
         // been removed (e.g. GuestUser).
-        $allowRoles = unserialize(get_option('archive_folder_allow_roles')) ?: array();
+        $allowRoles = unserialize(get_option('oai_pmh_static_repository_allow_roles')) ?: array();
         $allowRoles = array_intersect($roles, $allowRoles);
         if ($allowRoles) {
             $acl->allow($allowRoles, $resource);
@@ -200,7 +200,7 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
             $acl->deny($denyRoles, $resource);
         }
 
-        $resource = 'ArchiveFolder_Request';
+        $resource = 'OaiPmhStaticRepository_Request';
         if (!$acl->has($resource)) {
             $acl->addResource($resource);
         }
@@ -217,9 +217,9 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
     public function filterAdminNavigationMain($nav)
     {
         $link = array(
-            'label' => __('Archive Folders'),
-            'uri' => url('archive-folder'),
-            'resource' => 'ArchiveFolder_Index',
+            'label' => __('OAI-PMH Static Repositories'),
+            'uri' => url('oai-pmh-static-repository'),
+            'resource' => 'OaiPmhStaticRepository_Index',
             'privilege' => 'index',
         );
         $nav[] = $link;
@@ -233,49 +233,49 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
      * @param array $oaiIdentifiers Oai identifiers array.
      * @return array Filtered oai identifiers array.
     */
-    public function filterArchiveFolderOaiIdentifiers($oaiIdentifiers)
+    public function filterOaiPmhStaticRepositoryOaiIdentifiers($oaiIdentifiers)
     {
         // Available default identifiers in the plugin.
         // TODO Use Ark.
         // The only one that allows updates currently, so it is set by default.
         $oaiIdentifiers['short_name'] = array(
-            'class' => 'ArchiveFolder_Identifier_ShortName',
+            'class' => 'OaiPmhStaticRepository_Identifier_ShortName',
             'description' => __('Hashed path + name: repository_id:aUi3[:name]'),
         );
         // These are usable for update only if new documents are listed at end.
         $oaiIdentifiers['position_folder'] = array(
-            'class' => 'ArchiveFolder_Identifier_PositionFolder',
+            'class' => 'OaiPmhStaticRepository_Identifier_PositionFolder',
             'description' => __('Alphabetic position of item and file: repository_id:17:14'),
         );
         $oaiIdentifiers['position'] = array(
-            'class' => 'ArchiveFolder_Identifier_Position',
+            'class' => 'OaiPmhStaticRepository_Identifier_Position',
             'description' => __('Alphabetic position of record: repository_id:17'),
         );
         // Hashs are currently useless for updates: use the paths / names only.
         $oaiIdentifiers['hash_md5'] = array(
-            'class' => 'ArchiveFolder_Identifier_HashMd5',
+            'class' => 'OaiPmhStaticRepository_Identifier_HashMd5',
             'description' => __('MD5 hash of the record'),
         );
         $oaiIdentifiers['hash_sha1'] = array(
-            'class' => 'ArchiveFolder_Identifier_HashSha1',
+            'class' => 'OaiPmhStaticRepository_Identifier_HashSha1',
             'description' => __('SHA1 hash of the record'),
         );
         /*
         // TODO Uses paths as identifiers (to be finished).
         $oaiIdentifiers['path'] = array(
-            'class' => 'ArchiveFolder_Identifier_Path',
+            'class' => 'OaiPmhStaticRepository_Identifier_Path',
             'description' => __('Path in the folder: "repository_id/my_subfolder/my_file"'),
         );
         $oaiIdentifiers['path_item'] = array(
-            'class' => 'ArchiveFolder_Identifier_PathItem',
+            'class' => 'OaiPmhStaticRepository_Identifier_PathItem',
             'description' => __('Path in the folder, with item for files'),
         );
         $oaiIdentifiers['path_colon'] = array(
-            'class' => 'ArchiveFolder_Identifier_PathColon',
+            'class' => 'OaiPmhStaticRepository_Identifier_PathColon',
             'description' => __('Path with colon ":": "repository_id:my_subfolder:my_file"'),
         );
         $oaiIdentifiers['path_colon_item'] = array(
-            'class' => 'ArchiveFolder_Identifier_PathColonItem',
+            'class' => 'OaiPmhStaticRepository_Identifier_PathColonItem',
             'description' => __('Path with colon, with item for files'),
         );
         */
@@ -289,33 +289,33 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
      * @param array $mappings Available mappings.
      * @return array Filtered mappings array.
     */
-    public function filterArchiveFolderMappings($mappings)
+    public function filterOaiPmhStaticRepositoryMappings($mappings)
     {
         // Available mappings in the plugin at first place to keep order.
-        $archiveFolderMappings = array();
+        $oaiPmhStaticRepositoryMappings = array();
         // Available default mappings in the plugin.
-        $archiveFolderMappings['text'] = array(
-            'class' => 'ArchiveFolder_Mapping_Text',
+        $oaiPmhStaticRepositoryMappings['text'] = array(
+            'class' => 'OaiPmhStaticRepository_Mapping_Text',
             'description' => __('Text (extension: ".metadata.txt")'),
         );
-        $archiveFolderMappings['json'] = array(
-            'class' => 'ArchiveFolder_Mapping_Json',
+        $oaiPmhStaticRepositoryMappings['json'] = array(
+            'class' => 'OaiPmhStaticRepository_Mapping_Json',
             'description' => __('Json (extension: ".json")'),
         );
-        $archiveFolderMappings['odt'] = array(
-            'class' => 'ArchiveFolder_Mapping_Odt',
+        $oaiPmhStaticRepositoryMappings['odt'] = array(
+            'class' => 'OaiPmhStaticRepository_Mapping_Odt',
             'description' => __('Open Document Text (extension: ".odt")'),
         );
-        $archiveFolderMappings['ods'] = array(
-            'class' => 'ArchiveFolder_Mapping_Ods',
+        $oaiPmhStaticRepositoryMappings['ods'] = array(
+            'class' => 'OaiPmhStaticRepository_Mapping_Ods',
             'description' => __('Open Document Spreadsheet (extension: ".ods")'),
         );
-        $archiveFolderMappings['mets'] = array(
-            'class' => 'ArchiveFolder_Mapping_Mets',
+        $oaiPmhStaticRepositoryMappings['mets'] = array(
+            'class' => 'OaiPmhStaticRepository_Mapping_Mets',
             'description' => __('METS xml (with a profile compliant with Dublin Core)'),
         );
 
-        return array_merge($archiveFolderMappings, $mappings);
+        return array_merge($oaiPmhStaticRepositoryMappings, $mappings);
     }
 
     /**
@@ -326,17 +326,17 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
      * @param array $ingesters Ingesters array.
      * @return array Filtered Ingesters array.
     */
-    public function filterArchiveFolderIngesters($ingesters)
+    public function filterOaiPmhStaticRepositoryIngesters($ingesters)
     {
         // Available ingesters in the plugin at first place to keep order.
-        $archiveFolderIngesters = array();
-        $archiveFolderIngesters['alto'] = array(
+        $oaiPmhStaticRepositoryIngesters = array();
+        $oaiPmhStaticRepositoryIngesters['alto'] = array(
             'prefix' => 'alto',
-            'class' => 'ArchiveFolder_Ingester_Alto',
+            'class' => 'OaiPmhStaticRepository_Ingester_Alto',
             'description' => __('Alto xml files for OCR'),
         );
 
-        return array_merge($archiveFolderIngesters, $ingesters);
+        return array_merge($oaiPmhStaticRepositoryIngesters, $ingesters);
     }
 
     /**
@@ -347,31 +347,31 @@ class ArchiveFolderPlugin extends Omeka_Plugin_AbstractPlugin
      * @param array $metadataFormats Metadata formats array.
      * @return array Filtered metadata formats array.
     */
-    public function filterArchiveFolderFormats($formats)
+    public function filterOaiPmhStaticRepositoryFormats($formats)
     {
         // Available formats in the plugin at first place to keep order.
-        $archiveFolderFormats = array();
-        $archiveFolderFormats['oai_dc'] = array(
+        $oaiPmhStaticRepositoryFormats = array();
+        $oaiPmhStaticRepositoryFormats['oai_dc'] = array(
             'prefix' => 'oai_dc',
-            'class' => 'ArchiveFolder_Format_OaiDc',
+            'class' => 'OaiPmhStaticRepository_Format_OaiDc',
             'description' => __('Dublin Core'),
         );
-        $archiveFolderFormats['oai_dcterms'] = array(
+        $oaiPmhStaticRepositoryFormats['oai_dcterms'] = array(
             'prefix' => 'oai_dcterms',
-            'class' => 'ArchiveFolder_Format_OaiDcterms',
+            'class' => 'OaiPmhStaticRepository_Format_OaiDcterms',
             'description' => __('Dublin Core Terms'),
         );
-        $archiveFolderFormats['oai_dcq'] = array(
+        $oaiPmhStaticRepositoryFormats['oai_dcq'] = array(
             'prefix' => 'oai_dcq',
-            'class' => 'ArchiveFolder_Format_OaiDcq',
+            'class' => 'OaiPmhStaticRepository_Format_OaiDcq',
             'description' => __('Qualified Dublin Core (deprecated)'),
         );
-        $archiveFolderFormats['mets'] = array(
+        $oaiPmhStaticRepositoryFormats['mets'] = array(
             'prefix' => 'mets',
-            'class' => 'ArchiveFolder_Format_Mets',
+            'class' => 'OaiPmhStaticRepository_Format_Mets',
             'description' => __('METS'),
         );
 
-        return array_merge($archiveFolderFormats, $formats);
+        return array_merge($oaiPmhStaticRepositoryFormats, $formats);
     }
 }

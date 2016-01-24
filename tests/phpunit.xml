@@ -2,7 +2,7 @@
          convertErrorsToExceptions="true"
          convertWarningsToExceptions="true">
     <testsuites>
-        <testsuite name="Archive Folder Tests">
+        <testsuite name="OAI-PMH Static Repository Tests">
             <directory>suite</directory>
         </testsuite>
     </testsuites>

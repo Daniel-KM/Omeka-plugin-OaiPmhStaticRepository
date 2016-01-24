@@ -2,9 +2,9 @@
 /**
  * Metadata format map for the required oai_dc Dublin Core format.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Format_OaiDc extends ArchiveFolder_Format_Abstract
+class OaiPmhStaticRepository_Format_OaiDc extends OaiPmhStaticRepository_Format_Abstract
 {
     const METADATA_PREFIX = 'oai_dc';
     const METADATA_SCHEMA = 'http://www.openarchives.org/OAI/2.0/oai_dc.xsd';

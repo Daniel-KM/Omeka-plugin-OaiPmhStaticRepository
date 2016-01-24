@@ -1,15 +1,15 @@
 <?php
 
-class ArchiveFolder_Form_Add extends Omeka_Form
+class OaiPmhStaticRepository_Form_Add extends Omeka_Form
 {
     public function init()
     {
         parent::init();
 
-        $oaiIdentifiers = $this->_getFiltered('archive_folder_oai_identifiers');
-        $mappings = $this->_getFiltered('archive_folder_mappings');
-        $formats = $this->_getFiltered('archive_folder_formats', 'prefix');
-        $formatsHarvests = $this->_getFilteredMetadataFormats('archive_folder_formats');
+        $oaiIdentifiers = $this->_getFiltered('oai_pmh_static_repository_oai_identifiers');
+        $mappings = $this->_getFiltered('oai_pmh_static_repository_mappings');
+        $formats = $this->_getFiltered('oai_pmh_static_repository_formats', 'prefix');
+        $formatsHarvests = $this->_getFilteredMetadataFormats('oai_pmh_static_repository_formats');
 
         $optionsUpdateMetadata = array(
             'keep' => __('Keep existing'),
@@ -26,9 +26,9 @@ class ArchiveFolder_Form_Add extends Omeka_Form
         );
         $defaultUpdateFiles = 'full';
 
-        $allowLocalPaths = Zend_Registry::get('archive_folder')->local_folders->allow == '1';
+        $allowLocalPaths = Zend_Registry::get('oai_pmh_static_repository')->local_folders->allow == '1';
 
-        $this->setAttrib('id', 'archive-folder');
+        $this->setAttrib('id', 'oai-pmh-static-repository');
         $this->setMethod('post');
 
         $this->addElement('text', 'uri', array(
@@ -257,7 +257,7 @@ class ArchiveFolder_Form_Add extends Omeka_Form
             array(
                 'uri',
             ),
-            'archive_folder_folder',
+            'oai_pmh_static_repository_folder',
             array(
                 'legend' => __('Archive Folder URI'),
         ));
@@ -275,7 +275,7 @@ class ArchiveFolder_Form_Add extends Omeka_Form
                 'oai_identifier_format',
                 'item_type_id',
             ),
-            'archive_folder_records',
+            'oai_pmh_static_repository_records',
             array(
                 'legend' => __('Archive Folder Records and files'),
                 'description' => __('Set parameters fo create each record from files.')
@@ -295,7 +295,7 @@ class ArchiveFolder_Form_Add extends Omeka_Form
                 'metadata_formats',
                 'use_dcterms'
             ),
-            'archive_folder_repository',
+            'oai_pmh_static_repository_repository',
             array(
                 'legend' => __('Static Repository'),
                 'description' => __('Set the generic parameters of the static repository.'),
@@ -309,7 +309,7 @@ class ArchiveFolder_Form_Add extends Omeka_Form
                 'repository_path',
                 'repository_identifier',
             ),
-            'archive_folder_base_url',
+            'oai_pmh_static_repository_base_url',
             array(
                 'legend' => __('Static Repository Url'),
                 'description' => __('These advanced options allow to change the url of the static repository, if wished.')
@@ -326,7 +326,7 @@ class ArchiveFolder_Form_Add extends Omeka_Form
                 'oaipmh_harvest_update_metadata',
                 'oaipmh_harvest_update_files',
             ),
-            'archive_folder_harvest',
+            'oai_pmh_static_repository_harvest',
             array(
                 'legend' => __('Static Repository Harvesting'),
                 'description' => __('Options for OAI-PMH harvesting (used after the first update).'),
@@ -338,7 +338,7 @@ class ArchiveFolder_Form_Add extends Omeka_Form
         $this->addElement('sessionCsrfToken', 'csrf_token');
 
         $this->addElement('submit', 'submit', array(
-            'label' => __('Add folder'),
+            'label' => __('Create Static Repository'),
             'class' => 'submit submit-medium',
             'decorators' => (array(
                 'ViewHelper',

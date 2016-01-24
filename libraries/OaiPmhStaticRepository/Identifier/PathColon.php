@@ -2,9 +2,9 @@
 /**
  * Utility class for dealing with identifiers.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Identifier_PathColon extends ArchiveFolder_Identifier_Path
+class OaiPmhStaticRepository_Identifier_PathColon extends OaiPmhStaticRepository_Identifier_Path
 {
     /**
      * Return the identifier of a record from a list of unique order / record.

@@ -2,9 +2,9 @@
 /**
  * Abstract class on which all other metadata format maps are based.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-abstract class ArchiveFolder_Format_Abstract
+abstract class OaiPmhStaticRepository_Format_Abstract
 {
     // The xsi is required for each record according to oai-pmh protocol.
     const XSI_PREFIX = 'xsi';
@@ -83,7 +83,7 @@ abstract class ArchiveFolder_Format_Abstract
             $this->_loadDcmiElements();
         }
 
-        $this->_managePaths = new ArchiveFolder_Tool_ManagePaths($uri, $parameters);
+        $this->_managePaths = new OaiPmhStaticRepository_Tool_ManagePaths($uri, $parameters);
     }
 
     /**

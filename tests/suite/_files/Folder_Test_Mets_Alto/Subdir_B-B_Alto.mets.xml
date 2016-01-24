@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mets OBJID="my_obj_id_1" LABEL="Test of Mets via Archive Folder" TYPE="Text" xmlns="http://www.loc.gov/METS/" xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:niso="http://www.niso.org/Z39-87-2006.pdf" xmlns:textmd="info:lc/xmlns/textMD-v3">
+<mets OBJID="my_obj_id_1" LABEL="Test of Mets via OAI-PMH Static Repository" TYPE="Text" xmlns="http://www.loc.gov/METS/" xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:niso="http://www.niso.org/Z39-87-2006.pdf" xmlns:textmd="info:lc/xmlns/textMD-v3">
    <metsHdr CREATEDATE="2015-04-16T08:48:56+02:00" RECORDSTATUS="Complete">
       <agent ROLE="Creator" TYPE="INDIVIDUAL">
          <name>Daniel Berthereau</name>
       </agent>
       <agent ROLE="OTHER" OTHERROLE="BUILDER" TYPE="OTHER" OTHERTYPE="SOFTWARE">
-         <name>Archive Folder for Omeka (https://github.com/Daniel-KM/ArchiveFolder)</name>
+         <name>OAI-PMH Static Repository for Omeka (https://github.com/Daniel-KM/OaiPmhStaticRepository)</name>
       </agent>
    </metsHdr>
    <dmdSec ID="DMD.2">
       <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Metadata of the Document">
          <xmlData>
             <dc:dc>
-               <dc:title>Test of Mets and Alto import via Archive Folder (from "Subdir_B-B_Alto.mets.xml")</dc:title>
+               <dc:title>Test of Mets and Alto import via OAI-PMH Static Repository (from "Subdir_B-B_Alto.mets.xml")</dc:title>
                <dc:creator>Myself</dc:creator>
                <dc:description>This record has four attached files, two images png and the OCR in Alto xml.</dc:description>
                <dc:date>2015</dc:date>

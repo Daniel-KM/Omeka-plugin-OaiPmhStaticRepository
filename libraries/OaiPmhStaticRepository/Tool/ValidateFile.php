@@ -2,9 +2,9 @@
 /**
  * Validation file tool that can be used by other classes.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Tool_ValidateFile
+class OaiPmhStaticRepository_Tool_ValidateFile
 {
     /**
      * Check if the a file is a metadata file via extension and/or content.

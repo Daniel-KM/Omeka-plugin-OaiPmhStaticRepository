@@ -2,9 +2,9 @@
 /**
  * Metadata format map for the oai_dcq Qualified Dublin Core format.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Format_OaiDcq extends ArchiveFolder_Format_Abstract
+class OaiPmhStaticRepository_Format_OaiDcq extends OaiPmhStaticRepository_Format_Abstract
 {
     const METADATA_PREFIX = 'oai_dcq';
     const METADATA_SCHEMA = 'http://localhost';

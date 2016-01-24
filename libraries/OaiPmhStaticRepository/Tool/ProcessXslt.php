@@ -2,9 +2,9 @@
 /**
  * Xsl tool that can be used by other classes.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Tool_ProcessXslt
+class OaiPmhStaticRepository_Tool_ProcessXslt
 {
     /**
      * Apply a process (xslt stylesheet) on an input (xml file) and save output.
@@ -18,7 +18,7 @@ class ArchiveFolder_Tool_ProcessXslt
      */
     public function processXslt($input, $stylesheet, $output = '', $parameters = array())
     {
-        $command = get_option('archive_folder_processor');
+        $command = get_option('oai_pmh_static_repository_processor');
 
         // Default is the internal xslt processor of php.
         return empty($command)
@@ -106,7 +106,7 @@ class ArchiveFolder_Tool_ProcessXslt
             $output = tempnam(sys_get_temp_dir(), 'omk_');
         }
 
-        $command = get_option('archive_folder_processor');
+        $command = get_option('oai_pmh_static_repository_processor');
 
         $command = sprintf($command, escapeshellarg($input), escapeshellarg($stylesheet), escapeshellarg($output));
         foreach ($parameters as $name => $parameter) {

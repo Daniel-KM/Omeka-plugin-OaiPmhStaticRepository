@@ -1,5 +1,5 @@
 <?php
-class ArchiveFolder_RequestTest extends ArchiveFolder_Test_AppTestCase
+class OaiPmhStaticRepository_RequestTest extends OaiPmhStaticRepository_Test_AppTestCase
 {
     protected $_isAdminTest = false;
 
@@ -9,14 +9,14 @@ class ArchiveFolder_RequestTest extends ArchiveFolder_Test_AppTestCase
         $folder = $this->_folder;
 
         $url = '/repository/wrong_folder/' . 'wrong_image.png';
-        $folder->process(ArchiveFolder_Builder::TYPE_UPDATE);
-        $this->assertEquals(ArchiveFolder::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
+        $folder->process(OaiPmhStaticRepository_Builder::TYPE_UPDATE);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
         $this->dispatch($url);
         $this->assertResponseCode(404);
 
         $url = '/repository/Folder_Test/' . 'wrong_image.png';
-        $folder->process(ArchiveFolder_Builder::TYPE_UPDATE);
-        $this->assertEquals(ArchiveFolder::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
+        $folder->process(OaiPmhStaticRepository_Builder::TYPE_UPDATE);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
         $this->dispatch($url);
         $this->assertResponseCode(500);
 
@@ -55,16 +55,16 @@ class ArchiveFolder_RequestTest extends ArchiveFolder_Test_AppTestCase
         $folder = $this->_folder;
 
         // Check before buildiing.
-        $folder->process(ArchiveFolder_Builder::TYPE_CHECK);
-        $this->assertEquals(ArchiveFolder::STATUS_COMPLETED, $folder->status, 'Folder check failed: ' . $folder->messages);
+        $folder->process(OaiPmhStaticRepository_Builder::TYPE_CHECK);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED, $folder->status, 'Folder check failed: ' . $folder->messages);
         $this->markTestIncomplete(
             'This test has not been implemented yet.'
         );
         // $this->assertResponseCode(404);
 
         // Check after buildiing.
-        $folder->process(ArchiveFolder_Builder::TYPE_UPDATE);
-        $this->assertEquals(ArchiveFolder::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
+        $folder->process(OaiPmhStaticRepository_Builder::TYPE_UPDATE);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
         $this->dispatch($url);
         $this->assertResponseCode(200);
     }

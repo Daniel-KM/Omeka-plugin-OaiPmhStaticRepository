@@ -12,7 +12,7 @@ Some missing data of records will be updated via the update file.
 <documents>
     <record
         name="doc #1"
-        collection="Tests of the plugin Archive Folder"
+        collection="Tests of the plugin OAI-PMH Static Repository"
         itemType="Still Image"
         featured="1"
         >
@@ -36,7 +36,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</data>
                 <data>The geolocation is a random one.</data>
                 <data><![CDATA[This fourth description is a simple string <em>inside</em> a CDATA one.]]></data>
                 <data><![CDATA[<p>This fifth description is a valid <strong>html</strong> string <em>inside</em> a CDATA one.</p>]]></data>
-                <data><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "Archive folders".</p></data>
+                <data><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "OAI-PMH Static Repositories".</p></data>
             </element>
         </elementSet>
         <elementSet name="Item Type Metadata">
@@ -81,7 +81,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</data>
     </record>
     <record
         name="doc #2"
-        collection="Tests of the plugin Archive Folder"
+        collection="Tests of the plugin OAI-PMH Static Repository"
         itemType="Still Image"
         xmlns:dc="http://purl.org/dc/elements/1.1/"
         xmlns:dcterms="http://purl.org/dc/terms/"

@@ -2,9 +2,9 @@
 /**
  * Map json files into Omeka elements for each item and file.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Mapping_Json extends ArchiveFolder_Mapping_Abstract
+class OaiPmhStaticRepository_Mapping_Json extends OaiPmhStaticRepository_Mapping_Abstract
 {
     protected $_checkMetadataFile = array('extension', 'json');
     protected $_extension = 'json';

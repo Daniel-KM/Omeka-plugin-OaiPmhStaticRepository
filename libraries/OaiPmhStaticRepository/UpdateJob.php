@@ -1,12 +1,12 @@
 <?php
 /**
- * ArchiveFolder_UpdateJob class
+ * OaiPmhStaticRepository_UpdateJob class
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_UpdateJob extends Omeka_Job_AbstractJob
+class OaiPmhStaticRepository_UpdateJob extends Omeka_Job_AbstractJob
 {
-    const QUEUE_NAME = 'archive_folder_update';
+    const QUEUE_NAME = 'oai_pmh_static_repository_update';
 
     private $_folderId;
     private $_processType;
@@ -20,7 +20,7 @@ class ArchiveFolder_UpdateJob extends Omeka_Job_AbstractJob
         // Set current user for this long running job.
 //        Zend_Registry::get('bootstrap')->bootstrap('Acl');
 
-        $memoryLimit = (integer) get_option('archive_folder_memory_limit');
+        $memoryLimit = (integer) get_option('oai_pmh_static_repository_memory_limit');
         if ($memoryLimit) {
             ini_set('memory_limit', $memoryLimit);
         }
@@ -33,8 +33,8 @@ class ArchiveFolder_UpdateJob extends Omeka_Job_AbstractJob
 
         // Resent jobs can remain queued after all the items themselves have
         // been deleted. Skip if that's the case.
-        if ($folder->status == ArchiveFolder::STATUS_DELETED) {
-            _log('[ArchiveFolder] '. __('The folder for uri "%s" (# %d) was deleted prior to running this job.',
+        if ($folder->status == OaiPmhStaticRepository::STATUS_DELETED) {
+            _log('[OaiPmhStaticRepository] '. __('The folder for uri "%s" (# %d) was deleted prior to running this job.',
                 $folder->uri, $folder->id), Zend_Log::NOTICE);
             return;
         }
@@ -43,9 +43,9 @@ class ArchiveFolder_UpdateJob extends Omeka_Job_AbstractJob
             $folder->process($this->_processType);
         } catch (Exception $e) {
             $message = $e->getMessage();
-            $folder->setStatus(ArchiveFolder::STATUS_ERROR);
-            $folder->addMessage($message, ArchiveFolder::MESSAGE_CODE_ERROR);
-            _log('[ArchiveFolder] '. __('Error when processing folder "%s" (#%d): %s',
+            $folder->setStatus(OaiPmhStaticRepository::STATUS_ERROR);
+            $folder->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
+            _log('[OaiPmhStaticRepository] '. __('Error when processing folder "%s" (#%d): %s',
                 $folder->uri, $folder->id, $message), Zend_Log::ERR);
         }
     }
@@ -63,12 +63,12 @@ class ArchiveFolder_UpdateJob extends Omeka_Job_AbstractJob
     /**
      * Returns the folder to process.
      *
-     * @return ArchiveFolder The folder to process
+     * @return OaiPmhStaticRepository The folder to process
      */
     protected function _getFolder()
     {
         return $this->_db
-            ->getTable('ArchiveFolder')
+            ->getTable('OaiPmhStaticRepository')
             ->find($this->_folderId);
     }
 }

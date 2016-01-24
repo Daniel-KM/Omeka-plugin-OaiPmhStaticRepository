@@ -12,7 +12,7 @@ Some missing data of records will be updated via the update file.
 <documents>
     <record
         name="doc #1"
-        collection="Tests of the plugin Archive Folder"
+        collection="Tests of the plugin OAI-PMH Static Repository"
         itemType="Still Image"
         featured="1"
         >
@@ -79,7 +79,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</data>
     </record>
     <record
         name="doc #2"
-        collection="Tests of the plugin Archive Folder"
+        collection="Tests of the plugin OAI-PMH Static Repository"
         itemType="Still Image"
         xmlns:dc="http://purl.org/dc/elements/1.1/"
         xmlns:dcterms="http://purl.org/dc/terms/"

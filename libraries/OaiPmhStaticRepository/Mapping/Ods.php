@@ -2,9 +2,9 @@
 /**
  * Map Open Document Spreadsheet into Omeka elements for each item and file.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Mapping_Ods extends ArchiveFolder_Mapping_Table
+class OaiPmhStaticRepository_Mapping_Ods extends OaiPmhStaticRepository_Mapping_Table
 {
     protected $_checkMetadataFile = array('extension');
     protected $_extension = 'ods';

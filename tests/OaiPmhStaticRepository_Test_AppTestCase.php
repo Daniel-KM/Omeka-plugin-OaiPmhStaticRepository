@@ -2,15 +2,15 @@
 /**
  * @copyright Daniel Berthereau, 2015
  * @license http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.txt
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
 
 /**
- * Base class for Archive Folder tests.
+ * Base class for OAI-PMH Static Repository tests.
  */
-class ArchiveFolder_Test_AppTestCase extends Omeka_Test_AppTestCase
+class OaiPmhStaticRepository_Test_AppTestCase extends Omeka_Test_AppTestCase
 {
-    const PLUGIN_NAME = 'ArchiveFolder';
+    const PLUGIN_NAME = 'OaiPmhStaticRepository';
 
     protected $_allowLocalPaths = true;
 
@@ -59,7 +59,7 @@ class ArchiveFolder_Test_AppTestCase extends Omeka_Test_AppTestCase
                     'base_path' => TEST_FILES_DIR,
                 ),
             );
-            Zend_Registry::set('archive_folder', $settings);
+            Zend_Registry::set('oai_pmh_static_repository', $settings);
         }
         // Disallow local paths (default).
         else {
@@ -70,7 +70,7 @@ class ArchiveFolder_Test_AppTestCase extends Omeka_Test_AppTestCase
                     'base_path' => '/var/path/to/the/folder',
                 ),
             );
-            Zend_Registry::set('archive_folder', $settings);
+            Zend_Registry::set('oai_pmh_static_repository', $settings);
         }
 
         defined('TEST_FILES_WEB') or define('TEST_FILES_WEB', WEB_ROOT
@@ -109,8 +109,8 @@ class ArchiveFolder_Test_AppTestCase extends Omeka_Test_AppTestCase
 
     public function assertPreConditions()
     {
-        $folders = $this->db->getTable('ArchiveFolder')->findAll();
-        $this->assertEquals(0, count($folders), 'There should be no archive folders.');
+        $folders = $this->db->getTable('OaiPmhStaticRepository')->findAll();
+        $this->assertEquals(0, count($folders), 'There should be no OAI-PMH static repository.');
     }
 
     protected function _prepareFolderTest($uri = '', $parameters = array())
@@ -121,7 +121,7 @@ class ArchiveFolder_Test_AppTestCase extends Omeka_Test_AppTestCase
             $parameters['element_delimiter'] = '|';
         }
 
-        $this->_folder = new ArchiveFolder();
+        $this->_folder = new OaiPmhStaticRepository();
         $this->_folder->uri = $uri ?: (TEST_FILES_DIR
             . DIRECTORY_SEPARATOR . 'Folder_Test');
         $this->_folder->prepareParameters($parameters);
@@ -130,12 +130,12 @@ class ArchiveFolder_Test_AppTestCase extends Omeka_Test_AppTestCase
 
     protected function _deleteAllRecords()
     {
-        $records = $this->db->getTable('ArchiveFolder')->findAll();
+        $records = $this->db->getTable('OaiPmhStaticRepository')->findAll();
         foreach($records as $record) {
             $record->delete();
         }
-        $records = $this->db->getTable('ArchiveFolder')->findAll();
-        $this->assertEquals(0, count($records), 'There should be no archive folders.');
+        $records = $this->db->getTable('OaiPmhStaticRepository')->findAll();
+        $this->assertEquals(0, count($records), 'There should be no OAI-PMH static repository.');
     }
 
     /**
@@ -160,7 +160,7 @@ class ArchiveFolder_Test_AppTestCase extends Omeka_Test_AppTestCase
      */
     protected function _removeCachedFiles()
     {
-        $folderCache = get_option('archive_folder_static_dir');
+        $folderCache = get_option('oai_pmh_static_repository_static_dir');
         $this->assertTrue(strlen($folderCache) > 0, __('The folder cache is not set.'));
         $staticDir = FILES_DIR . DIRECTORY_SEPARATOR . $folderCache;
         // Another check because deltree function is dangerous.

@@ -1,10 +1,10 @@
 <?php
 /**
- * The ArchiveFolder Ajax controller class.
+ * The OaiPmhStaticRepository Ajax controller class.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_AjaxController extends Omeka_Controller_AbstractActionController
+class OaiPmhStaticRepository_AjaxController extends Omeka_Controller_AbstractActionController
 {
     /**
      * Controller-wide initialization. Sets the underlying model to use.
@@ -14,7 +14,7 @@ class ArchiveFolder_AjaxController extends Omeka_Controller_AbstractActionContro
         // Don't render the view script.
         $this->_helper->viewRenderer->setNoRender(true);
 
-        $this->_helper->db->setDefaultModelName('ArchiveFolder');
+        $this->_helper->db->setDefaultModelName('OaiPmhStaticRepository');
     }
 
     /**
@@ -67,7 +67,7 @@ class ArchiveFolder_AjaxController extends Omeka_Controller_AbstractActionContro
         }
 
         // Allow only allowed users.
-        if (!is_allowed('ArchiveFolder_Index', $action)) {
+        if (!is_allowed('OaiPmhStaticRepository_Index', $action)) {
             $this->getResponse()->setHttpResponseCode(403);
             return false;
         }

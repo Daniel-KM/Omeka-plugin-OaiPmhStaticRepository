@@ -2,7 +2,7 @@
 /**
  * @internal This is quite an integration test because Builder is a main class.
  */
-class ArchiveFolder_BuilderTest extends ArchiveFolder_Test_AppTestCase
+class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_AppTestCase
 {
     protected $_isAdminTest = true;
 
@@ -20,8 +20,8 @@ class ArchiveFolder_BuilderTest extends ArchiveFolder_Test_AppTestCase
         $this->_prepareFolderTest();
 
         $folder = $this->_folder;
-        $folders = $this->db->getTable('ArchiveFolder')->findAll();
-        $this->assertEquals(1, count($folders), 'There should be one archive folders.');
+        $folders = $this->db->getTable('OaiPmhStaticRepository')->findAll();
+        $this->assertEquals(1, count($folders), 'There should be one OAI-PMH static repository.');
 
         $parameters = $folder->getParameters();
 
@@ -42,19 +42,19 @@ class ArchiveFolder_BuilderTest extends ArchiveFolder_Test_AppTestCase
 
         $this->assertEquals(WEB_ROOT . '/repository/Folder_Test/', $parameters['repository_folder']);
         $this->assertEquals(WEB_ROOT . '/repository/Folder_Test.xml', $parameters['repository_url']);
-        $this->assertEquals(WEB_FILES . '/' . get_option('archive_folder_static_dir') . '/Folder_Test.xml',
+        $this->assertEquals(WEB_FILES . '/' . get_option('oai_pmh_static_repository_static_dir') . '/Folder_Test.xml',
             $folder->getStaticRepositoryBaseUrl());
 
         $this->assertEquals(FILES_DIR
-            . DIRECTORY_SEPARATOR . get_option('archive_folder_static_dir')
+            . DIRECTORY_SEPARATOR . get_option('oai_pmh_static_repository_static_dir')
             . DIRECTORY_SEPARATOR . 'Folder_Test.xml',
             $folder->getLocalRepositoryFilepath());
         $this->assertEquals(FILES_DIR
-            . DIRECTORY_SEPARATOR . get_option('archive_folder_static_dir')
+            . DIRECTORY_SEPARATOR . get_option('oai_pmh_static_repository_static_dir')
             . DIRECTORY_SEPARATOR . 'Folder_Test',
             $folder->getCacheFolder());
 
-        $this->assertEquals(ArchiveFolder::STATUS_ADDED, $folder->status);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_ADDED, $folder->status);
     }
 
     public function testByFile()
@@ -96,8 +96,8 @@ class ArchiveFolder_BuilderTest extends ArchiveFolder_Test_AppTestCase
         $folder = $this->_folder;
 
         // Update the folder (no change).
-        $folder->process(ArchiveFolder_Builder::TYPE_UPDATE);
-        $this->assertEquals(ArchiveFolder::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
+        $folder->process(OaiPmhStaticRepository_Builder::TYPE_UPDATE);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
     }
 
     public function testByDirectory()
@@ -246,11 +246,11 @@ class ArchiveFolder_BuilderTest extends ArchiveFolder_Test_AppTestCase
     {
         $folder = $this->_folder;
 
-        $folder->process(ArchiveFolder_Builder::TYPE_CHECK);
-        $this->assertEquals(ArchiveFolder::STATUS_COMPLETED, $folder->status, 'Folder check failed: ' . $folder->messages);
+        $folder->process(OaiPmhStaticRepository_Builder::TYPE_CHECK);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED, $folder->status, 'Folder check failed: ' . $folder->messages);
 
-        $folder->process(ArchiveFolder_Builder::TYPE_UPDATE);
-        $this->assertEquals(ArchiveFolder::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
+        $folder->process(OaiPmhStaticRepository_Builder::TYPE_UPDATE);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
 
         if ($folder->uri == TEST_FILES_DIR . DIRECTORY_SEPARATOR . 'Folder_Test') {
             $this->_checkCache();

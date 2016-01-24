@@ -2,9 +2,9 @@
 /**
  * Map Open Document Text files into Omeka elements for each item and file.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Mapping_Odt extends ArchiveFolder_Mapping_Text
+class OaiPmhStaticRepository_Mapping_Odt extends OaiPmhStaticRepository_Mapping_Text
 {
     protected $_checkMetadataFile = array('extension');
     protected $_extension = 'odt';

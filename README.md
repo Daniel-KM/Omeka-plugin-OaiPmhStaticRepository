@@ -1,16 +1,13 @@
-Archive Folder (plugin for Omeka)
-=================================
+OAI-PMH Static Repository (plugin for Omeka)
+============================================
 
-[Archive Folder] is a plugin for [Omeka] that allows to import a folder of files
-and/or metadata and to create or update items in Omeka. Files can be local or
-remote.
-
-Instead of using a specific import schema for a specific API, it follows the
-standard [OAI-PMH static repository]. By this way, the folder can be fetched by
-any standard OAI-PMH harvesters, in particular the one available for Omeka,
-[OAI-PMH Harvester], through any standard OAI-PMH gateway, in particular another
-plugin for Omeka, [OAI-PMH Gateway]. In other words, you can self-harvest, or
-ingest, your own directories, files and metadata via a standard process.
+[OAI-PMH Static Repository] is a plugin for [Omeka] that allows to convert a
+folder of files and/or metadata into a standard [OAI-PMH static repository]. By
+this way, the folder can be fetched by any standard OAI-PMH harvesters, in
+particular the one available for Omeka, [OAI-PMH Harvester], through any
+standard OAI-PMH gateway, in particular another plugin for Omeka, [OAI-PMH Gateway].
+In other words, you can self-harvest, or ingest, your own directories, files and
+metadata via a standard process.
 
 Concretely, just install these three plugins, set a local folder or a remote
 one with files and/or metadata, then they will be harvested automatically and
@@ -21,11 +18,6 @@ folders of files somewhere on hard drives or servers, who manage them with a
 simple file manager and with some metadata in various files (text, spreadsheet,
 xml...). Of course, if files and metadata are well managed, they can be ingested
 too.
-
-This plugin replaces the [fork of Csv Import] and the plugin [Xml Import], that
-won't be maintained any more. All of their features have equivalents in this
-tool via internal functions, classes (for the mapping between specific metadata
-and Omeka elements) and hooks (for special data).
 
 
 Examples
@@ -45,7 +37,8 @@ media types `application/xml`, `text/xml`, `application/json`, and default
 `application/vnd.oasis.opendocument.spreadsheet`, `application/vnd.oasis.opendocument.text`
 and `text/plain`;
 - copy the folder outside of the Omeka install, somewhere the server can access;
-- click on "Add Folder" in the "Archive Folders" tab;
+- click on "Add OAI-PMH Static Repository" in the "OAI-PMH Static Repositories"
+tab;
 - fill the base uri, something like `http://localhost/path/to/the/Folder_Test`;
 - don't care about other parameters, they will be default;
 - click on the submit button;
@@ -68,7 +61,7 @@ You can try the update of this harvest too:
 - replace file "Dir_B/Subdir_B-A/document.xml" and/or "Dir_B/Subdir_B-A/document_external.xml"
 of your copied directory by the matching ones that are prepared in the directory
 "tests/suite/_files/Update_files/";
-- click on "Update" in the "Archive folders" tab.
+- click on "Update" in the "OAI-PMH Static Repositories" tab.
 
 ### Simple folder
 
@@ -221,7 +214,7 @@ commits, the latter is recommended.
 
 The plugin [OcrElementSet] can be installed too to import ocr data.
 
-Then uncompress files and rename plugin folder `ArchiveFolder`.
+Then uncompress files and rename plugin folder `OaiPmhStaticRepository`.
 
 Then install it like any other Omeka plugin and follow the config instructions.
 
@@ -461,7 +454,7 @@ Add a custom format
 Three filters and associated classes are available to create static repositories
 for custom formats.
 
-* `archive_folder_mappings`
+* `oai_pmh_static_repository_mappings`
 
 This filter makes the mapping between the metadata files and the elements that
 exists in Omeka. This filter is required to process metadata files. The mapping
@@ -475,14 +468,14 @@ should be done with the filter `oai_pmh_harvester_maps`.
 Note: In Omeka, all metadata are flat by default, so the hierarchical structure
 of a complex XML file should be interpreted.
 
-* `archive_folder_formats`
+* `oai_pmh_static_repository_formats`
 
 This filter specifies a class that defines a format that will be used as a
 metadata format in the static repository. It is not needed as long as all data
-are mapped into the Omeka format with the filter `archive_folder_mappings` so
-that the import can be done with default formats, in particular the `Documents`
-one. On the contrary, of course, It's required if the import is done with this
-format, in particular when the xml is raw copied.
+are mapped into the Omeka format with the filter `oai_pmh_static_repository_mappings`
+so that the import can be done with default formats, in particular the
+`Documents` one. On the contrary, of course, It's required if the import is done
+with this format, in particular when the xml is raw copied.
 
 * `oai_pmh_harvester_maps`
 
@@ -505,8 +498,9 @@ imported via two ways.
 * Standard "Post": the name should be the same that is used in the form of the
 original plugin, for example `geolocation[latitude]` for the latitude of an item
 in array notation with the plugin [Geolocation].
-* If this is not possible, the hook `archive_folder_ingest_data` should be set
-and managed in a plugin. This hook is called after the harvest of each record.
+* If this is not possible, the hook `oai_pmh_static_repository_ingest_data`
+should be set and managed in a plugin. This hook is called after the harvest of
+each record.
 
 Furthermore, this hook can be used to ingest data that are contained inside
 original files, in particular for audio, photo and video files.
@@ -704,7 +698,7 @@ Copyright
 * Copyright Daniel Berthereau, 2015
 
 
-[Archive Folder]: https://github.com/Daniel-KM/ArchiveFolder
+[OAI-PMH Static Repository]: https://github.com/Daniel-KM/OaiPmhStaticRepository
 [Omeka]: https://www.omeka.org
 [OAI-PMH static repository]: https://www.openarchives.org/OAI/2.0/guidelines-static-repository.htm
 [OAI-PMH Harvester]: https://omeka.org/add-ons/plugins/oai-pmh-harvester
@@ -724,7 +718,7 @@ Copyright
 [refNum2Mets]: https://github.com/Daniel-KM/refNum2Mets
 [Archive Folder Document]: https://github.com/Daniel-KM/ArchiveFolderDocument
 [OAI-PMH Repository]: https://omeka.org/add-ons/plugins/oai-pmh-repository
-[plugin issues]: https://github.com/Daniel-KM/ArchiveFolder/issues
+[plugin issues]: https://github.com/Daniel-KM/OaiPmhStaticRepository/issues
 [CeCILL v2.1]: https://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html
 [GNU/GPL]: https://www.gnu.org/licenses/gpl-3.0.html
 [FSF]: https://www.fsf.org

@@ -8,7 +8,7 @@
 
     @copyright Daniel Berthereau, 2013-2015
     @license http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html
-    @package ArchiveFolder
+    @package OaiPmhStaticRepository
     @see XmlImport
 -->
 <xsl:stylesheet version="1.0"

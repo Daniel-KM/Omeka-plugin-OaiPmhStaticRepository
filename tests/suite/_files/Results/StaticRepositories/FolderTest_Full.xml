@@ -105,7 +105,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</dc:descri
   <dc:description>The geolocation is a random one.</dc:description>
   <dc:description>This fourth description is a simple string <em>inside</em> a CDATA one.</dc:description>
   <dc:description><p>This fifth description is a valid <strong>html</strong> string <em>inside</em> a CDATA one.</p></dc:description>
-  <dc:description><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "Archive folders".</p></dc:description>
+  <dc:description><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "OAI-PMH Static Repositories".</p></dc:description>
   <dc:date>2015</dc:date>
   <dc:identifier>http://www.example.com/repository/Folder_Test/doc%20%231</dc:identifier>
   <dc:identifier>http://www.example.com/repository/Folder_Test/Dir_B/Subdir_B-A/image_Subdir_B-A_1.png</dc:identifier>
@@ -156,7 +156,7 @@ The cathedral is the mother church of the Roman Catholic Archdiocese of Florence
   <dc:title>Salisbury Cathedral</dc:title>
   <dc:creator>Unknown</dc:creator>
   <dc:description>For testing purposes, metadata of this item will be updated later.
-To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "Archive folders".</dc:description>
+To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "OAI-PMH Static Repositories".</dc:description>
   <dc:identifier>http://www.example.com/repository/Folder_Test/doc%20%234</dc:identifier>
 </oai_dc:dc>
 </oai:metadata>
@@ -168,7 +168,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
       </oai:header>
       <oai:metadata>
 <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:title>Test of Mets import via Archive Folder (from "Subdir_B-B.mets.xml")</dc:title>
+  <dc:title>Test of Mets import via OAI-PMH Static Repository (from "Subdir_B-B.mets.xml")</dc:title>
   <dc:creator>Elisabeth II</dc:creator>
   <dc:creator>Louis XIV</dc:creator>
   <dc:description>This record has two attached files, whose path contains only simple alphanumeric characters and no space, so the relative location is the same for http and local path and it can be ingested by the two ways.</dc:description>
@@ -419,7 +419,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</dc:descri
   <dc:description>The geolocation is a random one.</dc:description>
   <dc:description>This fourth description is a simple string <em>inside</em> a CDATA one.</dc:description>
   <dc:description><p>This fifth description is a valid <strong>html</strong> string <em>inside</em> a CDATA one.</p></dc:description>
-  <dc:description><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "Archive folders".</p></dc:description>
+  <dc:description><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "OAI-PMH Static Repositories".</p></dc:description>
   <dc:date>2015</dc:date>
   <dc:identifier>http://www.example.com/repository/Folder_Test/doc%20%231</dc:identifier>
   <dc:identifier>http://www.example.com/repository/Folder_Test/Dir_B/Subdir_B-A/image_Subdir_B-A_1.png</dc:identifier>
@@ -471,7 +471,7 @@ The cathedral is the mother church of the Roman Catholic Archdiocese of Florence
   <dc:title>Salisbury Cathedral</dc:title>
   <dc:creator>Unknown</dc:creator>
   <dc:description>For testing purposes, metadata of this item will be updated later.
-To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "Archive folders".</dc:description>
+To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "OAI-PMH Static Repositories".</dc:description>
   <dc:identifier>http://www.example.com/repository/Folder_Test/doc%20%234</dc:identifier>
 </oai_dcterms:dcterms>
 </oai:metadata>
@@ -483,7 +483,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
       </oai:header>
       <oai:metadata>
 <oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
-  <dc:title>Test of Mets import via Archive Folder (from "Subdir_B-B.mets.xml")</dc:title>
+  <dc:title>Test of Mets import via OAI-PMH Static Repository (from "Subdir_B-B.mets.xml")</dc:title>
   <dc:creator>Elisabeth II</dc:creator>
   <dc:creator>Louis XIV</dc:creator>
   <dc:description>This record has two attached files, whose path contains only simple alphanumeric characters and no space, so the relative location is the same for http and local path and it can be ingested by the two ways.</dc:description>
@@ -734,7 +734,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</dc:descri
   <dc:description>The geolocation is a random one.</dc:description>
   <dc:description>This fourth description is a simple string <em>inside</em> a CDATA one.</dc:description>
   <dc:description><p>This fifth description is a valid <strong>html</strong> string <em>inside</em> a CDATA one.</p></dc:description>
-  <dc:description><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "Archive folders".</p></dc:description>
+  <dc:description><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "OAI-PMH Static Repositories".</p></dc:description>
   <dc:date>2015</dc:date>
   <dc:identifier>http://www.example.com/repository/Folder_Test/doc%20%231</dc:identifier>
   <dc:identifier>http://www.example.com/repository/Folder_Test/Dir_B/Subdir_B-A/image_Subdir_B-A_1.png</dc:identifier>
@@ -786,7 +786,7 @@ The cathedral is the mother church of the Roman Catholic Archdiocese of Florence
   <dc:title>Salisbury Cathedral</dc:title>
   <dc:creator>Unknown</dc:creator>
   <dc:description>For testing purposes, metadata of this item will be updated later.
-To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "Archive folders".</dc:description>
+To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "OAI-PMH Static Repositories".</dc:description>
   <dc:identifier>http://www.example.com/repository/Folder_Test/doc%20%234</dc:identifier>
 </oai_dcq:dcterms>
 </oai:metadata>
@@ -798,7 +798,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
       </oai:header>
       <oai:metadata>
 <oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
-  <dc:title>Test of Mets import via Archive Folder (from "Subdir_B-B.mets.xml")</dc:title>
+  <dc:title>Test of Mets import via OAI-PMH Static Repository (from "Subdir_B-B.mets.xml")</dc:title>
   <dc:creator>Elisabeth II</dc:creator>
   <dc:creator>Louis XIV</dc:creator>
   <dc:description>This record has two attached files, whose path contains only simple alphanumeric characters and no space, so the relative location is the same for http and local path and it can be ingested by the two ways.</dc:description>
@@ -991,7 +991,7 @@ This is the second line of the description, after a line break.</dc:description>
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.01">
@@ -1039,7 +1039,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.02">
@@ -1069,7 +1069,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.03">
@@ -1108,7 +1108,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.04">
@@ -1125,7 +1125,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</dc:descri
         <dc:description>The geolocation is a random one.</dc:description>
         <dc:description>This fourth description is a simple string <em>inside</em> a CDATA one.</dc:description>
         <dc:description><p>This fifth description is a valid <strong>html</strong> string <em>inside</em> a CDATA one.</p></dc:description>
-        <dc:description><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "Archive folders".</p></dc:description>
+        <dc:description><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "OAI-PMH Static Repositories".</p></dc:description>
         <dc:date>2015</dc:date>
         <dc:identifier>http://www.example.com/repository/Folder_Test/doc%20%231</dc:identifier>
       </xmlData>
@@ -1160,7 +1160,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</dc:descri
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.05">
@@ -1192,7 +1192,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</dc:descri
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.06">
@@ -1235,7 +1235,7 @@ The cathedral is the mother church of the Roman Catholic Archdiocese of Florence
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.07">
@@ -1244,7 +1244,7 @@ The cathedral is the mother church of the Roman Catholic Archdiocese of Florence
         <dc:title>Salisbury Cathedral</dc:title>
         <dc:creator>Unknown</dc:creator>
         <dc:description>For testing purposes, metadata of this item will be updated later.
-To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "Archive folders".</dc:description>
+To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "OAI-PMH Static Repositories".</dc:description>
         <dc:identifier>http://www.example.com/repository/Folder_Test/doc%20%234</dc:identifier>
       </xmlData>
     </mdWrap>
@@ -1264,20 +1264,20 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:niso="http://www.niso.org/Z39-87-2006.pdf" xmlns:textmd="info:lc/xmlns/textMD-v3" OBJID="my_obj_id_1" LABEL="Test of Mets via Archive Folder" TYPE="Text">
+<mets xmlns="http://www.loc.gov/METS/" xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:niso="http://www.niso.org/Z39-87-2006.pdf" xmlns:textmd="info:lc/xmlns/textMD-v3" OBJID="my_obj_id_1" LABEL="Test of Mets via OAI-PMH Static Repository" TYPE="Text">
    <metsHdr CREATEDATE="2015-04-16T08:48:56+02:00" RECORDSTATUS="Complete">
       <agent ROLE="Creator" TYPE="INDIVIDUAL">
          <name>Daniel Berthereau</name>
       </agent>
       <agent ROLE="OTHER" OTHERROLE="BUILDER" TYPE="OTHER" OTHERTYPE="SOFTWARE">
-         <name>Archive Folder for Omeka (https://github.com/Daniel-KM/ArchiveFolder)</name>
+         <name>OAI-PMH Static Repository for Omeka (https://github.com/Daniel-KM/OaiPmhStaticRepository)</name>
       </agent>
    </metsHdr>
    <dmdSec ID="DMD.2">
       <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Metadata of the Document">
          <xmlData>
             <dc:dc>
-               <dc:title>Test of Mets import via Archive Folder (from "Subdir_B-B.mets.xml")</dc:title>
+               <dc:title>Test of Mets import via OAI-PMH Static Repository (from "Subdir_B-B.mets.xml")</dc:title>
                <dc:creator>Elisabeth II</dc:creator>
                <dc:creator>Louis XIV</dc:creator>
                <dc:description>This record has two attached files, whose path contains only simple alphanumeric characters and no space, so the relative location is the same for http and local path and it can be ingested by the two ways.</dc:description>
@@ -1346,7 +1346,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.08">
@@ -1391,7 +1391,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.09">
@@ -1444,7 +1444,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.010">
@@ -1485,7 +1485,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.011">
@@ -1523,7 +1523,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.012">
@@ -1563,7 +1563,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.013">
@@ -1598,7 +1598,7 @@ The item has two files without specific metadata.</dc:description>
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.014">
@@ -1643,7 +1643,7 @@ This is the second line of the description, after a line break.</dc:description>
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.015">
@@ -1674,7 +1674,7 @@ This is the second line of the description, after a line break.</dc:description>
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.016">
@@ -1714,7 +1714,7 @@ This is the second line of the description, after a line break.</dc:description>
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.017">
@@ -1841,7 +1841,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
-<record xmlns="http://localhost/documents/" name="doc #1" collection="Tests of the plugin Archive Folder" itemType="Still Image" featured="1">
+<record xmlns="http://localhost/documents/" name="doc #1" collection="Tests of the plugin OAI-PMH Static Repository" itemType="Still Image" featured="1">
         <elementSet name="Dublin Core">
             <element name="Title">
                 <data>Title of the document of the Directory B-A (from “document.xml”)</data>
@@ -1862,7 +1862,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</data>
                 <data>The geolocation is a random one.</data>
                 <data><![CDATA[This fourth description is a simple string <em>inside</em> a CDATA one.]]></data>
                 <data><![CDATA[<p>This fifth description is a valid <strong>html</strong> string <em>inside</em> a CDATA one.</p>]]></data>
-                <data><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "Archive folders".</p></data>
+                <data><p>To try the update of the folder by the OAI-PMH harvester, replace the file "<code>Dir_B/Subdir_B-A/document.xml</code>" of your copied directory by the matching one that is prepared in the directory "<code>tests/suite/_files/Update_files/</code>", and click on "Update" in the tab "OAI-PMH Static Repositories".</p></data>
             </element>
         </elementSet>
         <elementSet name="Item Type Metadata">
@@ -1908,7 +1908,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</data>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
-<record xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns="http://localhost/documents/" name="doc #2" collection="Tests of the plugin Archive Folder" itemType="Still Image">
+<record xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns="http://localhost/documents/" name="doc #2" collection="Tests of the plugin OAI-PMH Static Repository" itemType="Still Image">
         <dc:title>A simple document of ”document.xml”, without attached file</dc:title>
         <dc:creator>Unknown, just for test of Dublin Core</dc:creator>
         <dcterms:abstract>This is an abstract.</dcterms:abstract>
@@ -1981,7 +1981,7 @@ The cathedral is the mother church of the Roman Catholic Archdiocese of Florence
             </element>
             <element name="Description">
                 <data>For testing purposes, metadata of this item will be updated later.
-To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "Archive folders".</data>
+To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "OAI-PMH Static Repositories".</data>
             </element>
         </elementSet>
     </record></oai:metadata>
@@ -1995,7 +1995,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
 <record xmlns="http://localhost/documents/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/documents/ http://localhost/documents.xsd">
   <elementSet name="Dublin Core">
     <element name="Title">
-      <data>Test of Mets import via Archive Folder (from "Subdir_B-B.mets.xml")</data>
+      <data>Test of Mets import via OAI-PMH Static Repository (from "Subdir_B-B.mets.xml")</data>
     </element>
     <element name="Creator">
       <data>Elisabeth II</data>

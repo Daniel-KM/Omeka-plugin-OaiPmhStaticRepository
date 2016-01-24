@@ -1,5 +1,5 @@
 <?php
-class ArchiveFolder_MappingTest extends ArchiveFolder_Test_AppTestCase
+class OaiPmhStaticRepository_MappingTest extends OaiPmhStaticRepository_Test_AppTestCase
 {
     protected $_isAdminTest = true;
 
@@ -13,7 +13,7 @@ class ArchiveFolder_MappingTest extends ArchiveFolder_Test_AppTestCase
         $this->user = $this->db->getTable('User')->find(1);
         $this->_authenticateUser($this->user);
 
-        $this->_mappings = $this->_getFiltered('archive_folder_mappings');
+        $this->_mappings = $this->_getFiltered('oai_pmh_static_repository_mappings');
     }
 
     public function testMappings()

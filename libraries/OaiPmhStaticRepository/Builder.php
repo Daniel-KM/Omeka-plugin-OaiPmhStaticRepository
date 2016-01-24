@@ -1,11 +1,11 @@
 <?php
 
 /**
- * ArchiveFolder_Builder class
+ * OaiPmhStaticRepository_Builder class
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Builder
+class OaiPmhStaticRepository_Builder
 {
     const TYPE_CHECK = 'check';
     const TYPE_UPDATE = 'update';
@@ -81,11 +81,11 @@ class ArchiveFolder_Builder
     /**
      * Process update of a folder.
      *
-     * @param ArchiveFolder $folder The folder to process.
+     * @param OaiPmhStaticRepository $folder The folder to process.
      * @param string $type The type of process.
      * @return List of documents.
      */
-    public function process(ArchiveFolder $folder, $type = self::TYPE_CHECK)
+    public function process(OaiPmhStaticRepository $folder, $type = self::TYPE_CHECK)
     {
         $this->_folder = $folder;
         $this->_type = $type;
@@ -103,14 +103,14 @@ class ArchiveFolder_Builder
 
         try {
             $this->_checkFolderUri();
-        } catch (ArchiveFolder_BuilderException $e) {
-            throw new ArchiveFolder_BuilderException($e->getMessage());
+        } catch (OaiPmhStaticRepository_BuilderException $e) {
+            throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
         } catch (Exception $e) {
-            throw new ArchiveFolder_BuilderException(__('The folder uri or the transfer mode cannot be checked: %s', $e->getMessage()));
+            throw new OaiPmhStaticRepository_BuilderException(__('The folder uri or the transfer mode cannot be checked: %s', $e->getMessage()));
         }
 
         if (empty($this->_transferStrategy)) {
-            throw new ArchiveFolder_BuilderException(__('The format of the uri is not managed.'));
+            throw new OaiPmhStaticRepository_BuilderException(__('The format of the uri is not managed.'));
         }
 
         $this->_parameters['transfer_strategy'] = $this->_transferStrategy;
@@ -119,26 +119,26 @@ class ArchiveFolder_Builder
 
         try {
             $this->_checkOaiIdentifier();
-        } catch (ArchiveFolder_BuilderException $e) {
-            throw new ArchiveFolder_BuilderException($e->getMessage());
+        } catch (OaiPmhStaticRepository_BuilderException $e) {
+            throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
         } catch (Exception $e) {
-            throw new ArchiveFolder_BuilderException(__('Identifier cannot be built: %s', $e->getMessage()));
+            throw new OaiPmhStaticRepository_BuilderException(__('Identifier cannot be built: %s', $e->getMessage()));
         }
 
         try {
             $this->_checkMappings();
-        } catch (ArchiveFolder_BuilderException $e) {
-            throw new ArchiveFolder_BuilderException($e->getMessage());
+        } catch (OaiPmhStaticRepository_BuilderException $e) {
+            throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
         } catch (Exception $e) {
-            throw new ArchiveFolder_BuilderException(__('Mappings cannot be checked: %s', $e->getMessage()));
+            throw new OaiPmhStaticRepository_BuilderException(__('Mappings cannot be checked: %s', $e->getMessage()));
         }
 
         try {
             $this->_checkMetadataFormats();
-        } catch (ArchiveFolder_BuilderException $e) {
-            throw new ArchiveFolder_BuilderException($e->getMessage());
+        } catch (OaiPmhStaticRepository_BuilderException $e) {
+            throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
         } catch (Exception $e) {
-            throw new ArchiveFolder_BuilderException(__('Formats cannot be checked: %s', $e->getMessage()));
+            throw new OaiPmhStaticRepository_BuilderException(__('Formats cannot be checked: %s', $e->getMessage()));
         }
 
         if ($this->_folder->hasBeenStopped()) return;
@@ -146,11 +146,11 @@ class ArchiveFolder_Builder
         try {
             $this->_listFolderAndFiles();
         } catch (Exception $e) {
-            throw new ArchiveFolder_BuilderException(__('Files cannot be checked: %s', $e->getMessage()));
+            throw new OaiPmhStaticRepository_BuilderException(__('Files cannot be checked: %s', $e->getMessage()));
         }
 
         if (empty($this->_folders) || empty($this->_files)) {
-            throw new ArchiveFolder_BuilderException(__('No folder and no file found.')
+            throw new OaiPmhStaticRepository_BuilderException(__('No folder and no file found.')
                 . ' ' . __('Check your rights and your configuration.'));
         }
 
@@ -159,11 +159,11 @@ class ArchiveFolder_Builder
         try {
             $this->_checkFiles();
         } catch (Exception $e) {
-            throw new ArchiveFolder_BuilderException(__('Some extensions of paths cannot be checked: %s', $e->getMessage()));
+            throw new OaiPmhStaticRepository_BuilderException(__('Some extensions of paths cannot be checked: %s', $e->getMessage()));
         }
 
         if (empty($this->_folders) || empty($this->_files)) {
-            throw new ArchiveFolder_BuilderException(__('No folder and no file found.')
+            throw new OaiPmhStaticRepository_BuilderException(__('No folder and no file found.')
                 . ' ' . __('Check rights, allowed paths, extensions and configuration.'));
         }
 
@@ -171,10 +171,10 @@ class ArchiveFolder_Builder
 
         try {
             $this->_listDocuments();
-        } catch (ArchiveFolder_BuilderException $e) {
-            throw new ArchiveFolder_BuilderException($e->getMessage());
+        } catch (OaiPmhStaticRepository_BuilderException $e) {
+            throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
         } catch (Exception $e) {
-            throw new ArchiveFolder_BuilderException(__('The static repository cannot be built: %s', $e->getMessage()));
+            throw new OaiPmhStaticRepository_BuilderException(__('The static repository cannot be built: %s', $e->getMessage()));
         }
 
         if ($this->_folder->hasBeenStopped()) return;
@@ -182,11 +182,11 @@ class ArchiveFolder_Builder
         try {
             $this->_checkDocuments();
         } catch (Exception $e) {
-            throw new ArchiveFolder_BuilderException(__('Some documents cannot be imported: %s', $e->getMessage()));
+            throw new OaiPmhStaticRepository_BuilderException(__('Some documents cannot be imported: %s', $e->getMessage()));
         }
 
         if (empty($this->_documents)) {
-            throw new ArchiveFolder_BuilderException(__('No folder and no file found.')
+            throw new OaiPmhStaticRepository_BuilderException(__('No folder and no file found.')
                 . ' ' . __('Check rights, allowed paths, extensions and configuration.'));
         }
 
@@ -194,10 +194,10 @@ class ArchiveFolder_Builder
 
         try {
             $this->_createOaiIdentifiers();
-        } catch (ArchiveFolder_BuilderException $e) {
-            throw new ArchiveFolder_BuilderException($e->getMessage());
+        } catch (OaiPmhStaticRepository_BuilderException $e) {
+            throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
         } catch (Exception $e) {
-            throw new ArchiveFolder_BuilderException(__('The oai identifiers cannot be built: %s', $e->getMessage()));
+            throw new OaiPmhStaticRepository_BuilderException(__('The oai identifiers cannot be built: %s', $e->getMessage()));
         }
 
         if ($this->_folder->hasBeenStopped()) return;
@@ -207,7 +207,7 @@ class ArchiveFolder_Builder
                 break;
             case self::TYPE_UPDATE :
                 if (empty($this->_folder->identifier)) {
-                    throw new ArchiveFolder_BuilderException(__('The repository identifier is not defined.'));
+                    throw new OaiPmhStaticRepository_BuilderException(__('The repository identifier is not defined.'));
                 }
 
                 // Create the cache for local files and remote files that need it.
@@ -216,10 +216,10 @@ class ArchiveFolder_Builder
                 if (!$this->_getParameter('repository_remote')) {
                     try {
                         $this->_cacheFilesIntoLocalRepository();
-                    } catch (ArchiveFolder_BuilderException $e) {
-                        throw new ArchiveFolder_BuilderException($e->getMessage());
+                    } catch (OaiPmhStaticRepository_BuilderException $e) {
+                        throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
                     } catch (Exception $e) {
-                        throw new ArchiveFolder_BuilderException(__('An error occurs when the files are cached locally: %s', $e->getMessage()));
+                        throw new OaiPmhStaticRepository_BuilderException(__('An error occurs when the files are cached locally: %s', $e->getMessage()));
                     }
                 }
 
@@ -232,10 +232,10 @@ class ArchiveFolder_Builder
 
                 try {
                     $this->_saveStaticRepository();
-                } catch (ArchiveFolder_BuilderException $e) {
-                    throw new ArchiveFolder_BuilderException($e->getMessage());
+                } catch (OaiPmhStaticRepository_BuilderException $e) {
+                    throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
                 } catch (Exception $e) {
-                    throw new ArchiveFolder_BuilderException(__('An error occurs when the file of the static repository was saved: %s', $e->getMessage()));
+                    throw new OaiPmhStaticRepository_BuilderException(__('An error occurs when the file of the static repository was saved: %s', $e->getMessage()));
                 }
                 break;
         }
@@ -260,7 +260,7 @@ class ArchiveFolder_Builder
     {
         $result = $this->_isUriAllowed($this->_folder->uri);
         if ($result !== true) {
-            throw new ArchiveFolder_BuilderException($result);
+            throw new OaiPmhStaticRepository_BuilderException($result);
         }
 
         // The scheme has just been checked above.
@@ -270,7 +270,7 @@ class ArchiveFolder_Builder
             : 'Filesystem';
 
         if (!$this->_isUriAvailable($this->_folder->uri)) {
-            throw new ArchiveFolder_BuilderException(__('The folder is not readable or not available.'));
+            throw new OaiPmhStaticRepository_BuilderException(__('The folder is not readable or not available.'));
         }
     }
 
@@ -281,17 +281,17 @@ class ArchiveFolder_Builder
      */
     protected function _checkOaiIdentifier()
     {
-        $oaiIdentifiers = apply_filters('archive_folder_oai_identifiers', array());
+        $oaiIdentifiers = apply_filters('oai_pmh_static_repository_oai_identifiers', array());
 
         // Check the selected identifier.
         $identifierFormat = $this->_getParameter('oai_identifier_format');
         if (!isset($oaiIdentifiers[$identifierFormat])) {
-            throw new ArchiveFolder_BuilderException(__('OAI identifier format"%s" is missing.', $identifierFormat));
+            throw new OaiPmhStaticRepository_BuilderException(__('OAI identifier format"%s" is missing.', $identifierFormat));
         }
 
         $class = $oaiIdentifiers[$identifierFormat]['class'];
         if (!class_exists($class)) {
-            throw new ArchiveFolder_BuilderException(__('OAI identifier class "%s" is missing.', $class));
+            throw new OaiPmhStaticRepository_BuilderException(__('OAI identifier class "%s" is missing.', $class));
         }
 
         $this->_oaiIdentifier = new $class;
@@ -307,13 +307,13 @@ class ArchiveFolder_Builder
      */
     protected function _checkMappings()
     {
-        $mappings = apply_filters('archive_folder_mappings', array());
+        $mappings = apply_filters('oai_pmh_static_repository_mappings', array());
 
         // Check the mappings.
         foreach ($mappings as $name => $mapping) {
             $class = $mapping['class'];
             if (!class_exists($class)) {
-                throw new ArchiveFolder_BuilderException(__('Mapping class "%s" is missing.', $class));
+                throw new OaiPmhStaticRepository_BuilderException(__('Mapping class "%s" is missing.', $class));
             }
             $this->_mappings[$name] = new $class($this->_folder->uri, $this->_parameters);
         }
@@ -328,7 +328,7 @@ class ArchiveFolder_Builder
      */
     protected function _checkMetadataFormats()
     {
-        $metadataFormats = apply_filters('archive_folder_formats', array());
+        $metadataFormats = apply_filters('oai_pmh_static_repository_formats', array());
 
         // Keep only formats that are wanted for this repository.
         $this->_metadataFormats = array();
@@ -337,7 +337,7 @@ class ArchiveFolder_Builder
             if (in_array($name, $this->_getParameter('metadata_formats'))) {
                 $class = $format['class'];
                 if (!class_exists($class)) {
-                    throw new ArchiveFolder_BuilderException(__('Format class "%s" is missing.', $class));
+                    throw new OaiPmhStaticRepository_BuilderException(__('Format class "%s" is missing.', $class));
                 }
                 $this->_metadataFormats[$format['prefix']] = new $class($this->_folder->uri, $this->_parameters);
             }
@@ -345,7 +345,7 @@ class ArchiveFolder_Builder
 
         // "oai_dc" is the only required format.
         if (!isset($this->_metadataFormats['oai_dc'])) {
-            throw new ArchiveFolder_BuilderException(__('Format "oai_dc" is required.'));
+            throw new OaiPmhStaticRepository_BuilderException(__('Format "oai_dc" is required.'));
         }
 
         return true;
@@ -409,7 +409,7 @@ class ArchiveFolder_Builder
             $message = __('%d files with extensions "%s" were skipped.',
                 array_sum($unsetExtensions), implode('", "', array_keys($unsetExtensions)));
             $this->_folder->addMessage($message);
-            _log('[ArchiveFolder] '. __('Folder #%d [%s]: %s',
+            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s',
                 $this->_folder->id, $this->_folder->uri, $message));
         }
 
@@ -417,7 +417,7 @@ class ArchiveFolder_Builder
             $message = __('At least %d forbidden files "%s" were skipped.',
                 count($unsets), implode('", "', $unsets));
             $this->_folder->addMessage($message);
-            _log('[ArchiveFolder] '. __('Folder #%d [%s]: %s',
+            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s',
                 $this->_folder->id, $this->_folder->uri, $message));
         }
     }
@@ -442,10 +442,10 @@ class ArchiveFolder_Builder
                     unset($this->_files[$filepath]);
                     try {
                         $metadataDocs = $mapping->listDocuments($filepath);
-                    } catch (ArchiveFolder_BuilderException $e) {
-                        throw new ArchiveFolder_BuilderException($e->getMessage());
+                    } catch (OaiPmhStaticRepository_BuilderException $e) {
+                        throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
                     } catch (Exception $e) {
-                        throw new ArchiveFolder_BuilderException(__('The document "%s" has an issue: %s', $filepath, $e->getMessage()));
+                        throw new OaiPmhStaticRepository_BuilderException(__('The document "%s" has an issue: %s', $filepath, $e->getMessage()));
                     }
                     $documents = array_merge($documents, $metadataDocs);
                 }
@@ -552,7 +552,7 @@ class ArchiveFolder_Builder
                     }
                 }
                 if (!empty($remainingFiles)) {
-                   throw new ArchiveFolder_BuilderException(__('Some files are not manageable "%s".', implode('", "', $remainingFiles)));
+                   throw new OaiPmhStaticRepository_BuilderException(__('Some files are not manageable "%s".', implode('", "', $remainingFiles)));
                 }
                 break;
 
@@ -599,7 +599,7 @@ class ArchiveFolder_Builder
                     count($unsets), '"' . implode('", "', $unsets) . '"');
             }
             $this->_folder->addMessage($message);
-            _log('[ArchiveFolder] '. __('Folder #%d [%s]: %s',
+            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s',
                 $this->_folder->id, $this->_folder->uri, $message));
         }
     }
@@ -629,7 +629,7 @@ class ArchiveFolder_Builder
         // Check if all identifiers are unique.
         $unique = array_filter(array_unique($listOaiIdentifiers));
         if (empty($unique) || count($unique) != count($listOaiIdentifiers)) {
-           throw new ArchiveFolder_BuilderException(__('Some oai identifiers are not unique. Check names of your documents.'));
+           throw new OaiPmhStaticRepository_BuilderException(__('Some oai identifiers are not unique. Check names of your documents.'));
         }
     }
 
@@ -655,7 +655,7 @@ class ArchiveFolder_Builder
             $absoluteFolderPath = $cacheFolder . '/' . $relativeFolderpath;
             if (file_exists($absoluteFolderPath)) {
                 if (is_file($absoluteFolderPath)) {
-                    throw new ArchiveFolder_BuilderException(__('Unable to create the folder "%s": there is a file with the same name.', $relativeFolderpath));
+                    throw new OaiPmhStaticRepository_BuilderException(__('Unable to create the folder "%s": there is a file with the same name.', $relativeFolderpath));
                 }
                 $result = true;
             }
@@ -663,7 +663,7 @@ class ArchiveFolder_Builder
                 $result = @mkdir($absoluteFolderPath, 0775, true);
             }
             if (!$result) {
-                throw new ArchiveFolder_BuilderException(__('Unable to create the cache for folder "%s".', $relativeFolderpath));
+                throw new OaiPmhStaticRepository_BuilderException(__('Unable to create the cache for folder "%s".', $relativeFolderpath));
             }
         }
 
@@ -676,7 +676,7 @@ class ArchiveFolder_Builder
             }
             $result = @copy($filepath, $cacheFolder . '/' . $relativeFilepath);
             if (!$result) {
-                throw new ArchiveFolder_BuilderException(__('Unable to copy the file "%s" in the cache.', $filepath));
+                throw new OaiPmhStaticRepository_BuilderException(__('Unable to copy the file "%s" in the cache.', $filepath));
             }
         }
     }
@@ -827,6 +827,7 @@ class ArchiveFolder_Builder
         // Default conversion.
         else {
             $format = $this->_metadataFormats[$prefix];
+            // Record type is an item.
             if ($recordType == 'Item') {
                 $format->fillRecord($document);
             }
@@ -1095,11 +1096,11 @@ class ArchiveFolder_Builder
             unlink($this->_xmlpathTemp);
         }
         else {
-            throw new ArchiveFolder_BuilderException(__('The static repository has not been created.'));
+            throw new OaiPmhStaticRepository_BuilderException(__('The static repository has not been created.'));
         }
 
         if (!file_exists($xmlpath) || !filesize($xmlpath)) {
-            throw new ArchiveFolder_BuilderException(__('The static repository cannot be copied in destination folder.'));
+            throw new OaiPmhStaticRepository_BuilderException(__('The static repository cannot be copied in destination folder.'));
         }
     }
 
@@ -1409,7 +1410,7 @@ class ArchiveFolder_Builder
         // Check a local path.
         if ($scheme == 'file' || $uri[0] == '/') {
             // Check the security setting.
-            $settings = Zend_Registry::get('archive_folder');
+            $settings = Zend_Registry::get('oai_pmh_static_repository');
             if ($settings->local_folders->allow != '1') {
                 return __('Local paths are not allowed by the administrator.');
             }

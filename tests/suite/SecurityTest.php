@@ -1,5 +1,5 @@
 <?php
-class ArchiveFolder_SecurityTest extends ArchiveFolder_Test_AppTestCase
+class OaiPmhStaticRepository_SecurityTest extends OaiPmhStaticRepository_Test_AppTestCase
 {
     protected $_isAdminTest = true;
 
@@ -7,7 +7,7 @@ class ArchiveFolder_SecurityTest extends ArchiveFolder_Test_AppTestCase
 
     public function testDisallowLocalPath()
     {
-        $settings = Zend_Registry::get('archive_folder');
+        $settings = Zend_Registry::get('oai_pmh_static_repository');
         $this->assertEquals('0', $settings->local_folders->allow);
 
         $uri = TEST_FILES_DIR
@@ -23,8 +23,8 @@ class ArchiveFolder_SecurityTest extends ArchiveFolder_Test_AppTestCase
         // Process folder to check error.
         $folder = $this->_folder;
 
-        $folder->process(ArchiveFolder_Builder::TYPE_CHECK);
-        $this->assertEquals(ArchiveFolder::STATUS_ERROR, $folder->status);
+        $folder->process(OaiPmhStaticRepository_Builder::TYPE_CHECK);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_ERROR, $folder->status);
         $this->assertStringEndsWith(__('Local paths are not allowed by the administrator.'), $folder->messages);
     }
 
@@ -37,7 +37,7 @@ class ArchiveFolder_SecurityTest extends ArchiveFolder_Test_AppTestCase
                 'base_path' => TEST_FILES_DIR . DIRECTORY_SEPARATOR . 'Folder_Test',
             ),
         );
-        Zend_Registry::set('archive_folder', $settings);
+        Zend_Registry::set('oai_pmh_static_repository', $settings);
 
         $this->_testOutsidePath();
 
@@ -55,7 +55,7 @@ class ArchiveFolder_SecurityTest extends ArchiveFolder_Test_AppTestCase
                 'base_path' => TEST_FILES_DIR . DIRECTORY_SEPARATOR . 'Folder_Test',
             ),
         );
-        Zend_Registry::set('archive_folder', $settings);
+        Zend_Registry::set('oai_pmh_static_repository', $settings);
 
         $this->_testOutsidePath();
 
@@ -68,7 +68,7 @@ class ArchiveFolder_SecurityTest extends ArchiveFolder_Test_AppTestCase
 
     protected function _testOutsidePath()
     {
-        $settings = Zend_Registry::get('archive_folder');
+        $settings = Zend_Registry::get('oai_pmh_static_repository');
         $this->assertEquals('1', $settings->local_folders->allow);
 
         $uri = TEST_FILES_DIR
@@ -83,7 +83,7 @@ class ArchiveFolder_SecurityTest extends ArchiveFolder_Test_AppTestCase
         // Process folder to check error.
         $folder = $this->_folder;
 
-        $folder->process(ArchiveFolder_Builder::TYPE_CHECK);
-        $this->assertEquals(ArchiveFolder::STATUS_ERROR, $folder->status);
+        $folder->process(OaiPmhStaticRepository_Builder::TYPE_CHECK);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_ERROR, $folder->status);
     }
 }

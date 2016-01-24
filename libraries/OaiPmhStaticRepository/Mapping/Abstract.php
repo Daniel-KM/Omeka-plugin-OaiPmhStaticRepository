@@ -13,9 +13,9 @@
  * Checks on Dublin Core elements can be made here, but another one is done
  * during formatting.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-abstract class ArchiveFolder_Mapping_Abstract
+abstract class OaiPmhStaticRepository_Mapping_Abstract
 {
     // The xsi is required for each record according to oai-pmh protocol.
     const XSI_PREFIX = 'xsi';
@@ -127,9 +127,9 @@ abstract class ArchiveFolder_Mapping_Abstract
         $this->_uri = $uri;
         $this->_parameters = $parameters;
 
-        $this->_managePaths = new ArchiveFolder_Tool_ManagePaths($uri, $parameters);
-        $this->_validateFile = new ArchiveFolder_Tool_ValidateFile();
-        $this->_processXslt = new ArchiveFolder_Tool_ProcessXslt();
+        $this->_managePaths = new OaiPmhStaticRepository_Tool_ManagePaths($uri, $parameters);
+        $this->_validateFile = new OaiPmhStaticRepository_Tool_ValidateFile();
+        $this->_processXslt = new OaiPmhStaticRepository_Tool_ProcessXslt();
 
         $this->_elementNameSeparator = $this->_getParameter('element_name_separator') ?: ':';
 
@@ -284,14 +284,14 @@ abstract class ArchiveFolder_Mapping_Abstract
                 // Empty() is not used, because "0" can be a content.
                 $path = trim($path);
                 if (strlen($path) == 0) {
-                    throw new ArchiveFolder_BuilderException(__('The filepath for document "%s" is empty.', $document['name']));
+                    throw new OaiPmhStaticRepository_BuilderException(__('The filepath for document "%s" is empty.', $document['name']));
                 }
 
                 // The path is absolute or relative to the path of the
                 // metadata file.
                 $absoluteFilePath = $this->_managePaths->getAbsolutePath($path);
                 if (empty($absoluteFilePath)) {
-                    throw new ArchiveFolder_BuilderException(__('The file "%s" is incorrect.', $path));
+                    throw new OaiPmhStaticRepository_BuilderException(__('The file "%s" is incorrect.', $path));
                 }
 
                 // No relative path if the file is external to the folder.
@@ -299,7 +299,7 @@ abstract class ArchiveFolder_Mapping_Abstract
                     ? $this->_managePaths->getRelativePathToFolder($path)
                     : $absoluteFilePath;
                 if (empty($relativeFilepath)) {
-                    throw new ArchiveFolder_BuilderException(__('The file path "%s" is incorrect.', $path));
+                    throw new OaiPmhStaticRepository_BuilderException(__('The file path "%s" is incorrect.', $path));
                 }
 
                 $file['path'] = $absoluteFilePath;

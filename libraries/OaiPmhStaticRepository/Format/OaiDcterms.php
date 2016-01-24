@@ -2,9 +2,9 @@
 /**
  * Metadata format map for the oai_dcterms Dublin Core Terms format.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Format_OaiDcterms extends ArchiveFolder_Format_Abstract
+class OaiPmhStaticRepository_Format_OaiDcterms extends OaiPmhStaticRepository_Format_Abstract
 {
     const METADATA_PREFIX = 'oai_dcterms';
     const METADATA_SCHEMA = 'http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd';

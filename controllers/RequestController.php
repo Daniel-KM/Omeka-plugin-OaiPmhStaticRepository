@@ -2,15 +2,15 @@
 /**
  * The File controller class.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
 
- class ArchiveFolder_RequestController extends Omeka_Controller_AbstractActionController
+ class OaiPmhStaticRepository_RequestController extends Omeka_Controller_AbstractActionController
 {
     // Requested parameters.
     protected $_repositoryIdentifier;
     protected $_filepath;
-    // Resulting registered archive folder, if any.
+    // Resulting registered OAI-PMH static repository, if any.
     protected $_folder;
 
     /**
@@ -18,7 +18,7 @@
      */
     public function init()
     {
-        $this->_helper->db->setDefaultModelName('ArchiveFolder');
+        $this->_helper->db->setDefaultModelName('OaiPmhStaticRepository');
     }
 
     /**
@@ -143,7 +143,7 @@
             }
        }
 
-        if (!$this->_getArchiveFolder()) {
+        if (!$this->_getOaiPmhStaticRepository()) {
             return false;
         }
 
@@ -182,11 +182,11 @@
     }
 
     /**
-     * Get and set the archive folder.
+     * Get and set the OAI-PMH static repository.
      *
-     * @return ArchiveFolder.
+     * @return OaiPmhStaticRepository.
      */
-    protected function _getArchiveFolder()
+    protected function _getOaiPmhStaticRepository()
     {
         if (is_null($this->_folder)) {
             $identifier = $this->_action == 'folder'
@@ -227,7 +227,7 @@
         if (empty($message)) {
             $message = __('The requested file is not registered by this OAI-PMH static repository.');
         }
-        _log('[ArchiveFolder] '. $message, Zend_Log::NOTICE);
+        _log('[OaiPmhStaticRepository] '. $message, Zend_Log::NOTICE);
         $this->view->message = $message;
 
         $this->getResponse()

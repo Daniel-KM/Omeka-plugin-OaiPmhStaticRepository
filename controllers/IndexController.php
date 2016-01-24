@@ -2,9 +2,9 @@
 /**
  * Controller for Achive Folder admin pages.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionController
+class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractActionController
 {
     /**
      * The number of records to browse per page.
@@ -21,7 +21,7 @@ class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionContr
     public function init()
     {
         $this->_db = $this->_helper->db;
-        $this->_db->setDefaultModelName('ArchiveFolder');
+        $this->_db->setDefaultModelName('OaiPmhStaticRepository');
     }
 
     /**
@@ -50,7 +50,7 @@ class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionContr
             . DIRECTORY_SEPARATOR . 'forms'
             . DIRECTORY_SEPARATOR . 'Add.php';
 
-        $this->view->form = new ArchiveFolder_Form_Add();
+        $this->view->form = new OaiPmhStaticRepository_Form_Add();
         $this->view->form->setAction($this->_helper->url('add'));
 
         // From parent::addAction(), to allow to set parameters as array.
@@ -141,7 +141,7 @@ class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionContr
             return $this->_helper->redirector->goto('browse');
         }
 
-        $folder->setStatus(ArchiveFolder::STATUS_STOPPED);
+        $folder->setStatus(OaiPmhStaticRepository::STATUS_STOPPED);
         $folder->save();
 
         $this->_helper->redirector->goto('browse');
@@ -156,7 +156,7 @@ class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionContr
             return $this->_helper->redirector->goto('browse');
         }
 
-        $folder->setStatus(ArchiveFolder::STATUS_RESET);
+        $folder->setStatus(OaiPmhStaticRepository::STATUS_RESET);
         $folder->save();
 
         $this->_helper->redirector->goto('browse');
@@ -167,7 +167,7 @@ class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionContr
      */
     public function checkAction()
     {
-        $result = $this->_launchJob(ArchiveFolder_Builder::TYPE_CHECK);
+        $result = $this->_launchJob(OaiPmhStaticRepository_Builder::TYPE_CHECK);
         $this->_helper->redirector->goto('browse');
     }
 
@@ -178,7 +178,7 @@ class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionContr
      */
     public function updateAction()
     {
-        $result = $this->_launchJob(ArchiveFolder_Builder::TYPE_UPDATE);
+        $result = $this->_launchJob(OaiPmhStaticRepository_Builder::TYPE_UPDATE);
         $this->_helper->redirector->goto('browse');
     }
 
@@ -197,11 +197,11 @@ class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionContr
         else {
             // Action can be Check (default) or Update.
             $action = $this->getParam('submit-batch-update')
-                ? ArchiveFolder_Builder::TYPE_UPDATE
-                : ArchiveFolder_Builder::TYPE_CHECK;
+                ? OaiPmhStaticRepository_Builder::TYPE_UPDATE
+                : OaiPmhStaticRepository_Builder::TYPE_CHECK;
 
             foreach ($folderIds as $folderId) {
-                $result = $this->_launchJob(ArchiveFolder_Builder::TYPE_UPDATE, $folderId);
+                $result = $this->_launchJob(OaiPmhStaticRepository_Builder::TYPE_UPDATE, $folderId);
             }
         }
 
@@ -227,13 +227,13 @@ class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionContr
         }
 
         if (in_array($folder->status, array(
-                ArchiveFolder::STATUS_QUEUED,
-                ArchiveFolder::STATUS_PROGRESS,
+                OaiPmhStaticRepository::STATUS_QUEUED,
+                OaiPmhStaticRepository::STATUS_PROGRESS,
             ))) {
             return true;
         }
 
-        $folder->setStatus(ArchiveFolder::STATUS_QUEUED);
+        $folder->setStatus(OaiPmhStaticRepository::STATUS_QUEUED);
         $folder->save();
 
         $options = array(
@@ -242,17 +242,17 @@ class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionContr
         );
 
         $jobDispatcher = Zend_Registry::get('bootstrap')->getResource('jobs');
-        $jobDispatcher->setQueueName(ArchiveFolder_UpdateJob::QUEUE_NAME);
+        $jobDispatcher->setQueueName(OaiPmhStaticRepository_UpdateJob::QUEUE_NAME);
 
         // Short dispatcher if user wants it.
-        if (get_option('archive_folder_short_dispatcher')) {
+        if (get_option('oai_pmh_static_repository_short_dispatcher')) {
             try {
-                $jobDispatcher->send('ArchiveFolder_UpdateJob', $options);
+                $jobDispatcher->send('OaiPmhStaticRepository_UpdateJob', $options);
             } catch (Exception $e) {
                 $message = __('Error when processing folder.');
-                $folder->setStatus(ArchiveFolder::STATUS_ERROR);
-                $folder->addMessage($message, ArchiveFolder::MESSAGE_CODE_ERROR);
-                _log('[ArchiveFolder] '. __('Folder "%s" (#%d): %s',
+                $folder->setStatus(OaiPmhStaticRepository::STATUS_ERROR);
+                $folder->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
+                _log('[OaiPmhStaticRepository] '. __('Folder "%s" (#%d): %s',
                     $folder->uri, $folder->id, $message), Zend_Log::ERR);
                 $this->_helper->flashMessenger($msg, 'error');
                 return false;
@@ -264,7 +264,7 @@ class ArchiveFolder_IndexController extends Omeka_Controller_AbstractActionContr
         }
 
         // Normal dispatcher for long processes.
-        $jobDispatcher->sendLongRunning('ArchiveFolder_UpdateJob', $options);
+        $jobDispatcher->sendLongRunning('OaiPmhStaticRepository_UpdateJob', $options);
         $message = __('Folder "%s" is being updated.', $folder->uri)
             . ' ' . __('This may take a while. Please check below for status.');
         $this->_helper->flashMessenger($message, 'success');

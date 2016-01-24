@@ -1,12 +1,12 @@
-# Translation for the ArchiveFolder plugin for Omeka.
+# Translation for the OaiPmhStaticRepository plugin for Omeka.
 # This file is distributed under the same license as the Omeka plugin.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ArchiveFolder\n"
-"Report-Msgid-Bugs-To: http://github.com/Daniel-KM/ArchiveFolder/issues\n"
+"Project-Id-Version: OaiPmhStaticRepository\n"
+"Report-Msgid-Bugs-To: http://github.com/Daniel-KM/OaiPmhStaticRepository/issues\n"
 "POT-Creation-Date: 2015-01-01 00:00-0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"

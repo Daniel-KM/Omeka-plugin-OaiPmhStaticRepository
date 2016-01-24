@@ -2,9 +2,9 @@
 /**
  * Utility class for dealing with identifiers.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-abstract class ArchiveFolder_Identifier_Abstract
+abstract class OaiPmhStaticRepository_Identifier_Abstract
 {
     protected $_uri;
     protected $_parameters;

@@ -2,7 +2,7 @@
 $pageTitle = __('Add a Folder to Archive');
 echo head(array(
     'title' => $pageTitle,
-    'bodyclass' => 'archive-folder edit',
+    'bodyclass' => 'oai-pmh-static-repository edit',
 ));
 ?>
 <div id="primary">

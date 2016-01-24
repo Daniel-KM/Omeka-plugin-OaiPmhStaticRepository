@@ -2,9 +2,9 @@
 /**
  * Map a table into Omeka elements for each item and file.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Mapping_Table extends ArchiveFolder_Mapping_Abstract
+class OaiPmhStaticRepository_Mapping_Table extends OaiPmhStaticRepository_Mapping_Abstract
 {
     // False is used, because this is an intermediate class to be used with
     // a spreadsheet.
@@ -132,7 +132,7 @@ class ArchiveFolder_Mapping_Table extends ArchiveFolder_Mapping_Abstract
                     // path should exist.
                     $record['path'] = empty($record['files']) ? null : reset($record['files']);
                     if (!strlen($record['path'])) {
-                        throw new ArchiveFolder_BuilderException(__('There is no path for the file.'));
+                        throw new OaiPmhStaticRepository_BuilderException(__('There is no path for the file.'));
                     }
                     unset($record['files']);
 
@@ -166,7 +166,7 @@ class ArchiveFolder_Mapping_Table extends ArchiveFolder_Mapping_Abstract
                     break;
 
                 default:
-                    throw new ArchiveFolder_BuilderException(__('The record type "%s" is not managed.', $recordType));
+                    throw new OaiPmhStaticRepository_BuilderException(__('The record type "%s" is not managed.', $recordType));
             }
         }
     }

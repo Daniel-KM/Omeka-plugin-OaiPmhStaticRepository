@@ -2,9 +2,9 @@
 /**
  * Map Mets xml files into Omeka elements for each item and file.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Mapping_Mets extends ArchiveFolder_Mapping_Abstract
+class OaiPmhStaticRepository_Mapping_Mets extends OaiPmhStaticRepository_Mapping_Abstract
 {
     const XML_ROOT = 'mets';
     const XML_PREFIX = 'mets';
@@ -30,20 +30,20 @@ class ArchiveFolder_Mapping_Mets extends ArchiveFolder_Mapping_Abstract
     // The first one is always added.
     protected $_fileSecGrps = array('master', 'ocr', 'MASTER', 'OCR');
 
-    protected $_xslOcrText = 'libraries/ArchiveFolder/Mapping/alto2text.xsl';
-    protected $_xslOcrData = 'libraries/ArchiveFolder/Mapping/alto2json.xsl';
-    protected $_xslOcrProcess = 'libraries/ArchiveFolder/Mapping/alto2process.xsl';
+    protected $_xslOcrText = 'libraries/OaiPmhStaticRepository/Mapping/alto2text.xsl';
+    protected $_xslOcrData = 'libraries/OaiPmhStaticRepository/Mapping/alto2json.xsl';
+    protected $_xslOcrProcess = 'libraries/OaiPmhStaticRepository/Mapping/alto2process.xsl';
 
     public function __construct($uri, $parameters)
     {
         $this->_xslOcrText = PLUGIN_DIR
-            . DIRECTORY_SEPARATOR . 'ArchiveFolder'
+            . DIRECTORY_SEPARATOR . 'OaiPmhStaticRepository'
             . DIRECTORY_SEPARATOR . $this->_xslOcrText;
         $this->_xslOcrData = PLUGIN_DIR
-            . DIRECTORY_SEPARATOR . 'ArchiveFolder'
+            . DIRECTORY_SEPARATOR . 'OaiPmhStaticRepository'
             . DIRECTORY_SEPARATOR . $this->_xslOcrData;
         $this->_xslOcrProcess = PLUGIN_DIR
-            . DIRECTORY_SEPARATOR . 'ArchiveFolder'
+            . DIRECTORY_SEPARATOR . 'OaiPmhStaticRepository'
             . DIRECTORY_SEPARATOR . $this->_xslOcrProcess;
 
         parent::__construct($uri, $parameters);
@@ -193,7 +193,7 @@ class ArchiveFolder_Mapping_Mets extends ArchiveFolder_Mapping_Abstract
 
         // This will be used only if there are alto xml files.
         $altoMetadata = array();
-        $altoIngester = new ArchiveFolder_Ingester_Alto($this->_uri, $this->_parameters);
+        $altoIngester = new OaiPmhStaticRepository_Ingester_Alto($this->_uri, $this->_parameters);
 
         foreach ($doc['files'] as &$file) {
             $dmdId = $file['dmdId'];

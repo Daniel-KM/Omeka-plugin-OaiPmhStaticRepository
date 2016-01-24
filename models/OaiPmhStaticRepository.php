@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Resource_Interface
+class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend_Acl_Resource_Interface
 {
     /**
      * Notice message code, used for status messages.
@@ -129,7 +129,7 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
      */
     public function isCached()
     {
-        return $this->status != ArchiveFolder::STATUS_ADDED
+        return $this->status != OaiPmhStaticRepository::STATUS_ADDED
             && !$this->getParameter('repository_remote');
     }
 
@@ -140,8 +140,8 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
      */
     public function hasBeenStopped()
     {
-        $currentStatus = $this->getTable('ArchiveFolder')->getCurrentStatus($this->id);
-        return $currentStatus == ArchiveFolder::STATUS_STOPPED;
+        $currentStatus = $this->getTable('OaiPmhStaticRepository')->getCurrentStatus($this->id);
+        return $currentStatus == OaiPmhStaticRepository::STATUS_STOPPED;
     }
 
     /**
@@ -280,7 +280,7 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
 
             'repository_name' => '[' . $this->uri . ']',
             'admin_emails' => get_option('administrator_email'),
-            'metadata_formats' => array_keys(apply_filters('archive_folder_formats', array())),
+            'metadata_formats' => array_keys(apply_filters('oai_pmh_static_repository_formats', array())),
             'use_dcterms' => true,
 
             'repository_remote' => false,
@@ -359,7 +359,7 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
                     'repository' => $parameters['repository_identifier'],
                     'filepath' => '',
                 ),
-                'archivefolder_file', array(), false, false);
+                'oaipmhstaticrepository_file', array(), false, false);
             revert_theme_base_url();
             $parameters['repository_folder_human'] = rtrim($parameters['repository_folder_human'], '/.') . '/';
         }
@@ -477,7 +477,7 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
         }
         // This static repository will not be really available.
         else {
-            $baseUrl = WEB_FILES . '/' . get_option('archive_folder_static_dir') . '/' . basename($url);
+            $baseUrl = WEB_FILES . '/' . get_option('oai_pmh_static_repository_static_dir') . '/' . basename($url);
         }
 
         return $baseUrl;
@@ -557,7 +557,7 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
     public function getLocalRepositoryFilepath()
     {
         return FILES_DIR
-            . DIRECTORY_SEPARATOR . get_option('archive_folder_static_dir')
+            . DIRECTORY_SEPARATOR . get_option('oai_pmh_static_repository_static_dir')
             . DIRECTORY_SEPARATOR . $this->identifier . '.xml';
     }
 
@@ -569,7 +569,7 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
     public function getCacheFolder()
     {
         return FILES_DIR
-            . DIRECTORY_SEPARATOR . get_option('archive_folder_static_dir')
+            . DIRECTORY_SEPARATOR . get_option('oai_pmh_static_repository_static_dir')
             . DIRECTORY_SEPARATOR . $this->identifier;
     }
 
@@ -637,87 +637,87 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
         }
 
         if (empty($this->id)) {
-            $folder = $this->getTable('ArchiveFolder')->findByUri($this->uri);
+            $folder = $this->getTable('OaiPmhStaticRepository')->findByUri($this->uri);
             if (!empty($folder)) {
                $this->addError('uri', __('The folder for uri "%s" exists already.', $this->uri));
             }
 
-            $folder = $this->getTable('ArchiveFolder')->findByIdentifier($this->identifier);
+            $folder = $this->getTable('OaiPmhStaticRepository')->findByIdentifier($this->identifier);
             if (!empty($folder)) {
                $this->addError('repository_identifier', __('The repository identifier "%s" exists already.', $this->identifier));
             }
 
             if (trim($this->status) == '') {
-                $this->status = ArchiveFolder::STATUS_ADDED;
+                $this->status = OaiPmhStaticRepository::STATUS_ADDED;
             }
         }
 
         if (!in_array($this->status, array(
-                ArchiveFolder::STATUS_ADDED,
-                ArchiveFolder::STATUS_RESET,
-                ArchiveFolder::STATUS_QUEUED,
-                ArchiveFolder::STATUS_PROGRESS,
-                ArchiveFolder::STATUS_PAUSED,
-                ArchiveFolder::STATUS_STOPPED,
-                ArchiveFolder::STATUS_KILLED,
-                ArchiveFolder::STATUS_COMPLETED,
-                ArchiveFolder::STATUS_DELETED,
-                ArchiveFolder::STATUS_ERROR,
+                OaiPmhStaticRepository::STATUS_ADDED,
+                OaiPmhStaticRepository::STATUS_RESET,
+                OaiPmhStaticRepository::STATUS_QUEUED,
+                OaiPmhStaticRepository::STATUS_PROGRESS,
+                OaiPmhStaticRepository::STATUS_PAUSED,
+                OaiPmhStaticRepository::STATUS_STOPPED,
+                OaiPmhStaticRepository::STATUS_KILLED,
+                OaiPmhStaticRepository::STATUS_COMPLETED,
+                OaiPmhStaticRepository::STATUS_DELETED,
+                OaiPmhStaticRepository::STATUS_ERROR,
             ))) {
             $this->addError('status', __('The status "%s" does not exist.', $this->status));
         }
     }
 
-    public function process($type = ArchiveFolder_Builder::TYPE_CHECK)
+    public function process($type = OaiPmhStaticRepository_Builder::TYPE_CHECK)
     {
-        _log('[ArchiveFolder] '. __('Folder #%d [%s]: Process started.', $this->id, $this->uri));
+        _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: Process started.', $this->id, $this->uri));
 
-        $this->setStatus(ArchiveFolder::STATUS_PROGRESS);
+        $this->setStatus(OaiPmhStaticRepository::STATUS_PROGRESS);
         $this->save();
 
         // Create collection if it is set to be the name of the repository. It
         // can't be removed automatically.
         $this->_createCollectionIfNeeded();
 
-        $builder = new ArchiveFolder_Builder();
+        $builder = new OaiPmhStaticRepository_Builder();
         try {
             $documents = $builder->process($this, $type);
-        } catch (ArchiveFolder_BuilderException $e) {
-            $this->setStatus(ArchiveFolder::STATUS_ERROR);
+        } catch (OaiPmhStaticRepository_BuilderException $e) {
+            $this->setStatus(OaiPmhStaticRepository::STATUS_ERROR);
             $message = __('Error during process: %s', $e->getMessage());
-            $this->addMessage($message, ArchiveFolder::MESSAGE_CODE_ERROR);
-            _log('[ArchiveFolder] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
+            $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
+            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
             return;
         } catch (Exception $e) {
-            $this->setStatus(ArchiveFolder::STATUS_ERROR);
+            $this->setStatus(OaiPmhStaticRepository::STATUS_ERROR);
             $message = __('Unknown error during process: %s', $e->getMessage());
-            $this->addMessage($message, ArchiveFolder::MESSAGE_CODE_ERROR);
-            _log('[ArchiveFolder] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
+            $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
+            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
             return;
         }
 
         if ($this->hasBeenStopped()) {
             $message = __('Process has been stopped by user.');
             $this->addMessage($message);
-            _log('[ArchiveFolder] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
+            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
             return;
         }
 
         $message = $this->_checkDocuments($documents);
-        $this->addMessage($message, ArchiveFolder::MESSAGE_CODE_NOTICE);
-        _log('[ArchiveFolder] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
+        $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_NOTICE);
+        _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
 
         switch ($type) {
-            case ArchiveFolder_Builder::TYPE_CHECK:
-                _log('[ArchiveFolder] '. __('Folder #%d [%s]: Check finished.', $this->id, $this->uri));
-                $this->setStatus(ArchiveFolder::STATUS_COMPLETED);
+            case OaiPmhStaticRepository_Builder::TYPE_CHECK:
+                _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: Check finished.', $this->id, $this->uri));
+                $this->setStatus(OaiPmhStaticRepository::STATUS_COMPLETED);
                 $this->save();
                 break;
-            case ArchiveFolder_Builder::TYPE_UPDATE:
-                $this->setStatus(ArchiveFolder::STATUS_COMPLETED);
+            case OaiPmhStaticRepository_Builder::TYPE_UPDATE:
+                $this->setStatus(OaiPmhStaticRepository::STATUS_COMPLETED);
                 $message = __('Update finished.');
-                $this->addMessage($message, ArchiveFolder::MESSAGE_CODE_NOTICE);
-                _log('[ArchiveFolder] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
+                $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_NOTICE);
+                _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
 
                 $this->_postProcess();
                 break;
@@ -731,7 +731,7 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
      *
      * @see OaipmhHarvester_IndexController::harvestAction()
      *
-     * @param ArchiveFolder $folder
+     * @param OaiPmhStaticRepository $folder
      */
     private function _postProcess()
     {
@@ -760,8 +760,8 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
                 $harvest->update_files = $updateFiles ?: OaipmhHarvester_Harvest::UPDATE_FILES_FULL;
 
                 $message = __('Harvester launched.');
-                $this->addMessage($message, ArchiveFolder::MESSAGE_CODE_NOTICE);
-                _log('[ArchiveFolder] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
+                $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_NOTICE);
+                _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
 
                 // Insert the harvest.
                 $harvest->status = OaipmhHarvester_Harvest::STATUS_QUEUED;
@@ -775,8 +775,8 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
                     $jobDispatcher->sendLongRunning('OaipmhHarvester_Job', array('harvestId' => $harvest->id));
                 } catch (Exception $e) {
                     $message = __('Harvester crashed: %s', get_class($e) . ': ' . $e->getMessage());
-                    $this->addMessage($message, ArchiveFolder::MESSAGE_CODE_NOTICE);
-                    _log('[ArchiveFolder] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
+                    $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_NOTICE);
+                    _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
                     $harvest->status = OaipmhHarvester_Harvest::STATUS_ERROR;
                     $harvest->addMessage(
                         get_class($e) . ': ' . $e->getMessage(),
@@ -919,9 +919,9 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
     private function _getMessageCodeText($messageCode)
     {
         switch ($messageCode) {
-            case ArchiveFolder::MESSAGE_CODE_ERROR:
+            case OaiPmhStaticRepository::MESSAGE_CODE_ERROR:
                 return __('Error');
-            case ArchiveFolder::MESSAGE_CODE_NOTICE:
+            case OaiPmhStaticRepository::MESSAGE_CODE_NOTICE:
             default:
                 return __('Notice');
         }
@@ -936,7 +936,7 @@ class ArchiveFolder extends Omeka_Record_AbstractRecord implements Zend_Acl_Reso
      */
     public function getResourceId()
     {
-        return 'ArchiveFolder';
+        return 'OaiPmhStaticRepositories';
     }
 
     /**

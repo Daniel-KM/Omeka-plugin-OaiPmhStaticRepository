@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Model class for a Archive Folder table.
+ * Model class for a OAI-PMH static repository table.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class Table_ArchiveFolder extends Omeka_Db_Table
+class Table_OaiPmhStaticRepository extends Omeka_Db_Table
 {
     /**
      * Retrieve a folder by its uri, that should be unique.
      *
      * @uses Omeka_Db_Table::getSelectForFindBy()
      * @param string $uri
-     * @return ArchiveFolder|null The existing folder or null.
+     * @return OaiPmhStaticRepository|null The existing folder or null.
      */
     public function findByUri($uri)
     {
@@ -27,7 +27,7 @@ class Table_ArchiveFolder extends Omeka_Db_Table
      *
      * @uses Omeka_Db_Table::getSelectForFindBy()
      * @param string $identifier
-     * @return ArchiveFolder|null The existing folder or null.
+     * @return OaiPmhStaticRepository|null The existing folder or null.
      */
     public function findByIdentifier($identifier)
     {
@@ -75,19 +75,19 @@ class Table_ArchiveFolder extends Omeka_Db_Table
                     switch ($value) {
                         case 'ready':
                             $genericParams['status'] = array(
-                                ArchiveFolder::STATUS_ADDED,
-                                ArchiveFolder::STATUS_RESET,
-                                ArchiveFolder::STATUS_PAUSED,
-                                ArchiveFolder::STATUS_STOPPED,
-                                ArchiveFolder::STATUS_KILLED,
-                                ArchiveFolder::STATUS_COMPLETED,
+                                OaiPmhStaticRepository::STATUS_ADDED,
+                                OaiPmhStaticRepository::STATUS_RESET,
+                                OaiPmhStaticRepository::STATUS_PAUSED,
+                                OaiPmhStaticRepository::STATUS_STOPPED,
+                                OaiPmhStaticRepository::STATUS_KILLED,
+                                OaiPmhStaticRepository::STATUS_COMPLETED,
                             );
                             break;
                         case 'processing':
                             $genericParams['status'] = array(
-                                ArchiveFolder::STATUS_QUEUED,
-                                ArchiveFolder::STATUS_PROGRESS,
-                                ArchiveFolder::STATUS_PAUSED,
+                                OaiPmhStaticRepository::STATUS_QUEUED,
+                                OaiPmhStaticRepository::STATUS_PROGRESS,
+                                OaiPmhStaticRepository::STATUS_PAUSED,
                             );
                             break;
                         default:

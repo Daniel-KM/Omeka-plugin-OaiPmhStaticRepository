@@ -131,7 +131,7 @@
   <metsHdr CREATEDATE="2015-01-01T09:04:33Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.01">
@@ -167,7 +167,7 @@
   <metsHdr CREATEDATE="2015-01-01T09:04:33Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.02">

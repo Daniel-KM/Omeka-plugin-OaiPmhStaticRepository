@@ -155,7 +155,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.01">
@@ -203,7 +203,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
   <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
-      <note>Archive Folder for Omeka</note>
+      <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.02">

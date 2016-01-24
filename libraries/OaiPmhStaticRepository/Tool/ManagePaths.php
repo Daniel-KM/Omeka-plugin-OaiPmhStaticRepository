@@ -2,9 +2,9 @@
 /**
  * Manage paths: tool that can be used by other classes.
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_Tool_ManagePaths
+class OaiPmhStaticRepository_Tool_ManagePaths
 {
     protected $_uri;
     protected $_parameters;
@@ -220,7 +220,7 @@ class ArchiveFolder_Tool_ManagePaths
 
         $relativeFilepath = $this->getRelativePathToFolder($path);
         if (empty($relativeFilepath)) {
-            throw new ArchiveFolder_BuilderException(__('The file path "%s" is not correct.', $path));
+            throw new OaiPmhStaticRepository_BuilderException(__('The file path "%s" is not correct.', $path));
         }
 
         // Check if this is an external url.

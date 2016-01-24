@@ -62,7 +62,7 @@ The cathedral is the mother church of the Roman Catholic Archdiocese of Florence
             </element>
             <element name="Description">
                 <data>For testing purposes, metadata of this item will be updated later.
-To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "Archive folders".</data>
+To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_B/Subdir_B-A/document_external.xml" of your copied directory by the matching one that is prepared in the directory "tests/suite/_files/Update_files/", and click on "Update" in the tab "OAI-PMH Static Repositories".</data>
             </element>
         </elementSet>
     </record>

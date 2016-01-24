@@ -1,9 +1,9 @@
 <?php
 /**
- * Thrown by ArchiveFolder_Builder
+ * Thrown by OaiPmhStaticRepository_Builder
  *
- * @package ArchiveFolder
+ * @package OaiPmhStaticRepository
  */
-class ArchiveFolder_BuilderException extends Exception
+class OaiPmhStaticRepository_BuilderException extends Exception
 {
 }
