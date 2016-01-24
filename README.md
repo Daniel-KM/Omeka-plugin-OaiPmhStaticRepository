@@ -198,9 +198,9 @@ with "refnum.xml ods txt" for example.
 Installation
 ------------
 
-Install first the plugins [Archive Folder Document], [OAI-PMH Harvester], and
-['Oai-PMH Gateway]. Even if only the first one is required, the latter are used
-to import data inside the Omeka database.
+Install first the plugins [Archive Document], [OAI-PMH Harvester], and ['Oai-PMH Gateway].
+Even if only the first one is required, the latter are used to import data
+inside the Omeka database.
 
 Note: the official [OAI-PMH Harvester] can only ingest standard metadata
 (elements). If you want to ingest other standards, files and metadata of files,
@@ -716,7 +716,7 @@ Copyright
 [Jpeg 2000]: http://www.jpeg.org/jpeg2000
 [refNum]: http://bibnum.bnf.fr/refNum
 [refNum2Mets]: https://github.com/Daniel-KM/refNum2Mets
-[Archive Folder Document]: https://github.com/Daniel-KM/ArchiveFolderDocument
+[Archive Document]: https://github.com/Daniel-KM/ArchiveDocument
 [OAI-PMH Repository]: https://omeka.org/add-ons/plugins/oai-pmh-repository
 [plugin issues]: https://github.com/Daniel-KM/OaiPmhStaticRepository/issues
 [CeCILL v2.1]: https://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html
