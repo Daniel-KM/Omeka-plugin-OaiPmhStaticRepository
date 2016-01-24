@@ -40,7 +40,7 @@ class OaiPmhStaticRepository_Mapping_Odt extends OaiPmhStaticRepository_Mapping_
     /**
      * Return the raw text from an xml.
      *
-     * @param string $xml
+     * @param SimpleXML $xml
      * @return string Cleaned raw text.
      */
     protected function _getRawTextFromXml($xml)

@@ -311,7 +311,7 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
     }
 
     /**
-     * Get the data or element set  and element name from a string.
+     * Get the data or element set and element name from a string.
      *
      * @param string $string The string to identify and clean.
      * @return string|array|null If recognized, the array with element set name

@@ -1,4 +1,5 @@
 <?php
+$totalRecords = total_records('OaiPmhStaticRepository');
 $pageTitle = __('OAI-PMH Static Repositories (%d total)', $total_results);
 queue_css_file('oai-pmh-static-repository');
 queue_js_file('oai-pmh-static-repository-browse');
@@ -276,11 +277,11 @@ echo head(array(
         Omeka.addReadyCallback(Omeka.OaiPmhStaticRepositoryBrowse.setupBatchEdit);
     </script>
 <?php else: ?>
-    <?php if (total_records('OaiPmhStaticRepository') == 0): ?>
-        <p><?php echo __('No url or path have been checked or exposed.'); ?></p>
-    <?php else: ?>
-        <p><?php echo __('The query searched %s records and returned no results.', total_records('OaiPmhStaticRepository')); ?></p>
+    <?php if ($totalRecords): ?>
+        <p><?php echo __('The query searched %s records and returned no results.', $totalRecords); ?></p>
         <p><a href="<?php echo url('oai-pmh-static-repository/index/browse'); ?>"><?php echo __('See all folders.'); ?></a></p>
+    <?php else: ?>
+        <p><?php echo __('No url or path have been checked or exposed.'); ?></p>
     <?php endif; ?>
 <?php endif; ?>
 </div>

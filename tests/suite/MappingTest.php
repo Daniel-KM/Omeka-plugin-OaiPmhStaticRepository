@@ -53,9 +53,13 @@ class OaiPmhStaticRepository_MappingTest extends OaiPmhStaticRepository_Test_App
                 $this->assertTrue($result, __('The file "%s" is not recognized as format "%s".', basename($filepath), $prefix));
 
                 $result = $mapping->listDocuments($filepath);
-                $result = json_encode($result, true);
+                $result = version_compare(phpversion(), '5.4.0', '<')
+                    ? json_encode($result)
+                    : json_encode($result, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                 // Remove local paths before comparaison.
-                $jsonUri = trim(json_encode($uri), '"');
+                $jsonUri = version_compare(phpversion(), '5.4.0', '<')
+                    ? trim(json_encode($uri), '"')
+                    : trim(json_encode($uri, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), '"');
                 $expected = str_replace($jsonUri, '::ExampleBasePath::', $expected);
                 $result = str_replace($jsonUri, '::ExampleBasePath::', $result);
                 $this->assertEquals($expected, $result, __('The list of documents for file "%s" (prefix "%s") is not correct.', basename($filepath), $prefix));

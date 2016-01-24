@@ -15,17 +15,23 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
      */
     const MESSAGE_CODE_ERROR = 3;
 
+    // Build.
     const STATUS_ADDED = 'added';
-    const STATUS_RESET = 'reset';
     const STATUS_QUEUED = 'queued';
     const STATUS_PROGRESS = 'progress';
+    const STATUS_COMPLETED = 'completed';
+    // Deletion of the xml document.
+    const STATUS_DELETED = 'deleted';
+    // Process.
     const STATUS_PAUSED = 'paused';
     const STATUS_STOPPED = 'stopped';
     const STATUS_KILLED = 'killed';
-    const STATUS_COMPLETED = 'completed';
-    const STATUS_DELETED = 'deleted';
+    const STATUS_RESET = 'reset';
     const STATUS_ERROR = 'error';
 
+    /**
+     * @var int The record ID.
+     */
     public $id;
 
     /**
@@ -134,12 +140,13 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
     }
 
     /**
-     * Indicate if the process of the folder has been stopped.
+     * Indicate if the process of the folder has been stopped in the background.
      *
      * @return boolean
      */
     public function hasBeenStopped()
     {
+        // Check the true status, that may have been updated in background.
         $currentStatus = $this->getTable('OaiPmhStaticRepository')->getCurrentStatus($this->id);
         return $currentStatus == OaiPmhStaticRepository::STATUS_STOPPED;
     }
@@ -670,7 +677,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
 
     public function process($type = OaiPmhStaticRepository_Builder::TYPE_CHECK)
     {
-        _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: Process started.', $this->id, $this->uri));
+        _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: Process started.', $this->id, $this->uri));
 
         $this->setStatus(OaiPmhStaticRepository::STATUS_PROGRESS);
         $this->save();
@@ -686,30 +693,30 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
             $this->setStatus(OaiPmhStaticRepository::STATUS_ERROR);
             $message = __('Error during process: %s', $e->getMessage());
             $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
-            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
+            _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
             return;
         } catch (Exception $e) {
             $this->setStatus(OaiPmhStaticRepository::STATUS_ERROR);
             $message = __('Unknown error during process: %s', $e->getMessage());
             $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
-            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
+            _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
             return;
         }
 
         if ($this->hasBeenStopped()) {
             $message = __('Process has been stopped by user.');
             $this->addMessage($message);
-            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
+            _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
             return;
         }
 
         $message = $this->_checkDocuments($documents);
         $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_NOTICE);
-        _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
+        _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
 
         switch ($type) {
             case OaiPmhStaticRepository_Builder::TYPE_CHECK:
-                _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: Check finished.', $this->id, $this->uri));
+                _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: Check finished.', $this->id, $this->uri));
                 $this->setStatus(OaiPmhStaticRepository::STATUS_COMPLETED);
                 $this->save();
                 break;
@@ -717,7 +724,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
                 $this->setStatus(OaiPmhStaticRepository::STATUS_COMPLETED);
                 $message = __('Update finished.');
                 $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_NOTICE);
-                _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
+                _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
 
                 $this->_postProcess();
                 break;
@@ -725,7 +732,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
     }
 
     /**
-     * The post process is the harvesting if set.
+     * The post process is the import process (harvesting) if set.
      *
      * @internal This process should be managed as a job.
      *
@@ -761,7 +768,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
 
                 $message = __('Harvester launched.');
                 $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_NOTICE);
-                _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
+                _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s', $this->id, $this->uri, $message));
 
                 // Insert the harvest.
                 $harvest->status = OaipmhHarvester_Harvest::STATUS_QUEUED;
@@ -776,9 +783,10 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
                 } catch (Exception $e) {
                     $message = __('Harvester crashed: %s', get_class($e) . ': ' . $e->getMessage());
                     $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_NOTICE);
-                    _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
+                    _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::ERR);
                     $harvest->status = OaipmhHarvester_Harvest::STATUS_ERROR;
-                    $harvest->addMessage(
+                    $harvest->save();
+                    $this->addMessage(
                         get_class($e) . ': ' . $e->getMessage(),
                         OaipmhHarvester_Harvest_Abstract::MESSAGE_CODE_ERROR
                     );
@@ -802,7 +810,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
         }
         // Computes total.
         else {
-            $this->countRecords($documents);
+            $this->countRecordsOfDocuments($documents);
             $message = __('Result: %d items and %d files.',
                 $this->_totalItems, $this->_totalFiles);
         }
@@ -817,7 +825,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
      * @param string $recordType "Item" or "File", else all types.
      * @return integer The total of the selected record type.
      */
-    public function countRecords($documents = null, $recordType = null)
+    public function countRecordsOfDocuments($documents = null, $recordType = null)
     {
         // Docs shouldn't be a null.
         if (empty($documents)) {
@@ -841,8 +849,8 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
                 $this->_totalFiles = $totalDocuments;
                 break;
             default:
-                $totalItems = $this->countRecords($documents, 'Item');
-                $totalFiles = $this->countRecords($documents, 'File');
+                $totalItems = $this->countRecordsOfDocuments($documents, 'Item');
+                $totalFiles = $this->countRecordsOfDocuments($documents, 'File');
                 $totalDocuments = $totalItems + $totalFiles;
                 break;
         }

@@ -83,7 +83,7 @@ class OaiPmhStaticRepositoryPlugin extends Omeka_Plugin_AbstractPlugin
             `uri` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
             `identifier` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
             `parameters` text collate utf8_unicode_ci NOT NULL,
-            `status` enum('added', 'reset', 'queued', 'progress', 'paused', 'stopped', 'killed', 'completed', 'deleted', 'error') NOT NULL default 'added',
+            `status` enum('added', 'reset', 'queued', 'progress', 'paused', 'stopped', 'killed', 'completed', 'deleted', 'error') NOT NULL,
             `messages` longtext COLLATE utf8_unicode_ci NOT NULL,
             `owner_id` int unsigned NOT NULL DEFAULT '0',
             `added` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',

@@ -34,7 +34,7 @@ class OaiPmhStaticRepository_UpdateJob extends Omeka_Job_AbstractJob
         // Resent jobs can remain queued after all the items themselves have
         // been deleted. Skip if that's the case.
         if ($folder->status == OaiPmhStaticRepository::STATUS_DELETED) {
-            _log('[OaiPmhStaticRepository] '. __('The folder for uri "%s" (# %d) was deleted prior to running this job.',
+            _log('[OaiPmhStaticRepository] ' . __('The folder for uri "%s" (# %d) was deleted prior to running this job.',
                 $folder->uri, $folder->id), Zend_Log::NOTICE);
             return;
         }
@@ -45,7 +45,7 @@ class OaiPmhStaticRepository_UpdateJob extends Omeka_Job_AbstractJob
             $message = $e->getMessage();
             $folder->setStatus(OaiPmhStaticRepository::STATUS_ERROR);
             $folder->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
-            _log('[OaiPmhStaticRepository] '. __('Error when processing folder "%s" (#%d): %s',
+            _log('[OaiPmhStaticRepository] ' . __('Error when processing folder "%s" (#%d): %s',
                 $folder->uri, $folder->id, $message), Zend_Log::ERR);
         }
     }

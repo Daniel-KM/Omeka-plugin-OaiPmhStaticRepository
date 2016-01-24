@@ -286,7 +286,7 @@ class OaiPmhStaticRepository_Builder
         // Check the selected identifier.
         $identifierFormat = $this->_getParameter('oai_identifier_format');
         if (!isset($oaiIdentifiers[$identifierFormat])) {
-            throw new OaiPmhStaticRepository_BuilderException(__('OAI identifier format"%s" is missing.', $identifierFormat));
+            throw new OaiPmhStaticRepository_BuilderException(__('OAI identifier format "%s" is missing.', $identifierFormat));
         }
 
         $class = $oaiIdentifiers[$identifierFormat]['class'];
@@ -409,7 +409,7 @@ class OaiPmhStaticRepository_Builder
             $message = __('%d files with extensions "%s" were skipped.',
                 array_sum($unsetExtensions), implode('", "', array_keys($unsetExtensions)));
             $this->_folder->addMessage($message);
-            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s',
+            _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s',
                 $this->_folder->id, $this->_folder->uri, $message));
         }
 
@@ -417,7 +417,7 @@ class OaiPmhStaticRepository_Builder
             $message = __('At least %d forbidden files "%s" were skipped.',
                 count($unsets), implode('", "', $unsets));
             $this->_folder->addMessage($message);
-            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s',
+            _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s',
                 $this->_folder->id, $this->_folder->uri, $message));
         }
     }
@@ -599,7 +599,7 @@ class OaiPmhStaticRepository_Builder
                     count($unsets), '"' . implode('", "', $unsets) . '"');
             }
             $this->_folder->addMessage($message);
-            _log('[OaiPmhStaticRepository] '. __('Folder #%d [%s]: %s',
+            _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s',
                 $this->_folder->id, $this->_folder->uri, $message));
         }
     }
@@ -972,7 +972,7 @@ class OaiPmhStaticRepository_Builder
         // Don't use a static value to allow tests.
         $localRepositoryFilepath = $this->_folder->getLocalRepositoryFilepath();
         if (!file_exists($localRepositoryFilepath)) {
-            return  false;
+            return false;
         }
 
         // Read the xml from the beginning.

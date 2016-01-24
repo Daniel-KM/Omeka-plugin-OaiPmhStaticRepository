@@ -40,7 +40,7 @@ class OaiPmhStaticRepository_Mapping_Ods extends OaiPmhStaticRepository_Mapping_
     /**
      * Return arrays of data from an xml.
      *
-     * @param string $xml
+     * @param SimpleXML $xml
      * @return array Cleaned array of arrays of data.
      */
     protected function _getArraysFromXml($xml)

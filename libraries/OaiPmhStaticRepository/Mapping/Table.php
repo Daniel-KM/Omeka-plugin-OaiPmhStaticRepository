@@ -161,7 +161,7 @@ class OaiPmhStaticRepository_Mapping_Table extends OaiPmhStaticRepository_Mappin
                     $referencedFiles[$record['path']] = isset($referencedFiles[$record['path']])
                         // This is an update.
                         ? $this->_mergeRecords($referencedFiles[$record['path']], $record)
-                        // This is anew record.
+                        // This is a new record.
                         : $record;
                     break;
 
@@ -254,7 +254,7 @@ class OaiPmhStaticRepository_Mapping_Table extends OaiPmhStaticRepository_Mappin
      */
     protected function _addValues($value, $existing = array())
     {
-        // Convert a null tino an array when needed.
+        // Convert a null into an array when needed.
         $existing = $existing ?: array();
 
         if (empty($this->_elementDelimiter)) {

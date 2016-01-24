@@ -1,5 +1,5 @@
 <?php
-$pageTitle = __('Add a Folder to Archive');
+$pageTitle = __('Create a new Static Repository');
 echo head(array(
     'title' => $pageTitle,
     'bodyclass' => 'oai-pmh-static-repository edit',

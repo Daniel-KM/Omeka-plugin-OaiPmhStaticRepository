@@ -227,7 +227,7 @@
         if (empty($message)) {
             $message = __('The requested file is not registered by this OAI-PMH static repository.');
         }
-        _log('[OaiPmhStaticRepository] '. $message, Zend_Log::NOTICE);
+        _log('[OaiPmhStaticRepository] ' . $message, Zend_Log::NOTICE);
         $this->view->message = $message;
 
         $this->getResponse()
