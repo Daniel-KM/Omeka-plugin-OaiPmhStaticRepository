@@ -21,6 +21,7 @@ class OaiPmhStaticRepositoryPlugin extends Omeka_Plugin_AbstractPlugin
     protected $_hooks = array(
         'initialize',
         'install',
+        'upgrade',
         'uninstall',
         'uninstall_message',
         'config_form',
@@ -86,7 +87,7 @@ class OaiPmhStaticRepositoryPlugin extends Omeka_Plugin_AbstractPlugin
             `status` enum('added', 'reset', 'queued', 'progress', 'paused', 'stopped', 'killed', 'completed', 'deleted', 'error') NOT NULL,
             `messages` longtext COLLATE utf8_unicode_ci NOT NULL,
             `owner_id` int unsigned NOT NULL DEFAULT '0',
-            `added` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+            `added` timestamp NOT NULL DEFAULT '2000-01-01 00:00:00',
             `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
             PRIMARY KEY (`id`),
             INDEX `uri` (`uri`),
@@ -105,6 +106,24 @@ class OaiPmhStaticRepositoryPlugin extends Omeka_Plugin_AbstractPlugin
             mkdir($staticDir, 0755, true);
             copy(FILES_DIR . DIRECTORY_SEPARATOR . 'original' . DIRECTORY_SEPARATOR . 'index.html',
                 $staticDir . DIRECTORY_SEPARATOR . 'index.html');
+        }
+    }
+
+    /**
+     * Upgrade the plugin.
+     */
+    public function hookUpgrade($args)
+    {
+        $oldVersion = $args['old_version'];
+        $newVersion = $args['new_version'];
+        $db = $this->_db;
+
+        if (version_compare($oldVersion, '2.4.1', '<')) {
+            $sql = "
+                ALTER TABLE `{$db->OaiPmhStaticRepository}`
+                ALTER `added` SET DEFAULT '2000-01-01 00:00:00'
+            ";
+            $db->query($sql);
         }
     }
 
