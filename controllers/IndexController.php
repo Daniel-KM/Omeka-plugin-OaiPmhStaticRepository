@@ -208,28 +208,35 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
         $jobDispatcher = Zend_Registry::get('bootstrap')->getResource('jobs');
         $jobDispatcher->setQueueName(OaiPmhStaticRepository_UpdateJob::QUEUE_NAME);
 
-        // Short dispatcher if user wants it.
-        if (get_option('oai_pmh_static_repository_short_dispatcher')) {
-            try {
-                $jobDispatcher->send('OaiPmhStaticRepository_UpdateJob', $options);
-            } catch (Exception $e) {
-                $message = __('Error when processing folder.');
-                $folder->setStatus(OaiPmhStaticRepository::STATUS_ERROR);
-                $folder->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
-                _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s',
-                    $folder->id, $folder->uri, $message), Zend_Log::ERR);
-                $this->_helper->flashMessenger($message, 'error');
-                return false;
-            }
+        return get_option('oai_pmh_static_repository_short_dispatcher')
+            ? $this->_launchShortJob($jobDispatcher, $folder, $options)
+            : $this->_launchLongJob($jobDispatcher, $folder, $options);
+    }
 
-            $message = __('Folder "%s" has been updated.', $folder->uri);
-            $this->_helper->flashMessenger($message, 'success');
-            return true;
+    private function _launchShortJob($jobDispatcher, $folder, $options)
+    {
+        try {
+            $jobDispatcher->send('OaiPmhStaticRepository_UpdateJob', $options);
+        } catch (Exception $e) {
+            $message = __('Error when processing folder.');
+            $folder->setStatus(OaiPmhStaticRepository::STATUS_ERROR);
+            $folder->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
+            _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s',
+                $folder->id, $folder->uri, $message), Zend_Log::ERR);
+            $this->_helper->flashMessenger($message, 'error');
+            return false;
         }
 
+        $message = __('Folder "%s" has been processed.', $folder->uri);
+        $this->_helper->flashMessenger($message, 'success');
+        return true;
+    }
+
+    private function _launchLongJob($jobDispatcher, $folder, $options)
+    {
         // Normal dispatcher for long processes.
         $jobDispatcher->sendLongRunning('OaiPmhStaticRepository_UpdateJob', $options);
-        $message = __('Folder "%s" is being updated.', $folder->uri)
+        $message = __('Folder "%s" is being processed.', $folder->uri)
             . ' ' . __('This may take a while. Please check below for status.');
         $this->_helper->flashMessenger($message, 'success');
         return true;
