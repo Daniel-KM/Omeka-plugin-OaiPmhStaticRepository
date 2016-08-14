@@ -138,12 +138,13 @@ echo head(array(
                         switch ($folder->status):
                             case OaiPmhStaticRepository::STATUS_QUEUED:
                             case OaiPmhStaticRepository::STATUS_PROGRESS:
-                                $actionUri = $this->url(array(
-                                        'action' => 'stop',
-                                        'id' => $folder->id,
-                                    ),
-                                    'default');
-                                $action = __('Stop');
+                                if (is_allowed('OaiPmhStaticRepository_Index', 'edit')):
+                                    $actionUri = $this->url(array(
+                                            'action' => 'stop',
+                                            'id' => $folder->id,
+                                        ),
+                                        'default');
+                                    $action = __('Stop');
                                 ?>
                         <a href="<?php echo html_escape($actionUri); ?>" class="stop button blue"><?php echo $action; ?></a>
 
@@ -155,7 +156,9 @@ echo head(array(
                                 $action = __('Refresh page');
                                 ?>
                         <a href="<?php echo html_escape($actionUri); ?>" class="refresh button blue"><?php echo $action; ?></a>
-                            <?php break;
+                            <?php
+                                endif;
+                                break;
                             case OaiPmhStaticRepository::STATUS_ADDED:
                             case OaiPmhStaticRepository::STATUS_RESET:
                             case OaiPmhStaticRepository::STATUS_PAUSED:
@@ -165,7 +168,6 @@ echo head(array(
                             case OaiPmhStaticRepository::STATUS_DELETED:
                             case OaiPmhStaticRepository::STATUS_ERROR:
                             default:
-
                                  if (is_allowed('OaiPmhStaticRepository_Index', 'edit')):
                                     $actionUri = $this->url(array(
                                             'action' => 'check',
