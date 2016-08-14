@@ -275,6 +275,7 @@ class OaiPmhStaticRepository_Form_Add extends Omeka_Form
                 'exclude_extensions',
                 'allow_no_extension',
                 'item_type_id',
+                'add_relations',
                 'oai_identifier_format',
             ),
             'oai_pmh_static_repository_records',
