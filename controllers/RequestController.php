@@ -50,7 +50,7 @@
             return $this->_error();
         }
 
-        $file = $this->_folder->getFile($this->_filepath);
+        $file = $this->_folder->getFilepath($this->_filepath);
 
         if (empty($file)) {
             return $this->_error();

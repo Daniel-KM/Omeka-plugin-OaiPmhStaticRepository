@@ -169,7 +169,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
      * @return string|boolean|null File path, false if not exist in this folder,
      * null if not available.
      */
-    public function getFile($filepath)
+    public function getFilepath($filepath)
     {
         if ($this->isCached()) {
             return $this->getCacheFolder() . '/' . $filepath;
