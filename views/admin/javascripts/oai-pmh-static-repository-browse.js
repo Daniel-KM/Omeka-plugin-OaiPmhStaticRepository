@@ -57,7 +57,7 @@ Omeka.OaiPmhStaticRepositoryBrowse = {};
         // Delete a simple record.
         $('.oai-pmh-static-repository input[name="submit-batch-delete"]').click(function(event) {
             event.preventDefault();
-            if (!confirm(Omeka.messages.oaiPmhStaticRepository.confirmation)) {
+            if (!confirm(Omeka.messages.oaiPmhStaticRepository.confirmBatch)) {
                 return;
             }
             $('table#oai-pmh-static-repositories thead tr th.batch-edit-heading input').attr('checked', false);

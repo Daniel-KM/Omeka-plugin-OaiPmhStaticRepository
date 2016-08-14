@@ -264,7 +264,7 @@ echo head(array(
     <script type="text/javascript">
         Omeka.messages = jQuery.extend(Omeka.messages,
             {'oaiPmhStaticRepository':{
-                'confirmation':<?php echo json_encode(__('Are your sure to remove these folders?')); ?>
+                'confirmBatch':<?php echo json_encode(__('Are your sure to remove these folders?')); ?>
         <?php if (plugin_is_active('OaiPmhGateway')): ?>
             },
             'oaiPmhGateway':{
