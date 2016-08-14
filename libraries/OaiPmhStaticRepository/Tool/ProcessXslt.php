@@ -15,10 +15,17 @@ class OaiPmhStaticRepository_Tool_ProcessXslt
      * be used.
      * @param array $parameters Parameters array.
      * @return string|null Path to the output file if ok, null else.
+     * @throws OaiPmhStaticRepository_Exception()
      */
     public function processXslt($input, $stylesheet, $output = '', $parameters = array())
     {
         $command = get_option('oai_pmh_static_repository_processor');
+
+        // The readability is a very common error, so it is checked separately.
+        if (!is_file($input) || !is_readable($input)) {
+            $msg = __('The input file "%s" is not readable.', $input);
+            throw new OaiPmhStaticRepository_Exception($msg);
+        }
 
         // Default is the internal xslt processor of php.
         return empty($command)
