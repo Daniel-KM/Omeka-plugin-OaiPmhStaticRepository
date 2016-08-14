@@ -82,6 +82,7 @@ Omeka.OaiPmhStaticRepositoryBrowse = {};
         // Toggle details for the current row.
         $('.oai-pmh-static-repository-details').click(function (event) {
             event.preventDefault();
+            $(this).closest('td').find('.last-message').slideToggle('fast');
             $(this).closest('td').find('.details').slideToggle('fast');
         });
     });
