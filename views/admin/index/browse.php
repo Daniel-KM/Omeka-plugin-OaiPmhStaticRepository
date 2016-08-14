@@ -179,7 +179,11 @@ echo head(array(
                         <a href="<?php echo html_escape($actionUri); ?>" class="update button green"><?php echo $action; ?></a>
                         <?php
 
-                                    if (!in_array($folder->status, array(OaiPmhStaticRepository::STATUS_ADDED, OaiPmhStaticRepository::STATUS_COMPLETED))):
+                                    if (!in_array($folder->status, array(
+                                            OaiPmhStaticRepository::STATUS_ADDED,
+                                            OaiPmhStaticRepository::STATUS_RESET,
+                                            OaiPmhStaticRepository::STATUS_COMPLETED,
+                                        ))):
                                         $actionUri = $this->url(array(
                                                 'action' => 'reset-status',
                                                 'id' => $folder->id,
