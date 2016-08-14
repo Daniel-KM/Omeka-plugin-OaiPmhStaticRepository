@@ -1122,6 +1122,11 @@ class OaiPmhStaticRepository_Builder
         $filenames = array();
 
         $path = realpath($path);
+        if (!is_readable($path)) {
+            _log(__('The folder "%s" is not readable.'), Zend_Log::NOTICE);
+            return array();
+        }
+
         $directoryIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path));
         foreach ($directoryIterator as $name => $pathObject) {
             // TODO Readable should be check for normal listing too.
