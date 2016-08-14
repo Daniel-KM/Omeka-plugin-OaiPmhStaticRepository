@@ -53,7 +53,7 @@ class OaiPmhStaticRepository_Builder
     //         files => ordered array of files attached to the document if any
     //             index => array Index is used as order and starts from 1
     //                 path => absolute filepath (local or http)
-    //                 name => filepath relative to the main folder, else url
+    //                 name => filepath relative to main folder, url or name
     //                 oai_id => oai id of the file (set internally)
     //                 metadata => if any, array of elements
     //                 extra => if any, array of unrecognized data
@@ -532,7 +532,7 @@ class OaiPmhStaticRepository_Builder
                     $folderpathClean = rtrim($folderpath, '/');
 
                     $doc = array();
-                    $doc['name'] = $relativeFolderpath;
+                    $doc['name'] = $relativeFolderpath === '' ? '[root]' : $relativeFolderpath;
 
                     foreach ($remainingFiles as $filepath => $filename) {
                         // Check if the file is in the folder (not subfolder).
