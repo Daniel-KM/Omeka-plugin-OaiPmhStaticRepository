@@ -282,6 +282,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
             'fill_ocr_text' => false,
             'fill_ocr_data' => false,
             'fill_ocr_process' => false,
+            'extra_parameters' => array(),
             'records_for_files' => false,
             'oai_identifier_format' => 'short_name',
             'item_type_name' => '',
@@ -395,6 +396,8 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
         $parameters['records_for_files'] = (boolean) $parameters['records_for_files'];
 
         $parameters['item_type_name'] = $this->_getItemTypeName();
+
+        $parameters['extra_parameters'] = $this->_getExtraParameters($parameters['extra_parameters']);
 
         $parameters['oaipmh_harvest'] = (boolean) $parameters['oaipmh_harvest'];
         $parameters['oaipmh_gateway'] = $parameters['oaipmh_gateway'] || $parameters['oaipmh_harvest'];
@@ -555,6 +558,31 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
     public function getStaticRepositoryUrlFolder()
     {
         return $this->getParameter('repository_folder');
+    }
+
+    /**
+     * Convert a string into a list of extra parameters.
+     *
+     * @internal The parameters are already checked via Zend form validator.
+     *
+     * @param array|string $extraParameters
+     * @return array
+     */
+    protected function _getExtraParameters($extraParameters)
+    {
+        if (is_array($extraParameters)) {
+            return $extraParameters;
+        }
+
+        $parameters = array();
+
+        $parametersAdded = array_values(array_filter(array_map('trim', explode(PHP_EOL, $extraParameters))));
+        foreach ($parametersAdded as $parameterAdded) {
+            list($paramName, $paramValue) = explode('=', $parameterAdded);
+            $parameters[trim($paramName)] = trim($paramValue);
+        }
+
+        return $parameters;
     }
 
     /**

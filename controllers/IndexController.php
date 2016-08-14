@@ -45,8 +45,9 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
 
     public function addAction()
     {
-        $this->view->form = new OaiPmhStaticRepository_Form_Add();
-        $this->view->form->setAction($this->_helper->url('add'));
+        $form = new OaiPmhStaticRepository_Form_Add();
+        $form->setAction($this->_helper->url('add'));
+        $this->view->form = $form;
 
         // From parent::addAction(), to allow to set parameters as array.
         $class = $this->_helper->db->getDefaultModelName();
@@ -64,6 +65,13 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
                 $this->view->$varName = $record;
                 return;
             }
+
+            if (!$form->isValid($this->getRequest()->getPost())) {
+                $this->_helper->_flashMessenger(__('There was an error on the form. Please try again.'), 'error');
+                $this->view->$varName = $record;
+                return;
+            }
+
             $record->setPostData($_POST);
 
             // Specific is here.
@@ -100,6 +108,7 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
             'fill_ocr_text',
             'fill_ocr_data',
             'fill_ocr_process',
+            'extra_parameters',
             'records_for_files',
             'oai_identifier_format',
             // The item_type_id is in _postData().

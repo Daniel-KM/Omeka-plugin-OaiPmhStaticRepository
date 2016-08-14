@@ -47,9 +47,7 @@ class OaiPmhStaticRepository_Form_Add extends Omeka_Form
                     'Callback',
                     true,
                     array(
-                        'callback' => function($value) {
-                            return Zend_Uri::check($value);
-                        }
+                        'callback' => array('OaiPmhStaticRepository_Form_Validator', 'validateUri'),
                     ),
                     'messages' => array(
                         Zend_Validate_Callback::INVALID_VALUE => __('An url or a path is required to add a folder.'),
@@ -150,6 +148,31 @@ class OaiPmhStaticRepository_Form_Add extends Omeka_Form
             'value' => isset($oaiIdentifiers['position_folder']) ? 'position_folder' : null,
         ));
         */
+
+        $this->addElement('textarea', 'extra_parameters', array(
+            'label' => __('Add specific parameters'),
+            'description' => __('Some formats require specific parameters, for example to be used in the xsl sheets.')
+                . ' ' . __('You can specify them here, one by line.'),
+            'value' => '',
+            'required' => false,
+            'rows' => 5,
+            'placeholder' => __('parameter_1_name = parameter 1 value'),
+            'filters' => array(
+                'StringTrim',
+            ),
+            'validators' => array(
+                array(
+                    'callback',
+                    false,
+                    array(
+                        'callback' => array('OaiPmhStaticRepository_Form_Validator', 'validateExtraParameters'),
+                    ),
+                    'messages' => array(
+                        Zend_Validate_Callback::INVALID_VALUE => __('Each extra parameter, one by line, should have a name separated from the value with a "=".'),
+                    ),
+                ),
+            ),
+        ));
 
         $values = array(
             '' => __('No default item type'),
@@ -314,6 +337,15 @@ class OaiPmhStaticRepository_Form_Add extends Omeka_Form
                     'description' => __('Set specific parameters for OCR.'),
             ));
         }
+
+        $this->addDisplayGroup(
+            array(
+                'extra_parameters',
+            ),
+            'oai_pmh_static_repository_extra_parameters',
+            array(
+                'legend' => __('Extra Parameters'),
+        ));
 
         // Parameters to create the static repository.
         $this->addDisplayGroup(
