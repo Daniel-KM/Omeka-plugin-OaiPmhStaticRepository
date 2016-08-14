@@ -252,8 +252,8 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
                 $message = __('Error when processing folder.');
                 $folder->setStatus(OaiPmhStaticRepository::STATUS_ERROR);
                 $folder->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
-                _log('[OaiPmhStaticRepository] ' . __('Folder "%s" (#%d): %s',
-                    $folder->uri, $folder->id, $message), Zend_Log::ERR);
+                _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s',
+                    $folder->id, $folder->uri, $message), Zend_Log::ERR);
                 $this->_helper->flashMessenger($msg, 'error');
                 return false;
             }
