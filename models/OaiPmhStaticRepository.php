@@ -892,7 +892,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
         switch ($type) {
             case 'Collection':
                 foreach ($documents as $document) {
-                    if ($document['record type'] == 'Collection') {
+                    if (isset($document['record type']) && $document['record type'] == 'Collection') {
                         ++$totalDocuments;
                     }
                 }
@@ -900,7 +900,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
                 break;
             case 'Item':
                 foreach ($documents as $document) {
-                    if ($document['record type'] == 'Item') {
+                    if (!isset($document['record type']) || $document['record type'] == 'Item') {
                         ++$totalDocuments;
                     }
                 }
