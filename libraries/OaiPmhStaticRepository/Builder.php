@@ -574,34 +574,44 @@ class OaiPmhStaticRepository_Builder
         $documents = &$this->_documents;
 
         $unsetExtensions = array();
-        $unsets = array();
+        $unsetDocuments = array();
         foreach ($documents as $key => $document) {
             foreach ($document['files'] as $order => $file) {
                 if (!$this->_isExtensionAllowed($file['path'])) {
                     unset($documents[$key]);
-                    $unsetExtensions[] = pathinfo($document['process']['name'], PATHINFO_BASENAME);
+                    $unsetExtensions[] = pathinfo($file['path'], PATHINFO_EXTENSION);
                     break;
                 }
 
                 if ($this->_isUriAllowed($file['path']) !== true) {
                     unset($documents[$key]);
-                    $unsets[] = $document['name'];
+                    $unsetDocuments[] = $document['name'];
                     break;
                 }
             }
         }
 
         if (count($unsetExtensions) > 0) {
-            $message = __('%d documents were skipped because of a forbidden extension: "%s".',
-                count($unsetExtensions), implode('", "', $unsetExtensions));
+            $totalUnsetExtensions = count($unsetExtensions);
+            $unsetExtensions = array_keys(array_flip($unsetExtensions));
+            // Singular message.
+            if ($totalUnsetExtensions == 1) {
+                $message = __('%d document was skipped because of a forbidden extension: "%s".',
+                    $totalUnsetExtensions, implode('", "', $unsetExtensions));
+            }
+            // Plural message.
+            else {
+                $message = __('%d documents were skipped because of a forbidden extension: "%s".',
+                    $totalUnsetExtensions, implode('", "', $unsetExtensions));
+            }
             $this->_folder->addMessage($message);
             _log('[ArchiveFolder] ' . __('Folder #%d [%s]: %s',
                 $this->_folder->id, $this->_folder->uri, $message));
         }
 
-        if (count($unsets) > 0) {
+        if (count($unsetDocuments) > 0) {
             $message = __('%d forbidden documents were skipped: "%s".',
-                count($unsets), '"' . implode('", "', $unsets) . '"');
+                count($unsetDocuments), '"' . implode('", "', $unsetDocuments) . '"');
             $this->_folder->addMessage($message);
             _log('[ArchiveFolder] ' . __('Folder #%d [%s]: "%s"',
                 $this->_folder->id, $this->_folder->uri, $message));
