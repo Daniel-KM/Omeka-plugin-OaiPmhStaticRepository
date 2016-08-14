@@ -1365,6 +1365,9 @@ class OaiPmhStaticRepository_Builder
         }
 
         $extension = strtolower(pathinfo($uri, PATHINFO_EXTENSION));
+        if ($extension === '') {
+            return (boolean) $this->_getParameter('allow_no_extension');
+        }
         if (!empty($blackList) && in_array($extension, $blackList)) {
             return false;
         }

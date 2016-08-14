@@ -100,6 +100,7 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
         $parameters = array_flip(array(
             'unreferenced_files',
             'exclude_extensions',
+            'allow_no_extension',
             'element_delimiter',
             'fill_ocr_text',
             'fill_ocr_data',

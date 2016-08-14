@@ -277,6 +277,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
         $defaults = array(
             'unreferenced_files' => 'by_file',
             'exclude_extensions' => '',
+            'allow_no_extension' => false,
             'element_delimiter' => '',
             'fill_ocr_text' => false,
             'fill_ocr_data' => false,

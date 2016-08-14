@@ -84,6 +84,13 @@ class OaiPmhStaticRepository_Form_Add extends Omeka_Form
                 . ' ' . __('The white-list is the Omeka one, defined in the security page.'),
         ));
 
+        $this->addElement('checkbox', 'allow_no_extension', array(
+            'label' => __('Allow file without extension'),
+            'description' => __('This option allows to import some specific files and urls.')
+                . ' ' . __('The option "Disable File Upload Validation" in Settings > Security should be set too.'),
+            'value' => false,
+        ));
+
         $this->addElement('text', 'element_delimiter', array(
             'label' => __('Spreadsheet element separator'),
             'description' => __('If metadata are available in a table (Open Document Spreadsheet ods), multiple elements can be set within one cell for the same field.')
@@ -268,6 +275,7 @@ class OaiPmhStaticRepository_Form_Add extends Omeka_Form
                 'unreferenced_files',
                 'records_for_files',
                 'exclude_extensions',
+                'allow_no_extension',
                 'element_delimiter',
                 'fill_ocr_text',
                 'fill_ocr_data',
