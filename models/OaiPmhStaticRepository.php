@@ -729,7 +729,9 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
 
     public function process($type = OaiPmhStaticRepository_Builder::TYPE_CHECK)
     {
-        _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: Process started.', $this->id, $this->uri));
+        $message = __('Process "%s" started.', $type);
+        $this->addMessage($message, ArchiveFolder_Folder::MESSAGE_CODE_DEBUG);
+        _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::DEBUG);
 
         $this->setStatus(OaiPmhStaticRepository::STATUS_PROGRESS);
         $this->save();
