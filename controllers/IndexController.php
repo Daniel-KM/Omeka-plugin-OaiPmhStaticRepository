@@ -45,11 +45,6 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
 
     public function addAction()
     {
-        require dirname(__FILE__)
-            . DIRECTORY_SEPARATOR . '..'
-            . DIRECTORY_SEPARATOR . 'forms'
-            . DIRECTORY_SEPARATOR . 'Add.php';
-
         $this->view->form = new OaiPmhStaticRepository_Form_Add();
         $this->view->form->setAction($this->_helper->url('add'));
 
