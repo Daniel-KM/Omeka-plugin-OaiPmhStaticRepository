@@ -19,9 +19,15 @@ simple file manager and with some metadata in various files (text, spreadsheet,
 xml...). Of course, if files and metadata are well managed, they can be ingested
 too.
 
+If you just want to import folders with various files and metadata, it is
+recommended to use [Archive Folder], that is simpler to use.
+
 
 Examples
 --------
+
+Examples are included in the directory [tests/suite/_files/], but you can build
+your own before importing true files and metadata.
 
 ### Included Example
 
@@ -62,6 +68,116 @@ You can try the update of this harvest too:
 of your copied directory by the matching ones that are prepared in the directory
 "tests/suite/_files/Update_files/";
 - click on "Update" in the "OAI-PMH Static Repositories" tab.
+
+
+Installation
+------------
+
+Install first the plugins [Archive Document], [OAI-PMH Harvester], and ['Oai-PMH Gateway].
+Even if only the first one is required, the latter are used to import data
+inside the Omeka database.
+
+Note: the official [OAI-PMH Harvester] can only ingest standard metadata
+(elements). If you want to ingest other standards, files and metadata of files,
+extra data, and to manage records, you should use the fixed and improved [fork]
+of it.
+
+The optional plugin [OAI-PMH Repository] can be used to expose data directly
+from Omeka. Note: the official [OAI-PMH Repository] has been completed in an
+[improved fork], in particular with a human interface, and until merge of the
+commits, the latter is recommended.
+
+The plugin [Ocr Element Set] can be installed too to import ocr data.
+
+Then uncompress files and rename plugin folder `OaiPmhStaticRepository`.
+
+Then install it like any other Omeka plugin and follow the config instructions.
+
+Some points should be checked too.
+
+* Server Access
+
+The server should allow the indexing of the folder for the localhost. So,
+for [Apache httpd], the following commands may be added in a file `.htaccess` at
+the root of the folder (this is the default in the folder test, so it may be
+needed to change it):
+
+```
+Options Indexes FollowSymLinks
+# AllowOverride all
+Order Deny,Allow
+Deny from all
+Allow from 127.0.0.1 ::1
+```
+
+* Local path
+
+If the server doesn't allow indexing, you can use the equivalent path `/var/www/path/to/the/Folder_Test`
+or something similar. Nevertheless, for security reasons, the allowed base path
+or a parent should be defined before in the file `security.ini` of the plugin.
+
+* Characters
+
+It is recommended to have filenames with characters whose representations are
+the same in metadata files, on the source file system, the transport layer
+(http) and the destination file system, in particular for uppercase/lowercase,
+for non-latin characters and even if they simply contains spaces. Furthermore,
+the behavior depends on the version of PHP.
+
+Nevertheless, the plugin manages all unicode characters. A quick check can be
+done with the folders "Folder_Test_Characters_Http" and "Folder_Test_Characters_Local".
+These folders contains files with spaces and some non-alphanumeric characters
+and metadata adapted for an ingest via http or local path.
+
+In fact, currently, if the main uri is an url, all paths in metadata files
+should be raw url encoded, except the reserved characters: `$-_.+!*'()[],`.
+
+* Files extensions
+
+For security reasons, the plugin checks the extension of each ingested file. So,
+if you import specific files, in particular XML metadata files and json ones,
+they should be allowed in the page "/admin/settings/edit-security".
+
+* XSLT processor
+
+Xslt has two main versions:  xslt 1.0 and xslt 2.0. The first is often installed
+with php via the extension "php-xsl" or the package "php5-xsl", depending on
+your system. It is until ten times slower than xslt 2.0 and sheets are more
+complex to write.
+
+So it's recommended to install an xslt 2 processor, that can process xslt 1.0
+and xslt 2.0 sheets. The command can be configured in the configuration page of
+the plugin. Use "%1$s", "%2$s", "%3$s", without escape, for the file input, the
+stylesheet, and the output.
+
+Examples for Debian 6, 7, 8 / Ubuntu / Mint (with the package "libsaxonb-java"):
+```
+saxonb-xslt -ext:on -versionmsg:off -warnings:silent -s:%1$s -xsl:%2$s -o:%3$s
+```
+
+Examples for Debian 8 / Ubuntu / Mint (with the package "libsaxonhe-java"):
+```
+CLASSPATH=/usr/share/java/Saxon-HE.jar java net.sf.saxon.Transform -ext:on -versionmsg:off -warnings:silent -s:%1$s -xsl:%2$s -o:%3$s
+```
+
+Example for Fedora / RedHat / Centos / Mandriva / Mageia:
+```
+saxon -ext:on -versionmsg:off -warnings:silent -s:%1$s -xsl:%2$s -o:%3$s
+```
+
+Note: Only saxon is currently supported as xslt 2 processor. Because Saxon is a
+Java tool, a JRE should be installed, for example "openjdk-8-jre-headless".
+
+Note: Warnings are processed as errors. That's why the parameter "-warnings:silent"
+is important to be able to process an import with a bad xsl sheet. It can be
+removed with default xsl, that doesn't warn anything.
+
+Anyway, if there is no xslt2 processor installed, the command field should be
+cleared. The plugin will use the default xslt 1 processor of php, if installed.
+
+
+Organization of files
+---------------------
 
 ### Simple folder
 
@@ -121,14 +237,17 @@ as an item with multiple files.
     └──── my_image_6.jpg
 ```
 
+Here, there are 4 or 8 items according to the parameter `unreferenced files`.
+
 ### Metadata ingest
 
 The metadata of each item can be imported if they are available in files in a
 supported format. Currently, some formats are implemented: a simple text one
-(as raw text or as OpenDocument Text `odt`), a simple json format, a table one
-(as OpenDocument Spreadsheet `ods`), the [Mets] xml, if the profile is based on
-Dublin Core, and an internal xml one, `Documents`, that allows to manage all
-specificities of Omeka. Other ones can be easily added via a simple class.
+(as raw text or as OpenDocument Text `odt`, for testing purpose), a simple json
+format, a table one (as OpenDocument Spreadsheet `ods`), the [Mets] xml, if the
+profile is based on Dublin Core, and an internal xml one, `Documents`, that
+allows to manage all specificities of Omeka. Other ones can be easily added via
+a simple class.
 
 ```
     My Digitized Books
@@ -149,10 +268,11 @@ specificities of Omeka. Other ones can be easily added via a simple class.
 
 Notes for metadata files:
 
-- A metadata file can contain multiple documents.
+- A metadata file can contain one or multiple documents.
 - Referenced files in metadata files can be external to the original folder.
 - Metadata files can be anywhere in the folder, as long as the paths to the
-referenced files urls are absolute or relative to it.
+referenced files urls are absolute or relative to it and that the server has
+access to it.
 
 See below for more details on metadata files.
 
@@ -186,115 +306,13 @@ are saved in [Alto]. All of them can be imported automagically.
 The xml Mets file contains path to each subordinate file (master, ocr, etc.), so
 the structure may be different.
 
-The plugin [OcrElementSet] should be installed to import ocr data, if any.
+The plugin [Ocr Element Set] should be installed to import ocr data, if any.
 
 If there are other files in folders, for example old xml [refNum] or any other
 old texts files that may have been used previously for example for a conversion
 from refNum to Mets via the tool [refNum2Mets], they need to be skipped via
 the option "Unreferenced files" and/or the option "File extensions to exclude",
 with "refnum.xml ods txt" for example.
-
-
-Installation
-------------
-
-Install first the plugins [Archive Document], [OAI-PMH Harvester], and ['Oai-PMH Gateway].
-Even if only the first one is required, the latter are used to import data
-inside the Omeka database.
-
-Note: the official [OAI-PMH Harvester] can only ingest standard metadata
-(elements). If you want to ingest other standards, files and metadata of files,
-extra data, and to manage records, you should use the fixed and improved [fork]
-of it.
-
-The optional plugin [OAI-PMH Repository] can be used to expose data directly
-from Omeka. Note: the official [OAI-PMH Repository] has been completed in an
-[improved fork], in particular with a human interface, and until merge of the
-commits, the latter is recommended.
-
-The plugin [OcrElementSet] can be installed too to import ocr data.
-
-Then uncompress files and rename plugin folder `OaiPmhStaticRepository`.
-
-Then install it like any other Omeka plugin and follow the config instructions.
-
-Some points should be checked too.
-
-* Server Access
-
-The server should allow the indexing of the folder for the localhost. So,
-for [Apache httpd], the following commands may be added in a file `.htaccess` at
-the root of the folder (this is the default in the folder test, so it may be
-needed to change it):
-
-```
-Options Indexes FollowSymLinks
-# AllowOverride all
-Order Deny,Allow
-Deny from all
-Allow from 127.0.0.1 ::1
-```
-
-* Local path
-
-If the server doesn't allow indexing, you can use the equivalent path `/var/www/path/to/the/Folder_Test`
-or something similar. Nevertheless, for security reasons, the allowed base path
-or a parent should be defined before in the file `security.ini` of the plugin.
-
-* Characters
-
-It is recommended to have filenames with characters whose representations are
-the same in metadata files, on the source file system, the transport layer
-(http) and the destination file system, in particular for uppercase/lowercase,
-for non-latin characters and even if they simply contains spaces. Furthermore,
-the behavior depends on the version of PHP.
-
-Nevertheless, the plugin manages all unicode characters. A quick check can be
-done with the folders "Folder_Test_Characters_Http" and "Folder_Test_Characters_Local".
-These folders contains files with spaces and some non-alphanumeric characters
-and metadata adapted for an ingest via http or local path.
-
-In fact, currently, if the main uri is an url, all paths in metadata files
-should be raw url encoded, except the reserved characters: `$-_.+!*'()[],`.
-
-* Files extensions
-
-For security reasons, the plugin checks the extension of each ingested file. So,
-if you import specific files, in particular XML metadata files and json ones,
-they should be allowed in the page "/admin/settings/edit-security".
-
-* XSLT processor
-
-The xslt processor of php is a slow xslt 1 one. So it's recommended to use an
-external xslt 2 processor, ten times faster. It's required with stylesheets
-designed for xslt 2.0. The command can be configured in the configuration page
-of the plugin. Use "%1$s", "%2$s", "%3$s", without escape, for the file input,
-the stylesheet, and the output.
-
-Examples for Debian 6, 7, 8 / Ubuntu / Mint (with the package "libsaxonb-java"):
-```
-saxonb-xslt -ext:on -versionmsg:off -warnings:silent -s:%1$s -xsl:%2$s -o:%3$s
-```
-
-Examples for Debian 8 / Ubuntu / Mint (with the package "libsaxonhe-java"):
-```
-CLASSPATH=/usr/share/java/Saxon-HE.jar java net.sf.saxon.Transform -ext:on -versionmsg:off -warnings:silent -s:%1$s -xsl:%2$s -o:%3$s
-```
-
-Example for Fedora / RedHat / Centos / Mandriva / Mageia:
-```
-saxon -ext:on -versionmsg:off -warnings:silent -s:%1$s -xsl:%2$s -o:%3$s
-```
-
-Note: Only saxon is currently supported as xslt 2 processor. Because Saxon is a
-Java tool, a JRE should be installed, for example "openjdk-8-jre-headless".
-
-Note: Warnings are processed as errors. That's why the parameter "-warnings:silent"
-is important to be able to process an import with a bad xsl sheet. It can be
-removed with default xsl, that doesn't warn anything.
-
-Anyway, if there is no xslt2 processor installed, the command field should be
-cleared. The plugin will use the default xslt 1 processor of php, if installed.
 
 
 Formats of metadata
@@ -329,19 +347,20 @@ Dublin Core format.
 
 ### Documents XML
 
-This internal and simple format is a pivot format and is designed to be internal
-only, not to be exposed.
+A internal and simple xml format is used as a pivot. It is designed to be used
+internaly only, not to be exposed. Other xml formats should be converted to it
+be imported.
 
 It has only the five tags `record`, `elementSet`, `element`, `extra` and `data`
 under the root tag `documents` allows to import all metadata and specific fields
-of Omeka, so this is the one that is set by default for the harvesting. For
-compatibilty purposes, it supports the tags of the Dublin Core (simple or
-qualified). Standard attributes of the record can be set as extra data.
+of Omeka. For compatibilty purposes, it supports too the tags of the Dublin Core
+(simple or qualified). Standard attributes of the record can be set as extra
+data too.
 
 Here is the structure (see true examples for details):
 
 ```xml
-<record xmlns="http://localhost/documents/" name="my-doc #1">
+<record xmlns="http://localhost/documents/" name="my-doc #1" recordType="Item">
     <elementSet name="Dublin Core">
         <element name="Title">
             <data>Foo Bar</data>
@@ -363,17 +382,94 @@ Here is the structure (see true examples for details):
 </record>
 ```
 
-### Text
+### METS and ALTO XML
 
-The text format for the metadata is a simple tagged file format, very similar to
-`.ini` formats: a metadata is a line that starts with the name of the element
-set (`Dublin Core` by default), followed by a colon `:` and by the name of the
-element (`Title`). The value is separated from the field name with an equal sign
-`=`. If this character is not present, the line is ignored, so it can be a
-comment. If an element has multiple lines, next lines start with two non
-significant spaces. Fields names and values are trimmed. Because values are
-trimmed, an empty line between two fields is not taken into account. Fields are
-repeatable.
+Any METS file can be imported as long as the profile uses Dublin Core metadata.
+Else, the class should be extended.
+
+The associated [Alto] file, an OCR format, can be ingested too as text. The
+plugin [Ocr Element Set] should be installed first to create fields for it,
+because texts are saved at file level. Else, a hook can be used to import data
+somewhere else.
+
+The plugin [Ocr Element Set] saves ocr about each image at file level, so the
+option "File Metadata" should be set.
+
+Two extra parameters can be managed:
+
+- "mets_fileGrp_document": allows to set the main file, if wanted and if any
+("document" by default).
+- "mets_fileGrps": allows to set the groups of files to import. This avoids
+to import only main files and not the thumbnails or other unwanted files. The
+default is "master, ocr, MASTER, OCR". If set to empty, only the first file
+group will be imported.
+
+Note: The namespace of the xslt stylesheets may need to be changed according to
+your files, or extend the class "OaiPmhStaticRepository_Mapping_Mets".
+
+### Table via OpenDocument Spreadsheet (`ods`)
+
+See examples in `tests/suite/_files/Folder_Test/External_Metadata.ods` and
+`tests/suite/_files/Folder_Test_Update/External_Metadata_Update.ods`.
+
+The first row of each sheet represents the element to import. Order of columns
+is not important. Unknown headers should be managed by the formats.
+
+One row can represent multiple records and multiple rows can represent one
+record. This is the case for example for a file without metadata that is set on
+a row for an item, or when there is a new collection on the same row, or when
+there are multiple files attached to an item.
+
+To add multiple values to the same element, for example multiple authors, three
+ways can be used:
+
+1. Set them in one or multiple columns with the same header;
+2. Fill the cell with multiple values separated by an element delimiter, like
+pipe `|` or a character `end of line`;
+3. Repeat the data in some other rows, as long as the identifier is set and that
+there is no column "action", in which case each row is processed separately.
+
+Metadata for a file should be set after the item ones and require a column
+`Document` that indicates the item to which the file is attached.
+
+Beside the [fork of Csv Import], some headers changed:
+
+- `ItemType` and `RecordType` are replaced by `Item Type` and `Record Type`;
+- `FileUrl` is replaced by `Files` (or `File`);
+- Extra data are now written with the array notation, so they are different from
+standard elements: for example, `geolocation : latitude` is replaced by `geolocation [ latitude ]`;
+- The standard delimiter ":" can still be used for extra data, but the value
+will be an array like other elements, not a string;
+- As identifier, it's recommended to use a true value from an element field like
+the "Dubliin Core:Identifier";
+- To enter an empty value, that may be required by some extra data like the
+standard [Geolocation] plugin, enter the value "Empty value" (case sensitive) or
+the one you specified; This may be required when the action is "replace" too.
+- if an extra data has only one value, it will be a string. To force an array,
+add an element delimiter ("|" by default).
+- TODO Convert OpenDocument styles into html ones.
+
+Three modes allows to link collections, items and files between rows.
+
+- The recommended format is the cleares: fill a column "Collection" for items
+and a column "Item" for files, where the value is the identifier, that is
+generally the "Dublin Core:Identifier".
+- An index may be used with the column "name". All rows with the same name
+belong to the same document.
+- Else, the documents are processed as ordered, so a file belong to the previous
+item. This is always the case if there is a column "action".
+
+### Text (example for testing purpose)
+
+The text format for the metadata is just an example to try the plugin.It's a
+simple tagged file format, very similar to `.ini` formats: a metadata is a line
+that starts with the name of the element set (`Dublin Core` by default),
+followed by a colon `:` and by the name of the element (`Title`). The value is
+separated from the field name with an equal sign `=`. If this character is not
+present, the line is ignored, so it can be a comment. If an element has multiple
+lines, next lines start with two non significant spaces. Fields names and values
+are trimmed. Because values are trimmed, an empty line between two fields is not
+taken into account. Fields are repeatable. All documents in a file are merged.
 
 The `File` field, with the path to the file (absolute or relative to the
 metadata file), is needed only for a flat folder or when there are metadata for
@@ -408,65 +504,10 @@ Item = Document 2
 Title = Second Document
 ```
 
-### OpenDocument Text (`odt`)
+### OpenDocument Text (`odt`) (example for testing purpose)
 
-This format is the same than the text one, except that the two spaces is
-replaced by two underscores `__`.
-
-### OpenDocument Spreadsheet (`ods`)
-
-The first row of each sheet represents the element to import. Order of columns
-is not important. Unknown headers should be managed by the formats.
-
-To add multiple values to the same elements, for example multiple authors,
-three ways can be used:
-
-1. Set them in one or multiple columns with the same header;
-2. Repeat the data in some other rows, as long as there is a name in a column
-`Document`, or, if this is a file, to the file attached to the current document;
-3. Fill the cell with multiple values separated by an element delimiter, like
-pipe `|` or a character `end of line`.
-
-Metadata for a file should be set after the item ones and require a column
-`Document` that indicates the item to which the file is attached.
-
-Beside the [fork of Csv Import], some headers changed:
-
-- `ItemType` and `RecordType` are replaced by `Item Type` and `Record Type`;
-- `FileUrl` is replaced by `Files` (or `File`);
-- extra data are now written with the array notation, so they are different from
-standard elements: for example, `geolocation:latitude` is replaced by `geolocation[latitude]`;
-- all headers used to update a record are replaced by a unique extra identifier
-`Name` (or `Document`);
-- the update of a record always overwrites all of previous data, because the
-static repository contains only full records;
-- the only available `action` is `delete`, used only with the harvest format
-`Documents`.
-
-### METS and ALTO XML
-
-Any METS file can be imported as long as the profile uses Dublin Core metadata.
-Else, the class should be extended.
-
-The associated [Alto] file, an OCR format, can be ingested too as text. The
-plugin [OcrElementSet] should be installed first to create fields for it,
-because texts are saved at file level. Else, a hook can be used to import data
-somewhere else.
-
-The plugin [OcrElementSet] saves ocr about each image at file level, so the
-option "File Metadata" should be set.
-
-Two extra parameters can be managed:
-
-- "mets_fileGrp_document": allows to set the main file, if wanted and if any
-("document" by default).
-- "mets_fileGrps": allows to set the groups of files to import. This avoids
-to import only main files and not the thumbnails or other unwanted files. The
-default is "master, ocr, MASTER, OCR". If set to empty, only the first file
-group will be imported.
-
-Note: The namespace of the xslt stylesheets may need to be changed according to
-your files, or extend the class "OaiPmhStaticRepository_Mapping_Mets"
+This format is the same than the text one, except that the two spaces are
+replaced by two underscores `__`. It is only added as an example.
 
 
 Add a custom format
@@ -635,7 +676,8 @@ merged into one space.
 ### Import of metadata files with the same extension than files
 
 Import of files `ods` and `odt` are not possible, because these files are
-ingested as metadata files.
+ingested as metadata files. If wanted, currently, they should be disabled
+via the filter directly in the code of the plugin.
 
 ### Extensions and Media types
 
@@ -724,6 +766,7 @@ Copyright
 [OAI-PMH static repository]: https://www.openarchives.org/OAI/2.0/guidelines-static-repository.htm
 [OAI-PMH Harvester]: https://omeka.org/add-ons/plugins/oai-pmh-harvester
 [OAI-PMH Gateway]: https://github.com/Daniel-KM/OaiPmhGateway
+[Archive Folder]: https://github.com/Daniel-KM/ArchiveFolder
 [fork of Csv Import]: https://github.com/Daniel-KM/CsvImport
 [Xml Import]: https://github.com/Daniel-KM/XmlImport
 [improved fork]: https://github.com/Daniel-KM/OaiPmhRepository
@@ -731,7 +774,7 @@ Copyright
 [fixed release]: https://github.com/Daniel-KM/Geolocation
 [Mets]: https://www.loc.gov/standards/mets
 [Alto]: https://www.loc.gov/standards/alto
-[OcrElementSet]: https://github.com/Daniel-KM/OcrElementSet
+[Ocr Element Set]: https://github.com/Daniel-KM/Ocr Element Set
 [Geolocation]: https://omeka.org/add-ons/plugins/geolocation
 [Apache httpd]: https://httpd.apache.org
 [Jpeg 2000]: http://www.jpeg.org/jpeg2000
