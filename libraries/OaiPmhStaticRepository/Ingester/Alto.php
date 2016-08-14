@@ -16,6 +16,7 @@ class OaiPmhStaticRepository_Ingester_Alto extends OaiPmhStaticRepository_Ingest
     protected $_formatXml = self::XML_PREFIX;
     protected $_xmlRoot = self::XML_ROOT;
     protected $_xmlNamespace = self::XML_NAMESPACE;
+    protected $_xmlPrefix = self::XML_PREFIX;
 
     // Current doc for internal purposes.
     protected $_doc;

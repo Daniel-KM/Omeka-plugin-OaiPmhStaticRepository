@@ -51,6 +51,7 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
     protected $_formatXml;
     protected $_xmlRoot = '';
     protected $_xmlNamespace = '';
+    protected $_xmlPrefix = '';
     // The content of the file via SimpleXML.
     protected $_xml;
 
