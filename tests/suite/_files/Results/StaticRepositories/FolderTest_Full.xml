@@ -81,6 +81,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
   <dc:title>Monument de la renaissance africaine</dc:title>
   <dc:creator>Pierre Goudiaby</dc:creator>
   <dc:date>4 April 2010</dc:date>
+  <dc:format>52 m</dc:format>
   <dc:identifier>http://www.example.com/repository/Folder_Test/Monument%20de%20la%20renaissance%20africaine</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/3/3a/Le_Monument_de_la_Renaissance_africaine.jpg</dc:identifier>
   <dc:coverage>Senegal</dc:coverage>
@@ -187,7 +188,97 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:e35biwjv859yr6toelr2iezkw</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:db6868g574o0qhsz24otgh3g8</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>Mont Saint-Michel | English: Saint Michael's Mount</dc:title>
+  <dc:date>709</dc:date>
+  <dc:identifier>Mont Saint-Michel</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A01</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/France-Mont-Saint-Michel-1900_bordercropped.jpg/1200px-France-Mont-Saint-Michel-1900_bordercropped.jpg</dc:identifier>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:afam5dqeh3s7t7wgh4mk76jg0</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>Coliseum | English: Colosseum</dc:title>
+  <dc:creator>Vespasian | Titus</dc:creator>
+  <dc:date>70-80</dc:date>
+  <dc:identifier>Coliseum</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A02</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/8/87/Exterior_of_the_Coliseum_Rome_Italy.jpg</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/b/b3/Fyodor_Matveyev_1.jpg</dc:identifier>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:egh21c8f5hw9fgmupsnsw3sd4</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>0</dc:title>
+  <dc:creator>0.0</dc:creator>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A03</dc:identifier>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:69o6j2hbgh9ddewb1rgz50cul</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>Saint-Louis Cathedral (Carthage)</dc:title>
+  <dc:creator>Joseph Pougnet</dc:creator>
+  <dc:date>1884-1890</dc:date>
+  <dc:identifier>Saint-Louis Cathedral</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A04</dc:identifier>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:0bh35mp8eat5y5wbn7a4y5cde</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>Architectural Heritage</dc:title>
+  <dc:description>The description will be set during update.</dc:description>
+  <dc:identifier>Architectural Heritage</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A05</dc:identifier>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:5xum83py9cas5rkr66ilxskcj</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>Example of simple item from "manage_one.csv"</dc:title>
+  <dc:creator>Money</dc:creator>
+  <dc:description>Because this row hasn't got any identifier, the item can't be updated via the selected default Dublin Core:Identifier.</dc:description>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A06</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/a/a2/16_Franken_1800_HR_681735.jpg | https://upload.wikimedia.org/wikipedia/commons/6/6d/1935_Indian_Head_Buffalo_Nickel.jpg</dc:identifier>
+  <dc:rights>Public domain</dc:rights>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:7l0s752pscvkfjh1crsbfkvko</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -206,13 +297,12 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:apgrd6lc08r7i85xshyyzy5uz</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:116zgl70uiw2u1on62wzz2oqm</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:title>Reunification of Cameroon Monument</dc:title>
-  <dc:title>French: Monument de la réunification du Cameroun</dc:title>
+  <dc:title>Reunification of Cameroon Monument | French: Monument de la réunification du Cameroun</dc:title>
   <dc:creator>Salomon (architect)</dc:creator>
   <dc:creator>Gédéon Mpando (sculptor)</dc:creator>
   <dc:date>1973-1976</dc:date>
@@ -220,6 +310,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
   <dc:identifier>http://www.example.com/repository/Folder_Test/2</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/6/66/Monument_Reunification.jpg</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/7/71/Monument_de_la_R%C3%A9unification.JPG</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png | https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG</dc:identifier>
 </oai_dc:dc>
@@ -227,32 +318,30 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:9was6usq3rsp1u9r0evb4nq9f</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:2js6kww0vr0epek88ytlas7h1</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:title>Lion of Judah Monument</dc:title>
-  <dc:title>עברית: אנדרטת גור אריה יהודה</dc:title>
+  <dc:title>Lion of Judah Monument | עברית: אנדרטת גור אריה יהודה</dc:title>
   <dc:creator>Emporer Haile Selassie</dc:creator>
   <dc:creator>Photo by Ludo Kuipers</dc:creator>
-  <dc:date>1930</dc:date>
-  <dc:date>Photo: Feb 12, 1973</dc:date>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A03</dc:identifier>
+  <dc:date>1930 | Photo: Feb 12, 1973</dc:date>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A09</dc:identifier>
   <dc:identifier>http://worldpics.com.au/Ethiopia/addisababa/slides/1973021201.jpg</dc:identifier>
 </oai_dc:dc>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:4br1gp4civlgwhp7fzoeekfi8</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:b2d5t9jwxgf6ouoaoxih67g8z</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
   <dc:title>Livingstone–Stanley Monument</dc:title>
   <dc:type>Still Image</dc:type>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A04</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A010</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/f/fd/Livingstone_monument_burundi.jpg</dc:identifier>
   <dc:rights>Public domain</dc:rights>
 </oai_dc:dc>
@@ -260,13 +349,13 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:6m8c9vk60fnw2me1mrbnbdnz0</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:2f8ixrltvamw0b6vfx4kl55gz</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
   <dc:title>Sphinx</dc:title>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A05</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A011</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/9/94/Brooklyn_Museum_-_Egypt_Gizeh.jpg</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/d/de/Paris_H%C3%B4tel_de_Ville_2497_07.jpg</dc:identifier>
 </oai_dc:dc>
@@ -274,7 +363,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:a0h62v1tjbinmvaiwus6bfa44</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:ezk413afwgmflahxmks84g7zb</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -285,13 +374,13 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
 There is an empty line before this one (as text).
 Headers of this sheet are different from the first.
 The item has two files without specific metadata.</dc:description>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A06</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A012</dc:identifier>
 </oai_dc:dc>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:957u7yv6qc1yxa0d0lbfs4bqm</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:5l45fyf6dukpylxmswq3wti98</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -310,7 +399,7 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:dhydyah9m4wp0l2mlzijbnqj0</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:b2dto70l87ngaocpblgayw4kh</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -323,13 +412,13 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:drj3u2q6pzrcm517di74uhvmx</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:esovxzfi6kqc3j48tsbwg35li</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:title>/</dc:title>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/</dc:identifier>
+  <dc:title>[root]</dc:title>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/%5Broot%5D</dc:identifier>
   <dc:identifier>http://www.example.com/repository/Folder_Test/image_Root_1.png</dc:identifier>
   <dc:identifier>http://www.example.com/repository/Folder_Test/image_Root_2.png</dc:identifier>
 </oai_dc:dc>
@@ -337,7 +426,7 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:2xw86wmomdxefghyagkwr4eu2</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:5buhti4etj32fvyr58gweqaxu</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -395,6 +484,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
   <dc:title>Monument de la renaissance africaine</dc:title>
   <dc:creator>Pierre Goudiaby</dc:creator>
   <dc:date>4 April 2010</dc:date>
+  <dc:format>52 m</dc:format>
   <dc:identifier>http://www.example.com/repository/Folder_Test/Monument%20de%20la%20renaissance%20africaine</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/3/3a/Le_Monument_de_la_Renaissance_africaine.jpg</dc:identifier>
   <dc:coverage>Senegal</dc:coverage>
@@ -502,7 +592,97 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:e35biwjv859yr6toelr2iezkw</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:db6868g574o0qhsz24otgh3g8</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>Mont Saint-Michel | English: Saint Michael's Mount</dc:title>
+  <dc:date>709</dc:date>
+  <dc:identifier>Mont Saint-Michel</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A01</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/France-Mont-Saint-Michel-1900_bordercropped.jpg/1200px-France-Mont-Saint-Michel-1900_bordercropped.jpg</dc:identifier>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:afam5dqeh3s7t7wgh4mk76jg0</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>Coliseum | English: Colosseum</dc:title>
+  <dc:creator>Vespasian | Titus</dc:creator>
+  <dc:date>70-80</dc:date>
+  <dc:identifier>Coliseum</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A02</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/8/87/Exterior_of_the_Coliseum_Rome_Italy.jpg</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/b/b3/Fyodor_Matveyev_1.jpg</dc:identifier>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:egh21c8f5hw9fgmupsnsw3sd4</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>0</dc:title>
+  <dc:creator>0.0</dc:creator>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A03</dc:identifier>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:69o6j2hbgh9ddewb1rgz50cul</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>Saint-Louis Cathedral (Carthage)</dc:title>
+  <dc:creator>Joseph Pougnet</dc:creator>
+  <dc:date>1884-1890</dc:date>
+  <dc:identifier>Saint-Louis Cathedral</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A04</dc:identifier>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:0bh35mp8eat5y5wbn7a4y5cde</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>Architectural Heritage</dc:title>
+  <dc:description>The description will be set during update.</dc:description>
+  <dc:identifier>Architectural Heritage</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A05</dc:identifier>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:5xum83py9cas5rkr66ilxskcj</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>Example of simple item from "manage_one.csv"</dc:title>
+  <dc:creator>Money</dc:creator>
+  <dc:description>Because this row hasn't got any identifier, the item can't be updated via the selected default Dublin Core:Identifier.</dc:description>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A06</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/a/a2/16_Franken_1800_HR_681735.jpg | https://upload.wikimedia.org/wikipedia/commons/6/6d/1935_Indian_Head_Buffalo_Nickel.jpg</dc:identifier>
+  <dc:rights>Public domain</dc:rights>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:7l0s752pscvkfjh1crsbfkvko</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -521,13 +701,12 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:apgrd6lc08r7i85xshyyzy5uz</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:116zgl70uiw2u1on62wzz2oqm</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
-  <dc:title>Reunification of Cameroon Monument</dc:title>
-  <dc:title>French: Monument de la réunification du Cameroun</dc:title>
+  <dc:title>Reunification of Cameroon Monument | French: Monument de la réunification du Cameroun</dc:title>
   <dc:creator>Salomon (architect)</dc:creator>
   <dc:creator>Gédéon Mpando (sculptor)</dc:creator>
   <dc:date>1973-1976</dc:date>
@@ -535,6 +714,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
   <dc:identifier>http://www.example.com/repository/Folder_Test/2</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/6/66/Monument_Reunification.jpg</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/7/71/Monument_de_la_R%C3%A9unification.JPG</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png | https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG</dc:identifier>
 </oai_dcterms:dcterms>
@@ -542,32 +722,30 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:9was6usq3rsp1u9r0evb4nq9f</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:2js6kww0vr0epek88ytlas7h1</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
-  <dc:title>Lion of Judah Monument</dc:title>
-  <dc:title>עברית: אנדרטת גור אריה יהודה</dc:title>
+  <dc:title>Lion of Judah Monument | עברית: אנדרטת גור אריה יהודה</dc:title>
   <dc:creator>Emporer Haile Selassie</dc:creator>
   <dc:creator>Photo by Ludo Kuipers</dc:creator>
-  <dc:date>1930</dc:date>
-  <dc:date>Photo: Feb 12, 1973</dc:date>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A03</dc:identifier>
+  <dc:date>1930 | Photo: Feb 12, 1973</dc:date>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A09</dc:identifier>
   <dc:identifier>http://worldpics.com.au/Ethiopia/addisababa/slides/1973021201.jpg</dc:identifier>
 </oai_dcterms:dcterms>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:4br1gp4civlgwhp7fzoeekfi8</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:b2d5t9jwxgf6ouoaoxih67g8z</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
   <dc:title>Livingstone–Stanley Monument</dc:title>
   <dc:type>Still Image</dc:type>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A04</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A010</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/f/fd/Livingstone_monument_burundi.jpg</dc:identifier>
   <dc:rights>Public domain</dc:rights>
 </oai_dcterms:dcterms>
@@ -575,13 +753,13 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:6m8c9vk60fnw2me1mrbnbdnz0</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:2f8ixrltvamw0b6vfx4kl55gz</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
   <dc:title>Sphinx</dc:title>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A05</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A011</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/9/94/Brooklyn_Museum_-_Egypt_Gizeh.jpg</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/d/de/Paris_H%C3%B4tel_de_Ville_2497_07.jpg</dc:identifier>
 </oai_dcterms:dcterms>
@@ -589,7 +767,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:a0h62v1tjbinmvaiwus6bfa44</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:ezk413afwgmflahxmks84g7zb</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -600,13 +778,13 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
 There is an empty line before this one (as text).
 Headers of this sheet are different from the first.
 The item has two files without specific metadata.</dc:description>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A06</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A012</dc:identifier>
 </oai_dcterms:dcterms>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:957u7yv6qc1yxa0d0lbfs4bqm</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:5l45fyf6dukpylxmswq3wti98</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -625,7 +803,7 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:dhydyah9m4wp0l2mlzijbnqj0</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:b2dto70l87ngaocpblgayw4kh</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -638,13 +816,13 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:drj3u2q6pzrcm517di74uhvmx</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:esovxzfi6kqc3j48tsbwg35li</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
-  <dc:title>/</dc:title>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/</dc:identifier>
+  <dc:title>[root]</dc:title>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/%5Broot%5D</dc:identifier>
   <dc:identifier>http://www.example.com/repository/Folder_Test/image_Root_1.png</dc:identifier>
   <dc:identifier>http://www.example.com/repository/Folder_Test/image_Root_2.png</dc:identifier>
 </oai_dcterms:dcterms>
@@ -652,7 +830,7 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:2xw86wmomdxefghyagkwr4eu2</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:5buhti4etj32fvyr58gweqaxu</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -710,6 +888,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
   <dc:title>Monument de la renaissance africaine</dc:title>
   <dc:creator>Pierre Goudiaby</dc:creator>
   <dc:date>4 April 2010</dc:date>
+  <dc:format>52 m</dc:format>
   <dc:identifier>http://www.example.com/repository/Folder_Test/Monument%20de%20la%20renaissance%20africaine</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/3/3a/Le_Monument_de_la_Renaissance_africaine.jpg</dc:identifier>
   <dc:coverage>Senegal</dc:coverage>
@@ -817,7 +996,97 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:e35biwjv859yr6toelr2iezkw</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:db6868g574o0qhsz24otgh3g8</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>Mont Saint-Michel | English: Saint Michael's Mount</dc:title>
+  <dc:date>709</dc:date>
+  <dc:identifier>Mont Saint-Michel</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A01</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/France-Mont-Saint-Michel-1900_bordercropped.jpg/1200px-France-Mont-Saint-Michel-1900_bordercropped.jpg</dc:identifier>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:afam5dqeh3s7t7wgh4mk76jg0</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>Coliseum | English: Colosseum</dc:title>
+  <dc:creator>Vespasian | Titus</dc:creator>
+  <dc:date>70-80</dc:date>
+  <dc:identifier>Coliseum</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A02</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/8/87/Exterior_of_the_Coliseum_Rome_Italy.jpg</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/b/b3/Fyodor_Matveyev_1.jpg</dc:identifier>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:egh21c8f5hw9fgmupsnsw3sd4</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>0</dc:title>
+  <dc:creator>0.0</dc:creator>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A03</dc:identifier>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:69o6j2hbgh9ddewb1rgz50cul</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>Saint-Louis Cathedral (Carthage)</dc:title>
+  <dc:creator>Joseph Pougnet</dc:creator>
+  <dc:date>1884-1890</dc:date>
+  <dc:identifier>Saint-Louis Cathedral</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A04</dc:identifier>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:0bh35mp8eat5y5wbn7a4y5cde</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>Architectural Heritage</dc:title>
+  <dc:description>The description will be set during update.</dc:description>
+  <dc:identifier>Architectural Heritage</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A05</dc:identifier>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:5xum83py9cas5rkr66ilxskcj</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>Example of simple item from "manage_one.csv"</dc:title>
+  <dc:creator>Money</dc:creator>
+  <dc:description>Because this row hasn't got any identifier, the item can't be updated via the selected default Dublin Core:Identifier.</dc:description>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A06</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/a/a2/16_Franken_1800_HR_681735.jpg | https://upload.wikimedia.org/wikipedia/commons/6/6d/1935_Indian_Head_Buffalo_Nickel.jpg</dc:identifier>
+  <dc:rights>Public domain</dc:rights>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:7l0s752pscvkfjh1crsbfkvko</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -836,13 +1105,12 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:apgrd6lc08r7i85xshyyzy5uz</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:116zgl70uiw2u1on62wzz2oqm</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
-  <dc:title>Reunification of Cameroon Monument</dc:title>
-  <dc:title>French: Monument de la réunification du Cameroun</dc:title>
+  <dc:title>Reunification of Cameroon Monument | French: Monument de la réunification du Cameroun</dc:title>
   <dc:creator>Salomon (architect)</dc:creator>
   <dc:creator>Gédéon Mpando (sculptor)</dc:creator>
   <dc:date>1973-1976</dc:date>
@@ -850,6 +1118,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
   <dc:identifier>http://www.example.com/repository/Folder_Test/2</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/6/66/Monument_Reunification.jpg</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/7/71/Monument_de_la_R%C3%A9unification.JPG</dc:identifier>
+  <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png | https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG</dc:identifier>
 </oai_dcq:dcterms>
@@ -857,32 +1126,30 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:9was6usq3rsp1u9r0evb4nq9f</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:2js6kww0vr0epek88ytlas7h1</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
-  <dc:title>Lion of Judah Monument</dc:title>
-  <dc:title>עברית: אנדרטת גור אריה יהודה</dc:title>
+  <dc:title>Lion of Judah Monument | עברית: אנדרטת גור אריה יהודה</dc:title>
   <dc:creator>Emporer Haile Selassie</dc:creator>
   <dc:creator>Photo by Ludo Kuipers</dc:creator>
-  <dc:date>1930</dc:date>
-  <dc:date>Photo: Feb 12, 1973</dc:date>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A03</dc:identifier>
+  <dc:date>1930 | Photo: Feb 12, 1973</dc:date>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A09</dc:identifier>
   <dc:identifier>http://worldpics.com.au/Ethiopia/addisababa/slides/1973021201.jpg</dc:identifier>
 </oai_dcq:dcterms>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:4br1gp4civlgwhp7fzoeekfi8</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:b2d5t9jwxgf6ouoaoxih67g8z</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
   <dc:title>Livingstone–Stanley Monument</dc:title>
   <dc:type>Still Image</dc:type>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A04</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A010</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/f/fd/Livingstone_monument_burundi.jpg</dc:identifier>
   <dc:rights>Public domain</dc:rights>
 </oai_dcq:dcterms>
@@ -890,13 +1157,13 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:6m8c9vk60fnw2me1mrbnbdnz0</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:2f8ixrltvamw0b6vfx4kl55gz</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
   <dc:title>Sphinx</dc:title>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A05</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A011</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/9/94/Brooklyn_Museum_-_Egypt_Gizeh.jpg</dc:identifier>
   <dc:identifier>https://upload.wikimedia.org/wikipedia/commons/d/de/Paris_H%C3%B4tel_de_Ville_2497_07.jpg</dc:identifier>
 </oai_dcq:dcterms>
@@ -904,7 +1171,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:a0h62v1tjbinmvaiwus6bfa44</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:ezk413afwgmflahxmks84g7zb</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -915,13 +1182,13 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
 There is an empty line before this one (as text).
 Headers of this sheet are different from the first.
 The item has two files without specific metadata.</dc:description>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A06</dc:identifier>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A012</dc:identifier>
 </oai_dcq:dcterms>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:957u7yv6qc1yxa0d0lbfs4bqm</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:5l45fyf6dukpylxmswq3wti98</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -940,7 +1207,7 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:dhydyah9m4wp0l2mlzijbnqj0</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:b2dto70l87ngaocpblgayw4kh</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -953,13 +1220,13 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:drj3u2q6pzrcm517di74uhvmx</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:esovxzfi6kqc3j48tsbwg35li</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
-  <dc:title>/</dc:title>
-  <dc:identifier>http://www.example.com/repository/Folder_Test/</dc:identifier>
+  <dc:title>[root]</dc:title>
+  <dc:identifier>http://www.example.com/repository/Folder_Test/%5Broot%5D</dc:identifier>
   <dc:identifier>http://www.example.com/repository/Folder_Test/image_Root_1.png</dc:identifier>
   <dc:identifier>http://www.example.com/repository/Folder_Test/image_Root_2.png</dc:identifier>
 </oai_dcq:dcterms>
@@ -967,7 +1234,7 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:2xw86wmomdxefghyagkwr4eu2</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:5buhti4etj32fvyr58gweqaxu</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -988,7 +1255,7 @@ This is the second line of the description, after a line break.</dc:description>
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -1036,7 +1303,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -1066,7 +1333,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -1078,6 +1345,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
         <dc:title>Monument de la renaissance africaine</dc:title>
         <dc:creator>Pierre Goudiaby</dc:creator>
         <dc:date>4 April 2010</dc:date>
+        <dc:format>52 m</dc:format>
         <dc:identifier>http://www.example.com/repository/Folder_Test/Monument%20de%20la%20renaissance%20africaine</dc:identifier>
         <dc:coverage>Senegal</dc:coverage>
       </xmlData>
@@ -1105,7 +1373,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -1157,7 +1425,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</dc:descri
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -1189,7 +1457,7 @@ This is a <i>tagged word</i>, managed even if there isn't a root tag.</dc:descri
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -1232,7 +1500,7 @@ The cathedral is the mother church of the Roman Catholic Archdiocese of Florence
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -1338,18 +1606,234 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:e35biwjv859yr6toelr2iezkw</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:db6868g574o0qhsz24otgh3g8</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.08">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Mont Saint-Michel | English: Saint Michael's Mount</dc:title>
+        <dc:date>709</dc:date>
+        <dc:identifier>Mont Saint-Michel</dc:identifier>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A01</dc:identifier>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original">
+      <file ID="original.08.1" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="1200px-France-Mont-Saint-Michel-1900_bordercropped.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/France-Mont-Saint-Michel-1900_bordercropped.jpg/1200px-France-Mont-Saint-Michel-1900_bordercropped.jpg"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.08">
+      <fptr FILEID="original.08.1"/>
+    </div>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:afam5dqeh3s7t7wgh4mk76jg0</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.09">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Coliseum | English: Colosseum</dc:title>
+        <dc:creator>Vespasian | Titus</dc:creator>
+        <dc:date>70-80</dc:date>
+        <dc:identifier>Coliseum</dc:identifier>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A02</dc:identifier>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original">
+      <file ID="original.09.1" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Exterior_of_the_Coliseum_Rome_Italy.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/8/87/Exterior_of_the_Coliseum_Rome_Italy.jpg"/>
+      </file>
+      <file ID="original.09.2" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Fyodor_Matveyev_1.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/b/b3/Fyodor_Matveyev_1.jpg"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.09">
+      <fptr FILEID="original.09.1"/>
+      <fptr FILEID="original.09.2"/>
+    </div>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:egh21c8f5hw9fgmupsnsw3sd4</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.010">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>0</dc:title>
+        <dc:creator>0.0</dc:creator>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A03</dc:identifier>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.010"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:69o6j2hbgh9ddewb1rgz50cul</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.011">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Saint-Louis Cathedral (Carthage)</dc:title>
+        <dc:creator>Joseph Pougnet</dc:creator>
+        <dc:date>1884-1890</dc:date>
+        <dc:identifier>Saint-Louis Cathedral</dc:identifier>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A04</dc:identifier>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.011"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:0bh35mp8eat5y5wbn7a4y5cde</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.012">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Architectural Heritage</dc:title>
+        <dc:description>The description will be set during update.</dc:description>
+        <dc:identifier>Architectural Heritage</dc:identifier>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A05</dc:identifier>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.012"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:5xum83py9cas5rkr66ilxskcj</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.013">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Example of simple item from "manage_one.csv"</dc:title>
+        <dc:creator>Money</dc:creator>
+        <dc:description>Because this row hasn't got any identifier, the item can't be updated via the selected default Dublin Core:Identifier.</dc:description>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A06</dc:identifier>
+        <dc:rights>Public domain</dc:rights>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original">
+      <file ID="original.013.1" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="1935_Indian_Head_Buffalo_Nickel.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/a/a2/16_Franken_1800_HR_681735.jpg | https://upload.wikimedia.org/wikipedia/commons/6/6d/1935_Indian_Head_Buffalo_Nickel.jpg"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.013">
+      <fptr FILEID="original.013.1"/>
+    </div>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:7l0s752pscvkfjh1crsbfkvko</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.014">
     <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
       <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
         <dc:title>Bronze statue of a seated Cecil Rhodes at the University of Cape Town</dc:title>
@@ -1364,263 +1848,11 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
   </dmdSec>
   <fileSec>
     <fileGrp USE="original">
-      <file ID="original.08.1" MIMETYPE="image/jpeg">
+      <file ID="original.014.1" MIMETYPE="image/jpeg">
         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="UCT_Cape_Town_-_Statue_of_Rhodes.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/7/7f/UCT_Cape_Town_-_Statue_of_Rhodes.jpg"/>
       </file>
-      <file ID="original.08.2" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Cecil_John_Rhodes_looking_over_Cape_Town_%287347447748%29.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/3/37/Cecil_John_Rhodes_looking_over_Cape_Town_%287347447748%29.jpg"/>
-      </file>
-    </fileGrp>
-  </fileSec>
-  <structMap>
-    <div DMDID="DMD.08">
-      <fptr FILEID="original.08.1"/>
-      <fptr FILEID="original.08.2"/>
-    </div>
-  </structMap>
-</mets>
-</oai:metadata>
-    </oai:record>
-    <oai:record>
-      <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:apgrd6lc08r7i85xshyyzy5uz</oai:identifier>
-        <oai:datestamp>2015-01-01</oai:datestamp>
-      </oai:header>
-      <oai:metadata>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
-    <agent ROLE="CREATOR">
-      <name>foobar@example.com</name>
-      <note>OAI-PMH Static Repository for Omeka</note>
-    </agent>
-  </metsHdr>
-  <dmdSec ID="DMD.09">
-    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
-      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
-        <dc:title>Reunification of Cameroon Monument</dc:title>
-        <dc:title>French: Monument de la réunification du Cameroun</dc:title>
-        <dc:creator>Salomon (architect)</dc:creator>
-        <dc:creator>Gédéon Mpando (sculptor)</dc:creator>
-        <dc:date>1973-1976</dc:date>
-        <dc:type>Still Image</dc:type>
-        <dc:identifier>http://www.example.com/repository/Folder_Test/2</dc:identifier>
-      </xmlData>
-    </mdWrap>
-  </dmdSec>
-  <fileSec>
-    <fileGrp USE="original">
-      <file ID="original.09.1" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Monument_Reunification.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/6/66/Monument_Reunification.jpg"/>
-      </file>
-      <file ID="original.09.2" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Monument_de_la_R%C3%A9unification.JPG" xlink:href="https://upload.wikimedia.org/wikipedia/commons/7/71/Monument_de_la_R%C3%A9unification.JPG"/>
-      </file>
-      <file ID="original.09.3" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="YaoundeReunificationStatue.png" xlink:href="https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png"/>
-      </file>
-      <file ID="original.09.4" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Monument_Reunification_6.JPG" xlink:href="https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG"/>
-      </file>
-    </fileGrp>
-  </fileSec>
-  <structMap>
-    <div DMDID="DMD.09">
-      <fptr FILEID="original.09.1"/>
-      <fptr FILEID="original.09.2"/>
-      <fptr FILEID="original.09.3"/>
-      <fptr FILEID="original.09.4"/>
-    </div>
-  </structMap>
-</mets>
-</oai:metadata>
-    </oai:record>
-    <oai:record>
-      <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:9was6usq3rsp1u9r0evb4nq9f</oai:identifier>
-        <oai:datestamp>2015-01-01</oai:datestamp>
-      </oai:header>
-      <oai:metadata>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
-    <agent ROLE="CREATOR">
-      <name>foobar@example.com</name>
-      <note>OAI-PMH Static Repository for Omeka</note>
-    </agent>
-  </metsHdr>
-  <dmdSec ID="DMD.010">
-    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
-      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
-        <dc:title>Lion of Judah Monument</dc:title>
-        <dc:title>עברית: אנדרטת גור אריה יהודה</dc:title>
-        <dc:creator>Emporer Haile Selassie</dc:creator>
-        <dc:creator>Photo by Ludo Kuipers</dc:creator>
-        <dc:date>1930</dc:date>
-        <dc:date>Photo: Feb 12, 1973</dc:date>
-        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A03</dc:identifier>
-      </xmlData>
-    </mdWrap>
-  </dmdSec>
-  <fileSec>
-    <fileGrp USE="original">
-      <file ID="original.010.1" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="1973021201.jpg" xlink:href="http://worldpics.com.au/Ethiopia/addisababa/slides/1973021201.jpg"/>
-      </file>
-    </fileGrp>
-  </fileSec>
-  <structMap>
-    <div DMDID="DMD.010">
-      <fptr FILEID="original.010.1"/>
-    </div>
-  </structMap>
-</mets>
-</oai:metadata>
-    </oai:record>
-    <oai:record>
-      <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:4br1gp4civlgwhp7fzoeekfi8</oai:identifier>
-        <oai:datestamp>2015-01-01</oai:datestamp>
-      </oai:header>
-      <oai:metadata>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
-    <agent ROLE="CREATOR">
-      <name>foobar@example.com</name>
-      <note>OAI-PMH Static Repository for Omeka</note>
-    </agent>
-  </metsHdr>
-  <dmdSec ID="DMD.011">
-    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
-      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
-        <dc:title>Livingstone–Stanley Monument</dc:title>
-        <dc:type>Still Image</dc:type>
-        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A04</dc:identifier>
-        <dc:rights>Public domain</dc:rights>
-      </xmlData>
-    </mdWrap>
-  </dmdSec>
-  <fileSec>
-    <fileGrp USE="original">
-      <file ID="original.011.1" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Livingstone_monument_burundi.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/f/fd/Livingstone_monument_burundi.jpg"/>
-      </file>
-    </fileGrp>
-  </fileSec>
-  <structMap>
-    <div DMDID="DMD.011">
-      <fptr FILEID="original.011.1"/>
-    </div>
-  </structMap>
-</mets>
-</oai:metadata>
-    </oai:record>
-    <oai:record>
-      <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:6m8c9vk60fnw2me1mrbnbdnz0</oai:identifier>
-        <oai:datestamp>2015-01-01</oai:datestamp>
-      </oai:header>
-      <oai:metadata>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
-    <agent ROLE="CREATOR">
-      <name>foobar@example.com</name>
-      <note>OAI-PMH Static Repository for Omeka</note>
-    </agent>
-  </metsHdr>
-  <dmdSec ID="DMD.012">
-    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
-      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
-        <dc:title>Sphinx</dc:title>
-        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A05</dc:identifier>
-      </xmlData>
-    </mdWrap>
-  </dmdSec>
-  <fileSec>
-    <fileGrp USE="original">
-      <file ID="original.012.1" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Brooklyn_Museum_-_Egypt_Gizeh.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/9/94/Brooklyn_Museum_-_Egypt_Gizeh.jpg"/>
-      </file>
-      <file ID="original.012.2" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Paris_H%C3%B4tel_de_Ville_2497_07.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/d/de/Paris_H%C3%B4tel_de_Ville_2497_07.jpg"/>
-      </file>
-    </fileGrp>
-  </fileSec>
-  <structMap>
-    <div DMDID="DMD.012">
-      <fptr FILEID="original.012.1"/>
-      <fptr FILEID="original.012.2"/>
-    </div>
-  </structMap>
-</mets>
-</oai:metadata>
-    </oai:record>
-    <oai:record>
-      <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:a0h62v1tjbinmvaiwus6bfa44</oai:identifier>
-        <oai:datestamp>2015-01-01</oai:datestamp>
-      </oai:header>
-      <oai:metadata>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
-    <agent ROLE="CREATOR">
-      <name>foobar@example.com</name>
-      <note>OAI-PMH Static Repository for Omeka</note>
-    </agent>
-  </metsHdr>
-  <dmdSec ID="DMD.013">
-    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
-      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
-        <dc:title>The description of this document from "External_Metadata.ods" has multiple lines.</dc:title>
-        <dc:description>This cell has multiple lines.
-
-There is an empty line before this one (as text).
-Headers of this sheet are different from the first.
-The item has two files without specific metadata.</dc:description>
-        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A06</dc:identifier>
-      </xmlData>
-    </mdWrap>
-  </dmdSec>
-  <fileSec>
-    <fileGrp USE="original"/>
-  </fileSec>
-  <structMap>
-    <div DMDID="DMD.013"/>
-  </structMap>
-</mets>
-</oai:metadata>
-    </oai:record>
-    <oai:record>
-      <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:957u7yv6qc1yxa0d0lbfs4bqm</oai:identifier>
-        <oai:datestamp>2015-01-01</oai:datestamp>
-      </oai:header>
-      <oai:metadata>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
-    <agent ROLE="CREATOR">
-      <name>foobar@example.com</name>
-      <note>OAI-PMH Static Repository for Omeka</note>
-    </agent>
-  </metsHdr>
-  <dmdSec ID="DMD.014">
-    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
-      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
-        <dc:title>Title of the document of the Directory B (from “OpenDocument_Metadata_Dir_B.odt”)</dc:title>
-        <dc:creator>Helen Smith</dc:creator>
-        <dc:creator>Jack Smith</dc:creator>
-        <dc:description>This is the Dublin Core Description of the document of the Directory A.
-This is the second line of the description, after a line break.</dc:description>
-        <dc:date>2015-01-01</dc:date>
-        <dc:identifier>http://www.example.com/repository/Folder_Test/First%20document</dc:identifier>
-      </xmlData>
-    </mdWrap>
-  </dmdSec>
-  <fileSec>
-    <fileGrp USE="original">
-      <file ID="original.014.1" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="image_Dir_B_1.png" xlink:href="http://www.example.com/repository/Folder_Test/Dir_B/image_Dir_B_1.png"/>
-      </file>
       <file ID="original.014.2" MIMETYPE="image/jpeg">
-        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="image_Dir_B_2.png" xlink:href="http://www.example.com/repository/Folder_Test/Dir_B/image_Dir_B_2.png"/>
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Cecil_John_Rhodes_looking_over_Cape_Town_%287347447748%29.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/3/37/Cecil_John_Rhodes_looking_over_Cape_Town_%287347447748%29.jpg"/>
       </file>
     </fileGrp>
   </fileSec>
@@ -1635,18 +1867,271 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:dhydyah9m4wp0l2mlzijbnqj0</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:116zgl70uiw2u1on62wzz2oqm</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
   <dmdSec ID="DMD.015">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Reunification of Cameroon Monument | French: Monument de la réunification du Cameroun</dc:title>
+        <dc:creator>Salomon (architect)</dc:creator>
+        <dc:creator>Gédéon Mpando (sculptor)</dc:creator>
+        <dc:date>1973-1976</dc:date>
+        <dc:type>Still Image</dc:type>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/2</dc:identifier>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original">
+      <file ID="original.015.1" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Monument_Reunification.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/6/66/Monument_Reunification.jpg"/>
+      </file>
+      <file ID="original.015.2" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Monument_de_la_R%C3%A9unification.JPG" xlink:href="https://upload.wikimedia.org/wikipedia/commons/7/71/Monument_de_la_R%C3%A9unification.JPG"/>
+      </file>
+      <file ID="original.015.3" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Monument_Reunification_6.JPG" xlink:href="https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png | https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG"/>
+      </file>
+      <file ID="original.015.4" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="YaoundeReunificationStatue.png" xlink:href="https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png"/>
+      </file>
+      <file ID="original.015.5" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Monument_Reunification_6.JPG" xlink:href="https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.015">
+      <fptr FILEID="original.015.1"/>
+      <fptr FILEID="original.015.2"/>
+      <fptr FILEID="original.015.3"/>
+      <fptr FILEID="original.015.4"/>
+      <fptr FILEID="original.015.5"/>
+    </div>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:2js6kww0vr0epek88ytlas7h1</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.016">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Lion of Judah Monument | עברית: אנדרטת גור אריה יהודה</dc:title>
+        <dc:creator>Emporer Haile Selassie</dc:creator>
+        <dc:creator>Photo by Ludo Kuipers</dc:creator>
+        <dc:date>1930 | Photo: Feb 12, 1973</dc:date>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A09</dc:identifier>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original">
+      <file ID="original.016.1" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="1973021201.jpg" xlink:href="http://worldpics.com.au/Ethiopia/addisababa/slides/1973021201.jpg"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.016">
+      <fptr FILEID="original.016.1"/>
+    </div>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:b2d5t9jwxgf6ouoaoxih67g8z</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.017">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Livingstone–Stanley Monument</dc:title>
+        <dc:type>Still Image</dc:type>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A010</dc:identifier>
+        <dc:rights>Public domain</dc:rights>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original">
+      <file ID="original.017.1" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Livingstone_monument_burundi.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/f/fd/Livingstone_monument_burundi.jpg"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.017">
+      <fptr FILEID="original.017.1"/>
+    </div>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:2f8ixrltvamw0b6vfx4kl55gz</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.018">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Sphinx</dc:title>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A011</dc:identifier>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original">
+      <file ID="original.018.1" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Brooklyn_Museum_-_Egypt_Gizeh.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/9/94/Brooklyn_Museum_-_Egypt_Gizeh.jpg"/>
+      </file>
+      <file ID="original.018.2" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Paris_H%C3%B4tel_de_Ville_2497_07.jpg" xlink:href="https://upload.wikimedia.org/wikipedia/commons/d/de/Paris_H%C3%B4tel_de_Ville_2497_07.jpg"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.018">
+      <fptr FILEID="original.018.1"/>
+      <fptr FILEID="original.018.2"/>
+    </div>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:ezk413afwgmflahxmks84g7zb</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.019">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>The description of this document from "External_Metadata.ods" has multiple lines.</dc:title>
+        <dc:description>This cell has multiple lines.
+
+There is an empty line before this one (as text).
+Headers of this sheet are different from the first.
+The item has two files without specific metadata.</dc:description>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A012</dc:identifier>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.019"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:5l45fyf6dukpylxmswq3wti98</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.020">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Title of the document of the Directory B (from “OpenDocument_Metadata_Dir_B.odt”)</dc:title>
+        <dc:creator>Helen Smith</dc:creator>
+        <dc:creator>Jack Smith</dc:creator>
+        <dc:description>This is the Dublin Core Description of the document of the Directory A.
+This is the second line of the description, after a line break.</dc:description>
+        <dc:date>2015-01-01</dc:date>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/First%20document</dc:identifier>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original">
+      <file ID="original.020.1" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="image_Dir_B_1.png" xlink:href="http://www.example.com/repository/Folder_Test/Dir_B/image_Dir_B_1.png"/>
+      </file>
+      <file ID="original.020.2" MIMETYPE="image/jpeg">
+        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="image_Dir_B_2.png" xlink:href="http://www.example.com/repository/Folder_Test/Dir_B/image_Dir_B_2.png"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.020">
+      <fptr FILEID="original.020.1"/>
+      <fptr FILEID="original.020.2"/>
+    </div>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:b2dto70l87ngaocpblgayw4kh</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.021">
     <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
       <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
         <dc:title>Second document of “OpenDocument_Metadata_Dir_B.odt”, without attached file</dc:title>
@@ -1659,46 +2144,46 @@ This is the second line of the description, after a line break.</dc:description>
     <fileGrp USE="original"/>
   </fileSec>
   <structMap>
-    <div DMDID="DMD.015"/>
+    <div DMDID="DMD.021"/>
   </structMap>
 </mets>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:drj3u2q6pzrcm517di74uhvmx</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:esovxzfi6kqc3j48tsbwg35li</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
-  <dmdSec ID="DMD.016">
+  <dmdSec ID="DMD.022">
     <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
       <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
-        <dc:title>/</dc:title>
-        <dc:identifier>http://www.example.com/repository/Folder_Test/</dc:identifier>
+        <dc:title>[root]</dc:title>
+        <dc:identifier>http://www.example.com/repository/Folder_Test/%5Broot%5D</dc:identifier>
       </xmlData>
     </mdWrap>
   </dmdSec>
   <fileSec>
     <fileGrp USE="original">
-      <file ID="original.016.1" MIMETYPE="image/jpeg">
+      <file ID="original.022.1" MIMETYPE="image/jpeg">
         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="image_Root_1.png" xlink:href="http://www.example.com/repository/Folder_Test/image_Root_1.png"/>
       </file>
-      <file ID="original.016.2" MIMETYPE="image/jpeg">
+      <file ID="original.022.2" MIMETYPE="image/jpeg">
         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="image_Root_2.png" xlink:href="http://www.example.com/repository/Folder_Test/image_Root_2.png"/>
       </file>
     </fileGrp>
   </fileSec>
   <structMap>
-    <div DMDID="DMD.016">
-      <fptr FILEID="original.016.1"/>
-      <fptr FILEID="original.016.2"/>
+    <div DMDID="DMD.022">
+      <fptr FILEID="original.022.1"/>
+      <fptr FILEID="original.022.2"/>
     </div>
   </structMap>
 </mets>
@@ -1706,18 +2191,18 @@ This is the second line of the description, after a line break.</dc:description>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:2xw86wmomdxefghyagkwr4eu2</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:5buhti4etj32fvyr58gweqaxu</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
     </agent>
   </metsHdr>
-  <dmdSec ID="DMD.017">
+  <dmdSec ID="DMD.023">
     <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
       <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
         <dc:title>Basic</dc:title>
@@ -1727,18 +2212,18 @@ This is the second line of the description, after a line break.</dc:description>
   </dmdSec>
   <fileSec>
     <fileGrp USE="original">
-      <file ID="original.017.1" MIMETYPE="image/jpeg">
+      <file ID="original.023.1" MIMETYPE="image/jpeg">
         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Image_Basic_1.jpg" xlink:href="http://www.example.com/repository/Folder_Test/Basic/Image_Basic_1.jpg"/>
       </file>
-      <file ID="original.017.2" MIMETYPE="image/jpeg">
+      <file ID="original.023.2" MIMETYPE="image/jpeg">
         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:title="Image_Basic_2.png" xlink:href="http://www.example.com/repository/Folder_Test/Basic/Image_Basic_2.png"/>
       </file>
     </fileGrp>
   </fileSec>
   <structMap>
-    <div DMDID="DMD.017">
-      <fptr FILEID="original.017.1"/>
-      <fptr FILEID="original.017.2"/>
+    <div DMDID="DMD.023">
+      <fptr FILEID="original.023.1"/>
+      <fptr FILEID="original.023.2"/>
     </div>
   </structMap>
 </mets>
@@ -1775,6 +2260,26 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
       <data>http://www.example.com/repository/Folder_Test/Dir_A/Directory_A.metadata.txt</data>
     </element>
   </elementSet>
+  <record file="::ExampleBasePath::/Folder_Test/Dir_A/image_Dir_A_1.png">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>The Recto of the Image (Image Dir A 1)</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons CC0</data>
+      </element>
+    </elementSet>
+  </record>
+  <record file="::ExampleBasePath::/Folder_Test/Dir_A/image_Dir_A_2.png">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>The verso of the Image (Image Dir A 2)</data>
+      </element>
+      <element name="Rights">
+        <data>Public Domain</data>
+      </element>
+    </elementSet>
+  </record>
 </record>
 </oai:metadata>
     </oai:record>
@@ -1819,19 +2324,39 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
     <element name="Coverage">
       <data>Senegal</data>
     </element>
+    <element name="Format">
+      <data>52 m</data>
+    </element>
     <element name="Identifier">
       <data>http://www.example.com/repository/Folder_Test/Monument%20de%20la%20renaissance%20africaine</data>
     </element>
   </elementSet>
   <extra>
+    <data name="item type">Physical Object</data>
     <data name="geolocation[latitude]">14.7222°</data>
     <data name="geolocation[longitude]">-17.495°</data>
     <data name="geolocation[zoom_level]">16</data>
-    <data name="geolocation[map_type]"></data>
+    <data name="geolocation[map_type]">hybrid</data>
     <data name="geolocation[address]"></data>
     <data name="tags">Memorial</data>
     <data name="tags">Statue</data>
   </extra>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/3/3a/Le_Monument_de_la_Renaissance_africaine.jpg">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>From the base of the monument</data>
+      </element>
+      <element name="Creator">
+        <data>Sbreitinger</data>
+      </element>
+      <element name="Date">
+        <data>18 July 2010</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons CC-BY-SA</data>
+      </element>
+    </elementSet>
+  </record>
 </record>
 </oai:metadata>
     </oai:record>
@@ -2025,12 +2550,286 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
       <data>Public Domain</data>
     </element>
   </elementSet>
+  <record file="::ExampleBasePath::/Folder_Test/Dir_B/Subdir_B-B/image_Subdir_B-B_1.png">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>Image #1 of Subdir B-B</data>
+      </element>
+      <element name="Description">
+        <data>Imported via Mets file "Subdir_B-B.mets.xml"</data>
+      </element>
+    </elementSet>
+  </record>
+  <record file="::ExampleBasePath::/Folder_Test/Dir_B/Subdir_B-B/image_Subdir_B-B_2.png">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>Image #2 of Subdir B-B</data>
+      </element>
+      <element name="Description">
+        <data>Imported via Mets file "Subdir_B-B.mets.xml"</data>
+      </element>
+    </elementSet>
+  </record>
 </record>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:e35biwjv859yr6toelr2iezkw</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:db6868g574o0qhsz24otgh3g8</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/documents/ http://localhost/documents.xsd">
+  <elementSet name="Dublin Core">
+    <element name="Identifier">
+      <data>Mont Saint-Michel</data>
+      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A01</data>
+    </element>
+    <element name="Title">
+      <data>Mont Saint-Michel | English: Saint Michael's Mount</data>
+    </element>
+    <element name="Date">
+      <data>709</data>
+    </element>
+  </elementSet>
+  <elementSet name="Item Type Metadata">
+    <element name="Physical Dimensions">
+      <data>92 m</data>
+    </element>
+  </elementSet>
+  <extra>
+    <data name="collection">Architectural Heritage</data>
+    <data name="item type">Still Image</data>
+    <data name="tags">Abbey | Monastery</data>
+    <data name="geolocation [latitude]">48.6360166</data>
+    <data name="geolocation [longitude]">-1.5111145</data>
+    <data name="geolocation [zoom_level]">15</data>
+    <data name="geolocation [map_type]">hybrid</data>
+    <data name="geolocation [address]">Empty value</data>
+  </extra>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/France-Mont-Saint-Michel-1900_bordercropped.jpg/1200px-France-Mont-Saint-Michel-1900_bordercropped.jpg">
+    <elementSet name="Dublin Core">
+      <element name="Identifier">
+        <data>Mont Saint-Michel f1</data>
+      </element>
+      <element name="Title">
+        <data>Looking east at high water in 1900</data>
+      </element>
+      <element name="Creator">
+        <data>Mont St. Michel</data>
+      </element>
+      <element name="Date">
+        <data>France</data>
+      </element>
+      <element name="Rights">
+        <data>Unknown</data>
+      </element>
+      <element name="Description">
+        <data>Between 1890 and 1905</data>
+      </element>
+    </elementSet>
+    <elementSet name="Item Type Metadata">
+      <element name="Physical Dimensions">
+        <data>Public domain</data>
+      </element>
+    </elementSet>
+  </record>
+</record>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:afam5dqeh3s7t7wgh4mk76jg0</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/documents/ http://localhost/documents.xsd">
+  <elementSet name="Dublin Core">
+    <element name="Identifier">
+      <data>Coliseum</data>
+      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A02</data>
+    </element>
+    <element name="Title">
+      <data>Coliseum | English: Colosseum</data>
+    </element>
+    <element name="Creator">
+      <data>Vespasian | Titus</data>
+    </element>
+    <element name="Date">
+      <data>70-80</data>
+    </element>
+  </elementSet>
+  <elementSet name="Item Type Metadata">
+    <element name="Physical Dimensions">
+      <data>61 m</data>
+    </element>
+  </elementSet>
+  <extra>
+    <data name="collection">Architectural Heritage</data>
+    <data name="item type">Still Image</data>
+    <data name="tags">Amphitheatre</data>
+    <data name="geolocation [latitude]">41.8902492</data>
+    <data name="geolocation [longitude]">12.4923563</data>
+    <data name="geolocation [zoom_level]">17</data>
+    <data name="geolocation [map_type]">hybrid</data>
+    <data name="geolocation [address]">Empty value</data>
+  </extra>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/8/87/Exterior_of_the_Coliseum_Rome_Italy.jpg">
+    <elementSet name="Dublin Core">
+      <element name="Identifier">
+        <data>Coliseum f1</data>
+      </element>
+      <element name="Title">
+        <data>Exterior of the Coliseum</data>
+      </element>
+      <element name="Creator">
+        <data>Rome</data>
+      </element>
+      <element name="Date">
+        <data>Italy</data>
+      </element>
+      <element name="Rights">
+        <data>The Library of Congress</data>
+      </element>
+      <element name="Description">
+        <data>Between ca. 1890 and ca. 1900</data>
+      </element>
+    </elementSet>
+    <elementSet name="Item Type Metadata">
+      <element name="Physical Dimensions">
+        <data>Public domain</data>
+      </element>
+    </elementSet>
+  </record>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/b/b3/Fyodor_Matveyev_1.jpg">
+    <elementSet name="Dublin Core">
+      <element name="Identifier">
+        <data>Coliseum f2</data>
+      </element>
+      <element name="Title">
+        <data>The Colosseum in Rome</data>
+      </element>
+      <element name="Creator">
+        <data>Fedor Mikhailovich Matveev (1753-1826) | Фёдор Михайлович Матвеев (1753-1826)</data>
+      </element>
+      <element name="Date">
+        <data>1816</data>
+      </element>
+      <element name="Rights">
+        <data>Public domain</data>
+      </element>
+    </elementSet>
+  </record>
+</record>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:egh21c8f5hw9fgmupsnsw3sd4</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/documents/ http://localhost/documents.xsd">
+  <elementSet name="Dublin Core">
+    <element name="Title">
+      <data>0</data>
+    </element>
+    <element name="Creator">
+      <data>0.0</data>
+    </element>
+    <element name="Identifier">
+      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A03</data>
+    </element>
+  </elementSet>
+</record>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:69o6j2hbgh9ddewb1rgz50cul</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/documents/ http://localhost/documents.xsd">
+  <elementSet name="Dublin Core">
+    <element name="Identifier">
+      <data>Saint-Louis Cathedral</data>
+      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A04</data>
+    </element>
+    <element name="Title">
+      <data>Saint-Louis Cathedral (Carthage)</data>
+    </element>
+    <element name="Creator">
+      <data>Joseph Pougnet</data>
+    </element>
+    <element name="Date">
+      <data>1884-1890</data>
+    </element>
+  </elementSet>
+  <extra>
+    <data name="collection">Architectural Heritage</data>
+    <data name="item type">Still Image</data>
+  </extra>
+</record>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:0bh35mp8eat5y5wbn7a4y5cde</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/documents/ http://localhost/documents.xsd">
+  <elementSet name="Dublin Core">
+    <element name="Identifier">
+      <data>Architectural Heritage</data>
+      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A05</data>
+    </element>
+    <element name="Title">
+      <data>Architectural Heritage</data>
+    </element>
+    <element name="Description">
+      <data>The description will be set during update.</data>
+    </element>
+  </elementSet>
+</record>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:5xum83py9cas5rkr66ilxskcj</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/documents/ http://localhost/documents.xsd">
+  <elementSet name="Dublin Core">
+    <element name="Title">
+      <data>Example of simple item from "manage_one.csv"</data>
+    </element>
+    <element name="Creator">
+      <data>Money</data>
+    </element>
+    <element name="Rights">
+      <data>Public domain</data>
+    </element>
+    <element name="Description">
+      <data>Because this row hasn't got any identifier, the item can't be updated via the selected default Dublin Core:Identifier.</data>
+    </element>
+    <element name="Identifier">
+      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A06</data>
+    </element>
+  </elementSet>
+  <extra>
+    <data name="collection">Example of new created collection</data>
+    <data name="item type">Still Image</data>
+  </extra>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/a/a2/16_Franken_1800_HR_681735.jpg | https://upload.wikimedia.org/wikipedia/commons/6/6d/1935_Indian_Head_Buffalo_Nickel.jpg"/>
+</record>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test:7l0s752pscvkfjh1crsbfkvko</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -2059,21 +2858,55 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
     </element>
   </elementSet>
   <extra>
-    <data name="tags">Statue</data>
-    <data name="tags">Protest</data>
+    <data name="tags">Statue | Protest</data>
     <data name="tags">Commemoration</data>
-    <data name="geolocation[latitude]">-33.957819</data>
-    <data name="geolocation[longitude]">18.461586</data>
-    <data name="geolocation[zoom_level]">15</data>
-    <data name="geolocation[map_type]">Google Maps v3.x</data>
-    <data name="geolocation[address]">-</data>
+    <data name="geolocation [latitude]">-33.957819</data>
+    <data name="geolocation [ longitude ]">18.461586</data>
+    <data name="geolocation [zoom_level]">15</data>
+    <data name="geolocation [map_type]">hybrid</data>
+    <data name="geolocation [address]">Empty value</data>
   </extra>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/7/7f/UCT_Cape_Town_-_Statue_of_Rhodes.jpg">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>UCT Cape Town - Statue of Rhodes</data>
+      </element>
+      <element name="Creator">
+        <data>Danie van der Merwe</data>
+      </element>
+      <element name="Date">
+        <data>12 January 2007, 09:45:27</data>
+      </element>
+      <element name="Description">
+        <data>University of Cape Town - Statue of Rhodes by Marion Walgate. Unveiled in 1934, and commissioned by a state-run university.</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons Attribution 2.0 Generic</data>
+      </element>
+    </elementSet>
+  </record>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/3/37/Cecil_John_Rhodes_looking_over_Cape_Town_%287347447748%29.jpg">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>Statue of Cecil Rhodes at the University of Cape Town</data>
+      </element>
+      <element name="Creator">
+        <data>Ian Barbour</data>
+      </element>
+      <element name="Date">
+        <data>6 June 2012, 07:49</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons Attribution-Share Alike 2.0 Generic</data>
+      </element>
+    </elementSet>
+  </record>
 </record>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:apgrd6lc08r7i85xshyyzy5uz</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:116zgl70uiw2u1on62wzz2oqm</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -2083,8 +2916,7 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
       <data>Still Image</data>
     </element>
     <element name="Title">
-      <data>Reunification of Cameroon Monument</data>
-      <data>French: Monument de la réunification du Cameroun</data>
+      <data>Reunification of Cameroon Monument | French: Monument de la réunification du Cameroun</data>
     </element>
     <element name="Creator">
       <data>Salomon (architect)</data>
@@ -2097,59 +2929,123 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
       <data>http://www.example.com/repository/Folder_Test/2</data>
     </element>
   </elementSet>
-  <elementSet name="Item Type Metadata">
-    <element name="Physical Dimensions">
-      <data>10 m</data>
-      <data>162 tons</data>
-    </element>
-  </elementSet>
-  <extra>
-    <data name="geolocation[latitude]">3.852394°</data>
-    <data name="geolocation[longitude]">11.513604°</data>
-    <data name="geolocation[zoom_level]">18</data>
-    <data name="geolocation[map_type]">Google Maps v3.x</data>
-    <data name="geolocation[address]">-</data>
-  </extra>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/6/66/Monument_Reunification.jpg">
+    <elementSet name="Dublin Core">
+      <element name="Creator">
+        <data>Steve Mvondo | 1</data>
+        <data>0</data>
+        <data>2 | 3</data>
+        <data>4 | 5</data>
+      </element>
+      <element name="Date">
+        <data>25 September 2013, 15:43:44</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons Attribution-Share Alike 3.0 Unported</data>
+      </element>
+    </elementSet>
+  </record>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/7/71/Monument_de_la_R%C3%A9unification.JPG">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>Monument de la Réunification</data>
+      </element>
+      <element name="Creator">
+        <data>Armelo Ambara</data>
+      </element>
+      <element name="Date">
+        <data>29 September 2013, 17:48:07</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons Attribution-Share Alike 3.0 Unported</data>
+      </element>
+    </elementSet>
+  </record>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png | https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG">
+    <elementSet name="Item Type Metadata">
+      <element name="Physical Dimensions">
+        <data>10 m | 162 tons</data>
+      </element>
+    </elementSet>
+    <extra>
+      <data name="geolocation [latitude]">3.852394°</data>
+      <data name="geolocation [ longitude ]">11.513604°</data>
+      <data name="geolocation [zoom_level]">18</data>
+      <data name="geolocation [map_type]">hybrid</data>
+      <data name="geolocation [address]">Empty value</data>
+    </extra>
+  </record>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/3/3c/YaoundeReunificationStatue.png">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>Yaounde Reunification Statue</data>
+      </element>
+      <element name="Creator">
+        <data>Borigue</data>
+      </element>
+      <element name="Date">
+        <data>21 March 2013, 00:51:13</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons Attribution-Share Alike 3.0 Unported</data>
+      </element>
+    </elementSet>
+  </record>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/9/95/Monument_Reunification_6.JPG">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>Monument de la Réunification du Cameroun Yaoundé</data>
+      </element>
+      <element name="Creator">
+        <data>Steve Mvondo</data>
+      </element>
+      <element name="Date">
+        <data>25 September 2013, 16:10:16</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons Attribution-Share Alike 3.0 Unported</data>
+      </element>
+    </elementSet>
+  </record>
 </record>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:9was6usq3rsp1u9r0evb4nq9f</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:2js6kww0vr0epek88ytlas7h1</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <record xmlns="http://localhost/documents/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/documents/ http://localhost/documents.xsd">
   <elementSet name="Dublin Core">
     <element name="Title">
-      <data>Lion of Judah Monument</data>
-      <data>עברית: אנדרטת גור אריה יהודה</data>
+      <data>Lion of Judah Monument | עברית: אנדרטת גור אריה יהודה</data>
     </element>
     <element name="Creator">
       <data>Emporer Haile Selassie</data>
       <data>Photo by Ludo Kuipers</data>
     </element>
     <element name="Date">
-      <data>1930</data>
-      <data>Photo: Feb 12, 1973</data>
+      <data>1930 | Photo: Feb 12, 1973</data>
     </element>
     <element name="Identifier">
-      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A03</data>
+      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A09</data>
     </element>
   </elementSet>
   <extra>
-    <data name="geolocation[latitude]">9.01086°</data>
-    <data name="geolocation[longitude]">38.75312°</data>
-    <data name="geolocation[zoom_level]">16</data>
-    <data name="geolocation[map_type]">Google Maps v3.x</data>
-    <data name="geolocation[address]">-</data>
+    <data name="geolocation [latitude]">9.01086°</data>
+    <data name="geolocation [ longitude ]">38.75312°</data>
+    <data name="geolocation [zoom_level]">16</data>
+    <data name="geolocation [map_type]">hybrid</data>
+    <data name="geolocation [address]">Empty value</data>
   </extra>
+  <record file="http://worldpics.com.au/Ethiopia/addisababa/slides/1973021201.jpg"/>
 </record>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:4br1gp4civlgwhp7fzoeekfi8</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:b2d5t9jwxgf6ouoaoxih67g8z</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -2165,22 +3061,23 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
       <data>Public domain</data>
     </element>
     <element name="Identifier">
-      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A04</data>
+      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A010</data>
     </element>
   </elementSet>
   <extra>
-    <data name="geolocation[latitude]">-3.482167</data>
-    <data name="geolocation[longitude]">29.352361</data>
-    <data name="geolocation[zoom_level]">16</data>
-    <data name="geolocation[map_type]">Google Maps v3.x</data>
-    <data name="geolocation[address]">-</data>
+    <data name="geolocation [latitude]">-3.482167</data>
+    <data name="geolocation [longitude]">29.352361</data>
+    <data name="geolocation [zoom_level]">16</data>
+    <data name="geolocation [map_type]">hybrid</data>
+    <data name="geolocation [address]">Empty value</data>
   </extra>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/f/fd/Livingstone_monument_burundi.jpg"/>
 </record>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:6m8c9vk60fnw2me1mrbnbdnz0</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:2f8ixrltvamw0b6vfx4kl55gz</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -2190,22 +3087,43 @@ To try the update of the folder by the OAI-PMH harvester, replace the file "Dir_
       <data>Sphinx</data>
     </element>
     <element name="Identifier">
-      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A05</data>
+      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A011</data>
     </element>
   </elementSet>
   <extra>
-    <data name="geolocation[latitude]">29.975278</data>
-    <data name="geolocation[longitude]">31.137778</data>
-    <data name="geolocation[zoom_level]">15</data>
-    <data name="geolocation[map_type]">Google Maps v3.x</data>
-    <data name="geolocation[address]">-</data>
+    <data name="geolocation [latitude]">29.975278</data>
+    <data name="geolocation [longitude]">31.137778</data>
+    <data name="geolocation [zoom_level]">15</data>
+    <data name="geolocation [map_type]">hybrid</data>
+    <data name="geolocation [address]">Empty value</data>
   </extra>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/9/94/Brooklyn_Museum_-_Egypt_Gizeh.jpg"/>
+  <record file="https://upload.wikimedia.org/wikipedia/commons/d/de/Paris_H%C3%B4tel_de_Ville_2497_07.jpg">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>Female sphinx on the tower of the Town Hall of Paris | Français : Sphinge sur le beffroi de l'Hôtel de Ville de Paris</data>
+      </element>
+      <element name="Creator">
+        <data>Vassil</data>
+      </element>
+      <element name="Rights">
+        <data>Public domain</data>
+      </element>
+    </elementSet>
+    <extra>
+      <data name="geolocation [latitude]">48.856389</data>
+      <data name="geolocation [longitude]">2.352222</data>
+      <data name="geolocation [zoom_level]">17</data>
+      <data name="geolocation [map_type]">hybrid</data>
+      <data name="geolocation [address]">Empty value</data>
+    </extra>
+  </record>
 </record>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:a0h62v1tjbinmvaiwus6bfa44</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:ezk413afwgmflahxmks84g7zb</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -2222,7 +3140,7 @@ Headers of this sheet are different from the first.
 The item has two files without specific metadata.</data>
     </element>
     <element name="Identifier">
-      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A06</data>
+      <data>http://www.example.com/repository/Folder_Test/External_Metadata.ods%3A012</data>
     </element>
   </elementSet>
 </record>
@@ -2230,7 +3148,7 @@ The item has two files without specific metadata.</data>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:957u7yv6qc1yxa0d0lbfs4bqm</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:5l45fyf6dukpylxmswq3wti98</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -2254,12 +3172,32 @@ This is the second line of the description, after a line break.</data>
       <data>http://www.example.com/repository/Folder_Test/First%20document</data>
     </element>
   </elementSet>
+  <record file="::ExampleBasePath::/Folder_Test/Dir_B/image_Dir_B_1.png">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>The recto of the Image (Image Dir B #1)</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons CC0</data>
+      </element>
+    </elementSet>
+  </record>
+  <record file="::ExampleBasePath::/Folder_Test/Dir_B/image_Dir_B_2.png">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>The verso of the Image (Image Dir B #2)</data>
+      </element>
+      <element name="Rights">
+        <data>Public Domain</data>
+      </element>
+    </elementSet>
+  </record>
 </record>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:dhydyah9m4wp0l2mlzijbnqj0</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:b2dto70l87ngaocpblgayw4kh</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -2283,25 +3221,27 @@ This is the second line of the description, after a line break.</data>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:drj3u2q6pzrcm517di74uhvmx</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:esovxzfi6kqc3j48tsbwg35li</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <record xmlns="http://localhost/documents/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/documents/ http://localhost/documents.xsd">
   <elementSet name="Dublin Core">
     <element name="Title">
-      <data>/</data>
+      <data>[root]</data>
     </element>
     <element name="Identifier">
-      <data>http://www.example.com/repository/Folder_Test/</data>
+      <data>http://www.example.com/repository/Folder_Test/%5Broot%5D</data>
     </element>
   </elementSet>
+  <record file="::ExampleBasePath::/Folder_Test/image_Root_1.png"/>
+  <record file="::ExampleBasePath::/Folder_Test/image_Root_2.png"/>
 </record>
 </oai:metadata>
     </oai:record>
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:Folder_Test:2xw86wmomdxefghyagkwr4eu2</oai:identifier>
+        <oai:identifier>oai:www.example.com:Folder_Test:5buhti4etj32fvyr58gweqaxu</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
@@ -2314,6 +3254,8 @@ This is the second line of the description, after a line break.</data>
       <data>http://www.example.com/repository/Folder_Test/Basic</data>
     </element>
   </elementSet>
+  <record file="::ExampleBasePath::/Folder_Test/Basic/Image_Basic_1.jpg"/>
+  <record file="::ExampleBasePath::/Folder_Test/Basic/Image_Basic_2.png"/>
 </record>
 </oai:metadata>
     </oai:record>

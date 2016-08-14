@@ -128,7 +128,7 @@
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:04:33Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -164,7 +164,7 @@
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:04:33Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -210,6 +210,7 @@
       <data>http://www.example.com/repository/Basic/Image_Basic_1</data>
     </element>
   </elementSet>
+  <record file="::ExampleBasePath::/Folder_Test/Basic/Image_Basic_1.jpg"/>
 </record>
 </oai:metadata>
     </oai:record>
@@ -228,6 +229,7 @@
       <data>http://www.example.com/repository/Basic/Image_Basic_2</data>
     </element>
   </elementSet>
+  <record file="::ExampleBasePath::/Folder_Test/Basic/Image_Basic_2.png"/>
 </record>
 </oai:metadata>
     </oai:record>

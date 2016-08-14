@@ -98,7 +98,7 @@
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:05Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -156,6 +156,16 @@
       <data>http://www.example.com/repository/Folder_Test_Characters_Local/Non-Latin%20-%20Local.metadata.txt</data>
     </element>
   </elementSet>
+  <record file="::ExampleBasePath::/Folder_Test_Characters_Local/With non-latin/Caf&#xE9; #1 (2&#x20AC;).png">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>The file with spaces and non-alphanumeric and non-recommended characters (local)</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons CC0</data>
+      </element>
+    </elementSet>
+  </record>
 </record>
 </oai:metadata>
     </oai:record>

@@ -152,7 +152,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -200,7 +200,7 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:14:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -254,6 +254,26 @@ The spaces at the start of the fourth line, after the first two, are not trimmed
       <data>http://www.example.com/repository/Dir_A/Directory_A.metadata.txt</data>
     </element>
   </elementSet>
+  <record file="::ExampleBasePath::/Folder_Test/Dir_A/image_Dir_A_1.png">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>The Recto of the Image (Image Dir A 1)</data>
+      </element>
+      <element name="Rights">
+        <data>Creative Commons CC0</data>
+      </element>
+    </elementSet>
+  </record>
+  <record file="::ExampleBasePath::/Folder_Test/Dir_A/image_Dir_A_2.png">
+    <elementSet name="Dublin Core">
+      <element name="Title">
+        <data>The verso of the Image (Image Dir A 2)</data>
+      </element>
+      <element name="Rights">
+        <data>Public Domain</data>
+      </element>
+    </elementSet>
+  </record>
 </record>
 </oai:metadata>
     </oai:record>

@@ -349,7 +349,7 @@
       <data>http://www.example.com/repository/Folder_Test_Mets_Alto/my_obj_id_1</data>
     </element>
   </elementSet>
-  <record file="/home/www/Omeka_PhpUnit/plugins/OaiPmhStaticRepository/tests/suite/_files/Folder_Test_Mets_Alto/master/image_Subdir_B-B_1.png">
+  <record file="::ExampleBasePath::/Folder_Test_Mets_Alto/master/image_Subdir_B-B_1.png">
     <elementSet name="Dublin Core">
       <element name="Title">
         <data>Image #1 of Subdir B-B Alto</data>
@@ -379,7 +379,7 @@ Date: 2015-09-14
       </element>
     </elementSet>
   </record>
-  <record file="/home/www/Omeka_PhpUnit/plugins/OaiPmhStaticRepository/tests/suite/_files/Folder_Test_Mets_Alto/master/image_Subdir_B-B_2.png">
+  <record file="::ExampleBasePath::/Folder_Test_Mets_Alto/master/image_Subdir_B-B_2.png">
     <elementSet name="Dublin Core">
       <element name="Title">
         <data>Image #2 of Subdir B-B Alto</data>
@@ -409,7 +409,7 @@ Date: 2015-09-14
       </element>
     </elementSet>
   </record>
-  <record file="/home/www/Omeka_PhpUnit/plugins/OaiPmhStaticRepository/tests/suite/_files/Folder_Test_Mets_Alto/ocr/image_Subdir_B-B_1.alto.xml">
+  <record file="::ExampleBasePath::/Folder_Test_Mets_Alto/ocr/image_Subdir_B-B_1.alto.xml">
     <elementSet name="Dublin Core">
       <element name="Title">
         <data>Image #1 of Subdir B-B Alto</data>
@@ -419,7 +419,7 @@ Date: 2015-09-14
       </element>
     </elementSet>
   </record>
-  <record file="/home/www/Omeka_PhpUnit/plugins/OaiPmhStaticRepository/tests/suite/_files/Folder_Test_Mets_Alto/ocr/image_Subdir_B-B_2.alto.xml">
+  <record file="::ExampleBasePath::/Folder_Test_Mets_Alto/ocr/image_Subdir_B-B_2.alto.xml">
     <elementSet name="Dublin Core">
       <element name="Title">
         <data>Image #2 of Subdir B-B Alto</data>

@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Repository xmlns="http://www.openarchives.org/OAI/2.0/static-repository" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/static-repository http://www.openarchives.org/OAI/2.0/static-repository.xsd">
+  <Identify>
+    <oai:repositoryName>Folder Test Collections</oai:repositoryName>
+    <oai:baseURL>http://www.example.com/files/repositories/Folder_Test_Collections.xml</oai:baseURL>
+    <oai:protocolVersion>2.0</oai:protocolVersion>
+    <oai:adminEmail>foobar@example.com</oai:adminEmail>
+    <oai:earliestDatestamp>1970-01-01</oai:earliestDatestamp>
+    <oai:deletedRecord>no</oai:deletedRecord>
+    <oai:granularity>YYYY-MM-DD</oai:granularity>
+  </Identify>
+  <ListMetadataFormats>
+    <oai:metadataFormat>
+      <oai:metadataPrefix>oai_dc</oai:metadataPrefix>
+      <oai:schema>http://www.openarchives.org/OAI/2.0/oai_dc.xsd</oai:schema>
+      <oai:metadataNamespace>http://www.openarchives.org/OAI/2.0/oai_dc/</oai:metadataNamespace>
+    </oai:metadataFormat>
+    <oai:metadataFormat>
+      <oai:metadataPrefix>oai_dcterms</oai:metadataPrefix>
+      <oai:schema>http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd</oai:schema>
+      <oai:metadataNamespace>http://www.openarchives.org/OAI/2.0/oai_dcterms/</oai:metadataNamespace>
+    </oai:metadataFormat>
+    <oai:metadataFormat>
+      <oai:metadataPrefix>oai_dcq</oai:metadataPrefix>
+      <oai:schema>http://localhost</oai:schema>
+      <oai:metadataNamespace>urn:dc:qdc:container</oai:metadataNamespace>
+    </oai:metadataFormat>
+    <oai:metadataFormat>
+      <oai:metadataPrefix>mets</oai:metadataPrefix>
+      <oai:schema>http://www.loc.gov/standards/mets/mets.xsd</oai:schema>
+      <oai:metadataNamespace>http://www.loc.gov/METS/</oai:metadataNamespace>
+    </oai:metadataFormat>
+    <oai:metadataFormat>
+      <oai:metadataPrefix>doc</oai:metadataPrefix>
+      <oai:schema>http://localhost/documents.xsd</oai:schema>
+      <oai:metadataNamespace>http://localhost/documents/</oai:metadataNamespace>
+    </oai:metadataFormat>
+  </ListMetadataFormats>
+  <ListRecords metadataPrefix="oai_dc">
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:5y5yhmd2jzqg85ukjnkaebo6r</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>This is the Item 1 in Collection Test 1</dc:title>
+  <dc:description>Test of a collection created via an item and without metadata.</dc:description>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:3u4na98hudk6gink4j1nfwsqm</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>This is the Item 2 in Collection Test 1</dc:title>
+  <dc:description>Test of a second item with the same collection created via a previous item and without metadata.</dc:description>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:5kblq3egkin8vm158zatko63e</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>Collection Test 2</dc:title>
+  <dc:description>Test of collection with metadata created before item.</dc:description>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:2nfcty6nslh4sjxtu16og3rgl</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>This is the Item 3 in Collection Test 2</dc:title>
+  <dc:description>Test of item inserted inside an existing collection.</dc:description>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:8ju76xcr9pzvm8njw2hqotkkm</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>This is the Item 4 in Collection Test 3</dc:title>
+  <dc:description>Test of collection created via item.</dc:description>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:8aypcwwsrn6qlla2nmxpblwhn</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>This is the Item 5 in Collection Test 3</dc:title>
+  <dc:description>Test of a second item in an existing collection, before metadata of collection.</dc:description>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:6yjmiw3yl1resoie2qizbc6sj</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:title>Collection Test 3</dc:title>
+  <dc:description>Test of a collection created by an item, but with metadata after.</dc:description>
+</oai_dc:dc>
+</oai:metadata>
+    </oai:record>
+  </ListRecords>
+  <ListRecords metadataPrefix="oai_dcterms">
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:5y5yhmd2jzqg85ukjnkaebo6r</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>This is the Item 1 in Collection Test 1</dc:title>
+  <dc:description>Test of a collection created via an item and without metadata.</dc:description>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:3u4na98hudk6gink4j1nfwsqm</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>This is the Item 2 in Collection Test 1</dc:title>
+  <dc:description>Test of a second item with the same collection created via a previous item and without metadata.</dc:description>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:5kblq3egkin8vm158zatko63e</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>Collection Test 2</dc:title>
+  <dc:description>Test of collection with metadata created before item.</dc:description>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:2nfcty6nslh4sjxtu16og3rgl</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>This is the Item 3 in Collection Test 2</dc:title>
+  <dc:description>Test of item inserted inside an existing collection.</dc:description>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:8ju76xcr9pzvm8njw2hqotkkm</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>This is the Item 4 in Collection Test 3</dc:title>
+  <dc:description>Test of collection created via item.</dc:description>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:8aypcwwsrn6qlla2nmxpblwhn</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>This is the Item 5 in Collection Test 3</dc:title>
+  <dc:description>Test of a second item in an existing collection, before metadata of collection.</dc:description>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:6yjmiw3yl1resoie2qizbc6sj</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
+  <dc:title>Collection Test 3</dc:title>
+  <dc:description>Test of a collection created by an item, but with metadata after.</dc:description>
+</oai_dcterms:dcterms>
+</oai:metadata>
+    </oai:record>
+  </ListRecords>
+  <ListRecords metadataPrefix="oai_dcq">
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:5y5yhmd2jzqg85ukjnkaebo6r</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>This is the Item 1 in Collection Test 1</dc:title>
+  <dc:description>Test of a collection created via an item and without metadata.</dc:description>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:3u4na98hudk6gink4j1nfwsqm</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>This is the Item 2 in Collection Test 1</dc:title>
+  <dc:description>Test of a second item with the same collection created via a previous item and without metadata.</dc:description>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:5kblq3egkin8vm158zatko63e</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>Collection Test 2</dc:title>
+  <dc:description>Test of collection with metadata created before item.</dc:description>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:2nfcty6nslh4sjxtu16og3rgl</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>This is the Item 3 in Collection Test 2</dc:title>
+  <dc:description>Test of item inserted inside an existing collection.</dc:description>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:8ju76xcr9pzvm8njw2hqotkkm</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>This is the Item 4 in Collection Test 3</dc:title>
+  <dc:description>Test of collection created via item.</dc:description>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:8aypcwwsrn6qlla2nmxpblwhn</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>This is the Item 5 in Collection Test 3</dc:title>
+  <dc:description>Test of a second item in an existing collection, before metadata of collection.</dc:description>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:6yjmiw3yl1resoie2qizbc6sj</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
+  <dc:title>Collection Test 3</dc:title>
+  <dc:description>Test of a collection created by an item, but with metadata after.</dc:description>
+</oai_dcq:dcterms>
+</oai:metadata>
+    </oai:record>
+  </ListRecords>
+  <ListRecords metadataPrefix="mets">
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:5y5yhmd2jzqg85ukjnkaebo6r</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.01">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>This is the Item 1 in Collection Test 1</dc:title>
+        <dc:description>Test of a collection created via an item and without metadata.</dc:description>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.01"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:3u4na98hudk6gink4j1nfwsqm</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.02">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>This is the Item 2 in Collection Test 1</dc:title>
+        <dc:description>Test of a second item with the same collection created via a previous item and without metadata.</dc:description>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.02"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:5kblq3egkin8vm158zatko63e</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.03">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Collection Test 2</dc:title>
+        <dc:description>Test of collection with metadata created before item.</dc:description>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.03"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:2nfcty6nslh4sjxtu16og3rgl</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.04">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>This is the Item 3 in Collection Test 2</dc:title>
+        <dc:description>Test of item inserted inside an existing collection.</dc:description>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.04"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:8ju76xcr9pzvm8njw2hqotkkm</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.05">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>This is the Item 4 in Collection Test 3</dc:title>
+        <dc:description>Test of collection created via item.</dc:description>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.05"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:8aypcwwsrn6qlla2nmxpblwhn</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.06">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>This is the Item 5 in Collection Test 3</dc:title>
+        <dc:description>Test of a second item in an existing collection, before metadata of collection.</dc:description>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.06"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:6yjmiw3yl1resoie2qizbc6sj</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
+    <agent ROLE="CREATOR">
+      <name>foobar@example.com</name>
+      <note>OAI-PMH Static Repository for Omeka</note>
+    </agent>
+  </metsHdr>
+  <dmdSec ID="DMD.07">
+    <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
+      <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
+        <dc:title>Collection Test 3</dc:title>
+        <dc:description>Test of a collection created by an item, but with metadata after.</dc:description>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  <fileSec>
+    <fileGrp USE="original"/>
+  </fileSec>
+  <structMap>
+    <div DMDID="DMD.07"/>
+  </structMap>
+</mets>
+</oai:metadata>
+    </oai:record>
+  </ListRecords>
+  <ListRecords metadataPrefix="doc">
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:5y5yhmd2jzqg85ukjnkaebo6r</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" recordType="Item" public="1" featured="0" collection="Collection 1" name="Item 1">
+        <elementSet name="Dublin Core">
+            <element name="Title">
+                <data>This is the Item 1 in Collection Test 1</data>
+            </element>
+            <element name="Description">
+                <data>Test of a collection created via an item and without metadata.</data>
+            </element>
+        </elementSet>
+    </record></oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:3u4na98hudk6gink4j1nfwsqm</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" recordType="Item" public="1" featured="0" collection="Collection 1" name="Item 2">
+        <elementSet name="Dublin Core">
+            <element name="Title">
+                <data>This is the Item 2 in Collection Test 1</data>
+            </element>
+            <element name="Description">
+                <data>Test of a second item with the same collection created via a previous item and without metadata.</data>
+            </element>
+        </elementSet>
+    </record></oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:5kblq3egkin8vm158zatko63e</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" recordType="Collection" public="0" featured="1" name="Collection 2">
+        <elementSet name="Dublin Core">
+            <element name="Title">
+                <data>Collection Test 2</data>
+            </element>
+            <element name="Description">
+                <data>Test of collection with metadata created before item.</data>
+            </element>
+        </elementSet>
+    </record></oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:2nfcty6nslh4sjxtu16og3rgl</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" recordType="Item" public="0" featured="1" collection="Collection 2" name="Item 3">
+        <elementSet name="Dublin Core">
+            <element name="Title">
+                <data>This is the Item 3 in Collection Test 2</data>
+            </element>
+            <element name="Description">
+                <data>Test of item inserted inside an existing collection.</data>
+            </element>
+        </elementSet>
+    </record></oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:8ju76xcr9pzvm8njw2hqotkkm</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" recordType="Item" public="1" featured="0" collection="Collection 3" name="Item 4">
+        <elementSet name="Dublin Core">
+            <element name="Title">
+                <data>This is the Item 4 in Collection Test 3</data>
+            </element>
+            <element name="Description">
+                <data>Test of collection created via item.</data>
+            </element>
+        </elementSet>
+    </record></oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:8aypcwwsrn6qlla2nmxpblwhn</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" recordType="Item" public="1" featured="0" collection="Collection 3" name="Item 5">
+        <elementSet name="Dublin Core">
+            <element name="Title">
+                <data>This is the Item 5 in Collection Test 3</data>
+            </element>
+            <element name="Description">
+                <data>Test of a second item in an existing collection, before metadata of collection.</data>
+            </element>
+        </elementSet>
+    </record></oai:metadata>
+    </oai:record>
+    <oai:record>
+      <oai:header>
+        <oai:identifier>oai:www.example.com:Folder_Test_Collections:6yjmiw3yl1resoie2qizbc6sj</oai:identifier>
+        <oai:datestamp>2015-01-01</oai:datestamp>
+      </oai:header>
+      <oai:metadata>
+<record xmlns="http://localhost/documents/" recordType="Collection" public="1" featured="0" name="Collection 3">
+        <elementSet name="Dublin Core">
+            <element name="Title">
+                <data>Collection Test 3</data>
+            </element>
+            <element name="Description">
+                <data>Test of a collection created by an item, but with metadata after.</data>
+            </element>
+        </elementSet>
+    </record></oai:metadata>
+    </oai:record>
+  </ListRecords>
+</Repository>

@@ -39,13 +39,13 @@
   <ListRecords metadataPrefix="oai_dc">
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:BasicByDirectory:6x39lfsex441aapvlojtbh68u</oai:identifier>
+        <oai:identifier>oai:www.example.com:BasicByDirectory:97qutey3xgcq0a3fzme38v5x4</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:title>/</dc:title>
-  <dc:identifier>http://www.example.com/repository/BasicByDirectory/</dc:identifier>
+  <dc:title>[root]</dc:title>
+  <dc:identifier>http://www.example.com/repository/BasicByDirectory/%5Broot%5D</dc:identifier>
   <dc:identifier>http://www.example.com/repository/BasicByDirectory/Image_Basic_1.jpg</dc:identifier>
   <dc:identifier>http://www.example.com/repository/BasicByDirectory/Image_Basic_2.png</dc:identifier>
 </oai_dc:dc>
@@ -55,13 +55,13 @@
   <ListRecords metadataPrefix="oai_dcterms">
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:BasicByDirectory:6x39lfsex441aapvlojtbh68u</oai:identifier>
+        <oai:identifier>oai:www.example.com:BasicByDirectory:97qutey3xgcq0a3fzme38v5x4</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcterms:dcterms xmlns:oai_dcterms="http://www.openarchives.org/OAI/2.0/oai_dcterms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dcterms/ http://www.openarchives.org/OAI/2.0/oai_dcterms.xsd">
-  <dc:title>/</dc:title>
-  <dc:identifier>http://www.example.com/repository/BasicByDirectory/</dc:identifier>
+  <dc:title>[root]</dc:title>
+  <dc:identifier>http://www.example.com/repository/BasicByDirectory/%5Broot%5D</dc:identifier>
   <dc:identifier>http://www.example.com/repository/BasicByDirectory/Image_Basic_1.jpg</dc:identifier>
   <dc:identifier>http://www.example.com/repository/BasicByDirectory/Image_Basic_2.png</dc:identifier>
 </oai_dcterms:dcterms>
@@ -71,13 +71,13 @@
   <ListRecords metadataPrefix="oai_dcq">
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:BasicByDirectory:6x39lfsex441aapvlojtbh68u</oai:identifier>
+        <oai:identifier>oai:www.example.com:BasicByDirectory:97qutey3xgcq0a3fzme38v5x4</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <oai_dcq:dcterms xmlns:oai_dcq="urn:dc:qdc:container" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:dc:qdc:container http://localhost">
-  <dc:title>/</dc:title>
-  <dc:identifier>http://www.example.com/repository/BasicByDirectory/</dc:identifier>
+  <dc:title>[root]</dc:title>
+  <dc:identifier>http://www.example.com/repository/BasicByDirectory/%5Broot%5D</dc:identifier>
   <dc:identifier>http://www.example.com/repository/BasicByDirectory/Image_Basic_1.jpg</dc:identifier>
   <dc:identifier>http://www.example.com/repository/BasicByDirectory/Image_Basic_2.png</dc:identifier>
 </oai_dcq:dcterms>
@@ -87,12 +87,12 @@
   <ListRecords metadataPrefix="mets">
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:BasicByDirectory:6x39lfsex441aapvlojtbh68u</oai:identifier>
+        <oai:identifier>oai:www.example.com:BasicByDirectory:97qutey3xgcq0a3fzme38v5x4</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <mets xmlns="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <metsHdr CREATEDATE="2015-01-01T09:09:04Z">
+  <metsHdr CREATEDATE="2015-01-01T00:00:00Z">
     <agent ROLE="CREATOR">
       <name>foobar@example.com</name>
       <note>OAI-PMH Static Repository for Omeka</note>
@@ -101,8 +101,8 @@
   <dmdSec ID="DMD.01">
     <mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata">
       <xmlData xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/">
-        <dc:title>/</dc:title>
-        <dc:identifier>http://www.example.com/repository/BasicByDirectory/</dc:identifier>
+        <dc:title>[root]</dc:title>
+        <dc:identifier>http://www.example.com/repository/BasicByDirectory/%5Broot%5D</dc:identifier>
       </xmlData>
     </mdWrap>
   </dmdSec>
@@ -129,19 +129,21 @@
   <ListRecords metadataPrefix="doc">
     <oai:record>
       <oai:header>
-        <oai:identifier>oai:www.example.com:BasicByDirectory:6x39lfsex441aapvlojtbh68u</oai:identifier>
+        <oai:identifier>oai:www.example.com:BasicByDirectory:97qutey3xgcq0a3fzme38v5x4</oai:identifier>
         <oai:datestamp>2015-01-01</oai:datestamp>
       </oai:header>
       <oai:metadata>
 <record xmlns="http://localhost/documents/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost/documents/ http://localhost/documents.xsd">
   <elementSet name="Dublin Core">
     <element name="Title">
-      <data>/</data>
+      <data>[root]</data>
     </element>
     <element name="Identifier">
-      <data>http://www.example.com/repository/BasicByDirectory/</data>
+      <data>http://www.example.com/repository/BasicByDirectory/%5Broot%5D</data>
     </element>
   </elementSet>
+  <record file="::ExampleBasePath::/Folder_Test/Basic/Image_Basic_1.jpg"/>
+  <record file="::ExampleBasePath::/Folder_Test/Basic/Image_Basic_2.png"/>
 </record>
 </oai:metadata>
     </oai:record>
