@@ -66,6 +66,7 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
                 return;
             }
 
+            // Specific is here.
             if (!$form->isValid($this->getRequest()->getPost())) {
                 $this->_helper->_flashMessenger(__('There was an error on the form. Please try again.'), 'error');
                 $this->view->$varName = $record;
@@ -73,10 +74,6 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
             }
 
             $record->setPostData($_POST);
-
-            // Specific is here.
-            $parameters = $this->_getParameters($record);
-            $record->prepareParameters($parameters);
 
             if ($record->save(false)) {
                 $successMessage = $this->_getAddSuccessMessage($record);
@@ -89,52 +86,6 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
             }
         }
         $this->view->$varName = $record;
-    }
-
-    /**
-     * Clean the parameters to save from the form.
-     *
-     * @param Record $record The record that is currently prepared.
-     * @return array
-     */
-    protected function _getParameters($record)
-    {
-        // Specific is here.
-        $parameters = array_flip(array(
-            'unreferenced_files',
-            'exclude_extensions',
-            'allow_no_extension',
-            'element_delimiter',
-            'fill_ocr_text',
-            'fill_ocr_data',
-            'fill_ocr_process',
-            'extra_parameters',
-            'records_for_files',
-            'oai_identifier_format',
-            // The item_type_id is in _postData().
-            'item_type_name',
-
-            'repository_name',
-            'admin_emails',
-            'metadata_formats',
-            'use_dcterms',
-
-            'repository_remote',
-            'repository_domain',
-            'repository_port',
-            'repository_path',
-            'repository_identifier',
-
-            'oaipmh_gateway',
-            'oaipmh_harvest',
-            'oaipmh_harvest_prefix',
-            'oaipmh_harvest_update_metadata',
-            'oaipmh_harvest_update_files',
-        ));
-        foreach ($parameters as $parameter => &$value) {
-            $value = isset($record->$parameter) ? $record->$parameter : null;
-        }
-        return $parameters;
     }
 
     public function stopAction()

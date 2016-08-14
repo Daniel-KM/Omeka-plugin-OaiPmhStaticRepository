@@ -263,15 +263,50 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
     }
 
     /**
-     * Prepare parameters from a form, in order to make them coherent.
+     * Filter the form input according to some criteria.
      *
-     * @param array $parameters
+     * @todo Move part of these filter inside save().
+     *
+     * @param array $post
+     * @return array Filtered post data.
      */
-    public function prepareParameters($parameters)
+    protected function filterPostData($post)
     {
-        $this->uri = rtrim(trim($this->uri), '/.');
+        // Remove superfluous whitespace.
+        $options = array('inputNamespace' => 'Omeka_Filter');
+        $filters = array(
+            'uri' => array('StripTags', 'StringTrim'),
+            // 'item_type_id'  => 'ForeignKey',
+            'records_for_files' => 'Boolean',
+        );
+        $filter = new Zend_Filter_Input($filters, null, $post, $options);
+        $post = $filter->getUnescaped();
 
-        $transferStrategy = $this->_getTransferStrategy();
+        // Avoid some notices with missed values.
+        $basePost = array(
+            'uri' => '',
+            'item_type_id' => 0,
+        );
+        $post = array_merge($basePost, $post);
+
+        $post['uri'] = rtrim(trim($post['uri']), '/.');
+
+        $transferStrategy = $this->_getTransferStrategy($post['uri']);
+
+        // Unset immutable or specific properties from $_POST.
+        $immutable = array('id', 'identifier', 'parameters', 'status', 'messages', 'owner_id', 'added', 'modified');
+        foreach ($immutable as $value) {
+            unset($post[$value]);
+        }
+
+        // This filter move all parameters inside 'parameters' of the folder.
+        $parameters = $post;
+        // Property level.
+        unset($parameters['uri']);
+        unset($parameters['item_type_id']);
+        // Not properties.
+        unset($parameters['csrf_token']);
+        unset($parameters['submit']);
 
         // Default parameters if not set.
         $defaults = array(
@@ -305,24 +340,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
             'oaipmh_harvest_update_metadata' => 'element',
             'oaipmh_harvest_update_files' => 'full',
         );
-
         $parameters = array_merge($defaults, $parameters);
-
-        // Manage empty values for some parameters.
-        foreach (array(
-                'unreferenced_files',
-                'oai_identifier_format',
-                'repository_name',
-                'repository_identifier',
-                'admin_emails',
-                'oaipmh_harvest_prefix',
-                'oaipmh_harvest_update_metadata',
-                'oaipmh_harvest_update_files',
-            ) as $value) {
-            if (empty($parameters[$value])) {
-                $parameters[$value] = $defaults[$value];
-            }
-        }
 
         // Manage some exceptions.
         $parameters['repository_identifier'] = $this->_keepAlphanumericOnly($parameters['repository_identifier']);
@@ -331,7 +349,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
         $parameters['repository_remote'] = $parameters['repository_remote'] && $transferStrategy == 'Url';
         // Remote folder.
         if ($parameters['repository_remote']) {
-            $parsedUrl = parse_url($this->uri);
+            $parsedUrl = parse_url($post['uri']);
             $parameters['repository_scheme'] = $parsedUrl['scheme'];
             if (empty($parameters['repository_domain']) && isset($parsedUrl['host'])) {
                 $parameters['repository_domain'] = $parsedUrl['host'];
@@ -347,7 +365,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
             }
             $parameters['repository_path'] = trim($parameters['repository_path'], '/');
 
-            $parameters['repository_folder_human'] = $this->uri . '/';
+            $parameters['repository_folder_human'] = $post['uri'] . '/';
         }
         // Local folder.
         else {
@@ -391,13 +409,13 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
             array_unshift($parameters['metadata_formats'], 'oai_dc');
         }
 
-        $parameters['use_dcterms'] = (boolean) $parameters['use_dcterms'];
-
-        $parameters['records_for_files'] = (boolean) $parameters['records_for_files'];
-
-        $parameters['item_type_name'] = $this->_getItemTypeName();
+        $parameters['item_type_name'] = $this->_getItemTypeName($post['item_type_id']);
 
         $parameters['extra_parameters'] = $this->_getExtraParameters($parameters['extra_parameters']);
+
+        if (empty($parameters['unreferenced_files'])) {
+            $parameters['unreferenced_files'] = $defaults['unreferenced_files'];
+        }
 
         $parameters['oaipmh_harvest'] = (boolean) $parameters['oaipmh_harvest'];
         $parameters['oaipmh_gateway'] = $parameters['oaipmh_gateway'] || $parameters['oaipmh_harvest'];
@@ -405,9 +423,11 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
         // Other parameters are not changed, so save them.
         $this->setParameters($parameters);
 
-        $this->identifier = $parameters['repository_remote']
+        $post['identifier'] = $parameters['repository_remote']
             ? $this->_keepAlphanumericOnly($parameters['repository_url_human'])
             : $parameters['repository_identifier'];
+
+        return $post;
     }
 
     /**
@@ -497,9 +517,13 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
     /**
      * Get the transfer strategy of files, according to uri.
      */
-    protected function _getTransferStrategy()
+    protected function _getTransferStrategy($uri = null)
     {
-        $scheme = parse_url($this->uri, PHP_URL_SCHEME);
+        if (empty($uri)) {
+            $uri = $this->uri;
+        }
+
+        $scheme = parse_url($uri, PHP_URL_SCHEME);
         if (in_array($scheme, array('http', 'https'))) {
             $transferStrategy = 'Url';
         }
@@ -508,7 +532,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
         elseif (in_array($scheme, array('ftp', 'sftp'))) {
             $transferStrategy = 'Ftp';
         }
-        elseif ($scheme == 'file' || (!empty($this->uri) && $this->uri[0] == '/')) {
+        elseif ($scheme == 'file' || (!empty($uri) && $uri[0] == '/')) {
             $transferStrategy = 'Filesystem';
         }
         else {
@@ -612,11 +636,11 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
     /**
      * Allow to set the item type name from filename (default) or to force it.
      *
+     * @param string $itemTypeId
      * @return string
      */
-    protected function _getItemTypeName()
+    protected function _getItemTypeName($itemTypeId)
     {
-        $itemTypeId = $this->_postData['item_type_id'];
         if (empty($itemTypeId)) {
             $itemTypeName = '';
         }
