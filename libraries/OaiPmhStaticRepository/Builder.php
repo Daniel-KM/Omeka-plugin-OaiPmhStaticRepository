@@ -1457,7 +1457,7 @@ class OaiPmhStaticRepository_Builder
         }
 
         // Unknown or unmanaged scheme.
-        return __('The uri "%" is not correct.', $uri);
+        return __('The uri "%s" is not correct.', $uri);
     }
 
     /**
