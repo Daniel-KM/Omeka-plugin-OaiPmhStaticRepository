@@ -83,9 +83,11 @@ class OaiPmhStaticRepository_Test_AppTestCase extends Omeka_Test_AppTestCase
         // ArchiveDocument is a required plugin.
         $pluginHelper->setUp('ArchiveDocument');
         $pluginHelper->setUp(self::PLUGIN_NAME);
-        // OcrElementSet is an optional plugin.
-        $pluginHelper->setUp('OcrElementSet');
-        $pluginHelper->setUp(self::PLUGIN_NAME);
+        // OcrElementSet is an optional plugin, but required for some tests.
+        try {
+            $pluginHelper->setUp('OcrElementSet');
+        } catch (Omeka_Plugin_Loader_Exception $e) {
+        }
 
         // Allow extensions "xml" and "json".
         $whiteList = get_option(Omeka_Validate_File_Extension::WHITELIST_OPTION) . ',xml,json';
@@ -115,16 +117,13 @@ class OaiPmhStaticRepository_Test_AppTestCase extends Omeka_Test_AppTestCase
 
     protected function _prepareFolderTest($uri = '', $parameters = array())
     {
-        // The ods file needs an element delimiter. Other parameters uses the
-        // defaults.
-        if (!isset($parameters['element_delimiter'])) {
-            $parameters['element_delimiter'] = '|';
+        if (empty($uri)) {
+            $uri = TEST_FILES_DIR . DIRECTORY_SEPARATOR . 'Folder_Test';
         }
-
+        $parameters['uri'] = $uri;
         $this->_folder = new OaiPmhStaticRepository();
-        $this->_folder->uri = $uri ?: (TEST_FILES_DIR
-            . DIRECTORY_SEPARATOR . 'Folder_Test');
-        $this->_folder->prepareParameters($parameters);
+        $this->_folder->uri = $uri;
+        $this->_folder->setPostData($parameters);
         $this->_folder->save();
     }
 
