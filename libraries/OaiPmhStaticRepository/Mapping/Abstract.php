@@ -500,6 +500,31 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
     }
 
     /**
+     * Convert a string into a list of key / values.
+     *
+     * @internal The input is already checked via Zend form validator.
+     *
+     * @param array|string $input
+     * @return array
+     */
+    protected function _stringParametersToArray($input)
+    {
+        if (is_array($input)) {
+            return $input;
+        }
+
+        $parameters = array();
+
+        $parametersAdded = array_values(array_filter(array_map('trim', explode(PHP_EOL, $input))));
+        foreach ($parametersAdded as $parameterAdded) {
+            list($paramName, $paramValue) = explode('=', $parameterAdded);
+            $parameters[trim($paramName)] = trim($paramValue);
+        }
+
+        return $parameters;
+    }
+
+    /**
      * Execute a shell command without exec().
      *
      * @see Omeka_File_Derivative_Strategy_ExternalImageMagick::executeCommand()
