@@ -274,6 +274,11 @@ abstract class OaiPmhStaticRepository_Format_Abstract
      */
     protected function _addIdentifierAndRelationToFiles()
     {
+        $addRelations = $this->_getParameter('add_relations');
+        if (empty($addRelations)) {
+            return;
+        }
+
         $doc = &$this->_document;
 
         $url = $this->_managePaths->getAbsoluteUrl($doc['name']);
@@ -314,6 +319,11 @@ abstract class OaiPmhStaticRepository_Format_Abstract
      */
     protected function _addIdentifierAndRelationToItem($file, $order)
     {
+        $addRelations = $this->_getParameter('add_relations');
+        if (empty($addRelations)) {
+                return;
+        }
+
         $doc = &$this->_document;
 
         $metadata = isset($file['metadata']) ? $file['metadata'] : array();
