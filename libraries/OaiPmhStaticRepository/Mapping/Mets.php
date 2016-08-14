@@ -59,7 +59,7 @@ class OaiPmhStaticRepository_Mapping_Mets extends OaiPmhStaticRepository_Mapping
 
         // If the xml is too large, the php memory may be increased so it can be
         // processed directly via SimpleXml.
-        $this->_xml = simplexml_load_file($this->_metadataFilepath);
+        $this->_xml = simplexml_load_file($this->_metadataFilepath, 'SimpleXMLElement', LIBXML_NOENT | LIBXML_XINCLUDE | LIBXML_PARSEHUGE);
         if ($this->_xml === false) {
             return;
         }
