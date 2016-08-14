@@ -962,7 +962,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
      */
     private function _keepAlphanumericOnly($string)
     {
-        return preg_replace("/[^a-zA-Z0-9\-_\.]/", '', $string);
+        return preg_replace('/[^a-zA-Z0-9\-_\.]/', '', $string);
     }
 
     /**
@@ -978,6 +978,6 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
      */
     private function _keepAlphanumericOnlyForDir($string)
     {
-        return preg_replace("/[^a-zA-Z0-9\-_\.\/]/", '', str_replace(' ', '_', $string));
+        return preg_replace('/[^a-zA-Z0-9\-_\.\/]/', '', str_replace(' ', '_', $string));
     }
 }
