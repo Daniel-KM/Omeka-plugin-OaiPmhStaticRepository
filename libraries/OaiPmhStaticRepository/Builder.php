@@ -449,6 +449,7 @@ class OaiPmhStaticRepository_Builder
                         throw new OaiPmhStaticRepository_BuilderException(__('The document "%s" has an issue: %s', $filepath, $e->getMessage()));
                     }
                     $documents = array_merge($documents, $metadataDocs);
+                    break;
                 }
             }
         }

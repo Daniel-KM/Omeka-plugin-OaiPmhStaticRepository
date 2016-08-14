@@ -15,6 +15,9 @@ abstract class OaiPmhStaticRepository_Format_Abstract
     protected $_metadataSchema;
     protected $_metadataNamespace;
 
+    // The root of the xml document.
+    protected $_xmlRoot = 'XMLROOT';
+
     // Tools that will be used.
     protected $_managePaths;
 
@@ -83,7 +86,7 @@ abstract class OaiPmhStaticRepository_Format_Abstract
             $this->_loadDcmiElements();
         }
 
-        $this->_managePaths = new OaiPmhStaticRepository_Tool_ManagePaths($uri, $parameters);
+        $this->_managePaths = new OaiPmhStaticRepository_Tool_ManagePaths($this->_uri, $this->_parameters);
     }
 
     /**
@@ -231,7 +234,9 @@ abstract class OaiPmhStaticRepository_Format_Abstract
         $doc = &$this->_document;
 
         $metadata = array();
-        $metadata['Dublin Core']['Title'][] = $doc['name'] ?: '/';
+        $metadata['Dublin Core']['Title'][] = empty($doc['name'])
+            ? '[root]'
+            : $doc['name'];
 
         $doc['metadata'] = $metadata;
     }
@@ -455,7 +460,9 @@ abstract class OaiPmhStaticRepository_Format_Abstract
      */
     protected function _isXml($string)
     {
-        return strpos($string, '<') !== false
+        $string = trim($string);
+        return !empty($string)
+            && strpos($string, '<') !== false
             && strpos($string, '>') !== false
             // A main tag is added to allow inner ones.
             && (boolean) simplexml_load_string("<xml>$string</xml>", 'SimpleXMLElement', LIBXML_NOERROR | LIBXML_NOWARNING);

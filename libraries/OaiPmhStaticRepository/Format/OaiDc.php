@@ -13,9 +13,12 @@ class OaiPmhStaticRepository_Format_OaiDc extends OaiPmhStaticRepository_Format_
     // Namespaces for simple Dublin Core.
     const DUBLIN_CORE_NAMESPACE = 'http://purl.org/dc/elements/1.1/';
 
+    const XML_ROOT = 'dc';
+
     protected $_metadataPrefix = self::METADATA_PREFIX;
     protected $_metadataSchema = self::METADATA_SCHEMA;
     protected $_metadataNamespace = self::METADATA_NAMESPACE;
+    protected $_xmlRoot = self::XML_ROOT;
 
     protected $_parametersFormat = array(
         'use_dcterms' => false,

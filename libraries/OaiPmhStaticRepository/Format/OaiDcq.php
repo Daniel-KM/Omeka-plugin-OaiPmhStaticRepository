@@ -14,9 +14,12 @@ class OaiPmhStaticRepository_Format_OaiDcq extends OaiPmhStaticRepository_Format
     const DUBLIN_CORE_NAMESPACE = 'http://purl.org/dc/elements/1.1/';
     const DCTERMS_NAMESPACE = 'http://purl.org/dc/terms/';
 
+    const XML_ROOT = 'dcterms';
+
     protected $_metadataPrefix = self::METADATA_PREFIX;
     protected $_metadataSchema = self::METADATA_SCHEMA;
     protected $_metadataNamespace = self::METADATA_NAMESPACE;
+    protected $_xmlRoot = self::XML_ROOT;
 
     protected $_parametersFormat = array(
         'use_dcterms' => true,

@@ -52,8 +52,11 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
     protected $_xmlRoot = '';
     protected $_xmlNamespace = '';
     protected $_xmlPrefix = '';
+    protected $_xslMain = '';
     // The content of the file via SimpleXML.
     protected $_xml;
+    // This tool is used only when the xsl generates an xml document.
+    protected $_mappingDocument;
 
     // List of the Dublin Core terms. Can be enlarged to qualified ones.
     protected $_dcTerms = array(
@@ -174,6 +177,7 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
                 'extension' => $this->_extension,
                 'xmlRoot' => $this->_xmlRoot,
                 'xmlNamespace' => $this->_xmlNamespace,
+                'xmlPrefix' => $this->_xmlPrefix,
             ));
     }
 
@@ -245,6 +249,53 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
     abstract protected function _prepareDocuments();
 
     /**
+     * When an xsl creates a generic xml document, the process can be automatic.
+     */
+    protected function _prepareXmlDocuments()
+    {
+        $this->_mappingDocument = new OaiPmhStaticRepository_Mapping_Document($this->_uri, $this->_parameters);
+
+        $this->_processedFiles[$this->_metadataFilepath] = array();
+        $documents = &$this->_processedFiles[$this->_metadataFilepath];
+
+        // If the xml is too large, the php memory may be increased so it can be
+        // processed directly via SimpleXml.
+        $this->_xml = simplexml_load_file($this->_metadataFilepath, 'SimpleXMLElement', LIBXML_NOENT | LIBXML_XINCLUDE | LIBXML_PARSEHUGE);
+        if ($this->_xml === false) {
+            return;
+        }
+
+        // Only one document by mets file is managed (the main use of Mag).
+        $doc = &$this->_doc;
+
+        $this->_xml->registerXPathNamespace($this->_xmlPrefix, $this->_xmlNamespace);
+
+        $extraParameters = $this->_getParameter('extra_parameters');
+
+        // Process the xml file via the stylesheet.
+        $xmlpath = $this->_processXslt($this->_metadataFilepath, $this->_xslMain, '', $extraParameters);
+        if (filesize($xmlpath) == 0) {
+            return;
+        }
+
+        // Now, the xml is a standard document, so process it with the class.
+        $documents = $this->_mappingDocument->listDocuments($xmlpath);
+    }
+
+    /**
+     * Convert one record (e.g. one row of a spreadsheet) into a document.
+     *
+     * @internal Currently, this is used only with the Archive Document.
+     *
+     * @param var $record The record to process.
+     * @param boolean $withSubRecords Add sub records if any (files...).
+     * @return array The document.
+     */
+    protected function _getDocument($record, $withSubRecords)
+    {
+    }
+
+    /**
      * Validate documents, secure paths of files and make them absolute.
      *
      * @internal Only local filepaths are checked.
@@ -256,8 +307,12 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
         // Check file paths and names (if one is absent, the other is used).
         $nameBase = $this->_managePaths->getRelativePathToFolder($this->_metadataFilepath);
         foreach ($documents as $key => &$document) {
+            $document = $this->_normalizeDocument($document, 'Item');
             // Check if the document is empty.
-            if (empty($document['metadata']) && empty($document['files']) && empty($document['extra'])) {
+            if (empty($document['metadata'])
+                    && empty($document['files'])
+                    && empty($document['extra'])
+                ) {
                 unset($documents[$key]);
                 continue;
             }
@@ -273,42 +328,107 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
             // Remove a possible null value.
             if (empty($document['files'])) {
                 $document['files'] = array();
+                continue;
             }
 
             foreach ($document['files'] as $order => &$file) {
-                // The absolute and the relative paths should be the same file.
-                $path = isset($file['path']) && strlen($file['path']) > 0
-                    ? $file['path']
-                    : (isset($file['name']) ? $file['name'] : null);
+                // The path and the fullpath are set during normalization, but
+                // not checked for security. They are the same.
+                $file = $this->_normalizeDocument($file, 'File');
 
-                // Check if there is a filepath.
-                // Empty() is not used, because "0" can be a content.
-                $path = trim($path);
-                if (strlen($path) == 0) {
-                    throw new OaiPmhStaticRepository_BuilderException(__('The filepath for document "%s" is empty.', $document['name']));
+                // The path is not required if the file can be identified with
+                // another metadata, for example for update or deletion.
+                if (!strlen($file['process']['fullpath']) && !strlen($file['specific']['path'])) {
+                    // TODO Check other metadata (name...).
+                    continue;
                 }
 
-                // The path is absolute or relative to the path of the
-                // metadata file.
-                $absoluteFilePath = $this->_managePaths->getAbsolutePath($path);
-                if (empty($absoluteFilePath)) {
-                    throw new OaiPmhStaticRepository_BuilderException(__('The file "%s" is incorrect.', $path));
+                // Secure the absolute filepath.
+                $absoluteFilepath = $this->_managePaths->getAbsolutePath($file['path']);
+                if (empty($absoluteFilepath)) {
+                    throw new OaiPmhStaticRepository_BuilderException(__('The file "%s" inside document "%s" is incorrect.',
+                        $file['path'], $document['name']));
                 }
 
                 // No relative path if the file is external to the folder.
-                $relativeFilepath = $this->_managePaths->isInsideFolder($absoluteFilePath)
-                    ? $this->_managePaths->getRelativePathToFolder($path)
-                    : $absoluteFilePath;
+                $relativeFilepath = $this->_managePaths->isInsideFolder($absoluteFilepath)
+                ? $this->_managePaths->getRelativePathToFolder($absoluteFilepath)
+                : $absoluteFilepath;
                 if (empty($relativeFilepath)) {
-                    throw new OaiPmhStaticRepository_BuilderException(__('The file path "%s" is incorrect.', $path));
+                    throw new OaiPmhStaticRepository_BuilderException(__('The file path "%s" is incorrect.',
+                        $file['path']));
                 }
 
-                $file['path'] = $absoluteFilePath;
-                $file['name'] = $relativeFilepath;
+                if (empty($file['name'])) {
+                    $file['name'] = $relativeFilepath;
+                }
             }
         }
 
         return $documents;
+    }
+
+    /**
+     * Check and normalize a document (move extra data in process and specific).
+     *
+     * No default is added here, except the record type.
+     *
+     * @todo To be completed (see ArchiveFolder).
+     *
+     * @param array $document The document to normalize.
+     * @param array $recordType Optional The record type if not set
+     * @return array The normalized document.
+     */
+    protected function _normalizeDocument($document, $recordType = null)
+    {
+        if ($recordType) {
+            $document['record type'] = $recordType;
+        }
+        if (!isset($document['metadata'])) {
+            $document['metadata'] = array();
+        }
+
+        // Specific normalization according to the record type: separate Omeka
+        // metadata and element texts, that are standard metadata.
+        switch ($document['record type']) {
+            case 'File':
+                if (empty($document['path'])) {
+                    $message = __('The path "%s" is empty.', $document['path']);
+                    throw new OaiPmhStaticRepository_BuilderException($message);
+                }
+                $absoluteFilePath = $this->_managePaths->getAbsoluteUri($document['path']);
+                if (empty($absoluteFilePath)) {
+                    $message = __('The path "%s" is forbidden or incorrect.', $document['path']);
+                    throw new OaiPmhStaticRepository_BuilderException($message);
+                }
+                $document['path'] = $absoluteFilePath;
+                break;
+
+            case 'Item':
+                break;
+
+            case 'Collection':
+                break;
+        }
+
+        // Normalize the element texts.
+        // Remove the Omeka 'html', that slows down process and that can be
+        // determined automatically when it is really needed.
+        /*
+        foreach ($document['metadata'] as $elementSetName => &$elements) {
+            foreach ($elements as $elementName => &$elementTexts) {
+                foreach ($elementTexts as &$elementText) {
+                    if (is_array($elementText)) {
+                        $elementText = $elementText['text'];
+                    }
+                }
+                // Trim the metadata too to avoid useless spaces.
+                $elementTexts = array_map('trim', $elementTexts);
+            }
+        }
+        */
+
+        return $document;
     }
 
     /**
@@ -497,6 +617,22 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
                 }
             }
         }
+    }
+
+    /**
+     * Check if a string is an Xml one.
+     *
+     * @param string $string
+     * @return boolean
+     */
+    protected function _isXml($string)
+    {
+        $string = trim($string);
+        return !empty($string)
+            && strpos($string, '<') !== false
+            && strpos($string, '>') !== false
+            // A main tag is added to allow inner ones.
+            && (boolean) simplexml_load_string('<xml>' . $string . '</xml>', 'SimpleXMLElement', LIBXML_NOERROR | LIBXML_NOWARNING);
     }
 
     /**

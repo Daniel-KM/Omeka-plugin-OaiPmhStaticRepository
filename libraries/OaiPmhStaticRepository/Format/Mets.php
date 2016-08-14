@@ -17,9 +17,12 @@ class OaiPmhStaticRepository_Format_Mets extends OaiPmhStaticRepository_Format_A
     const XLINK_PREFIX = 'xlink';
     const XLINK_NAMESPACE = 'http://www.w3.org/1999/xlink';
 
+    const XML_ROOT = 'mets';
+
     protected $_metadataPrefix = self::METADATA_PREFIX;
     protected $_metadataSchema = self::METADATA_SCHEMA;
     protected $_metadataNamespace = self::METADATA_NAMESPACE;
+    protected $_xmlRoot = self::XML_ROOT;
 
     protected $_parametersFormat = array(
         'use_dcterms' => false,
