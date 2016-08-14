@@ -98,7 +98,8 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
 
         // Update the folder (no change).
         $folder->process(OaiPmhStaticRepository_Builder::TYPE_UPDATE);
-        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED,
+            $folder->status, 'Folder update failed: ' . $folder->messages);
     }
 
     public function testByDirectory()
@@ -132,7 +133,6 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
 
         $parameters = array(
             'repository_name' => 'Folder Test Simple',
-            'element_delimiter' => '|',
             'add_relations' => true,
         );
 
@@ -160,7 +160,6 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
         $parameters = array(
             'repository_name' => 'Folder Test Full',
             'unreferenced_files' => 'by_directory',
-            'element_delimiter' => '|',
         );
 
         $expected = TEST_FILES_DIR
@@ -210,7 +209,6 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
 
         $parameters = array(
             'repository_name' => 'Folder Test Characters Local',
-            'element_delimiter' => '|',
             'add_relations' => true,
         );
 
@@ -231,7 +229,6 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
 
         $parameters = array(
             'repository_name' => 'Folder Test Characters Http',
-            'element_delimiter' => '|',
         );
 
         $expected = TEST_FILES_DIR

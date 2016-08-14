@@ -26,10 +26,7 @@ class OaiPmhStaticRepository_MappingTest extends OaiPmhStaticRepository_Test_App
 
                 $mapping = $this->_mappings[$prefix]['class'];
                 $uri = TEST_FILES_DIR . DIRECTORY_SEPARATOR . $folder;
-                $mapping = new $mapping($uri, array(
-                        // The ods file needs an element delimiter to process all tests.
-                        'element_delimiter' => '|',
-                ));
+                $mapping = new $mapping($uri, array());
 
                 $filepath = TEST_FILES_DIR
                     . DIRECTORY_SEPARATOR . $folder
@@ -45,24 +42,37 @@ class OaiPmhStaticRepository_MappingTest extends OaiPmhStaticRepository_Test_App
                     continue;
                 }
 
+                if ($prefix == 'mets' && !plugin_is_active('OcrElementSet')) {
+                    $notReady[] = basename($expectedPath);
+                    // $this->markTestSkipped(
+                    //    __('This test requires OcrElementSet.')
+                    // );
+                    continue;
+                }
+
                 $expected = file_get_contents($expectedPath);
                 $expected = trim($expected);
-                $this->assertTrue(strlen($expected) > 0, __('Result for file "%s" (prefix "%s") is not readable.', basename($filepath), $prefix));
+                $this->assertTrue(strlen($expected) > 0,
+                    __('Result for file "%s" (prefix "%s") is not readable.', basename($filepath), $prefix));
 
                 $result = $mapping->isMetadataFile($filepath);
-                $this->assertTrue($result, __('The file "%s" is not recognized as format "%s".', basename($filepath), $prefix));
+                $this->assertTrue($result,
+                    __('The file "%s" is not recognized as format "%s".', basename($filepath), $prefix));
+
+                if (version_compare(phpversion(), '5.4.0', '<')) {
+                    $this->markTestSkipped(
+                        __('This test requires php 5.4.0 or higher.')
+                    );
+                }
 
                 $result = $mapping->listDocuments($filepath);
-                $result = version_compare(phpversion(), '5.4.0', '<')
-                    ? json_encode($result)
-                    : json_encode($result, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+                $result = json_encode($result, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                 // Remove local paths before comparaison.
-                $jsonUri = version_compare(phpversion(), '5.4.0', '<')
-                    ? trim(json_encode($uri), '"')
-                    : trim(json_encode($uri, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), '"');
+                $jsonUri = trim(json_encode($uri, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), '"');
                 $expected = str_replace($jsonUri, '::ExampleBasePath::', $expected);
                 $result = str_replace($jsonUri, '::ExampleBasePath::', $result);
-                $this->assertEquals($expected, $result, __('The list of documents for file "%s" (prefix "%s") is not correct.', basename($filepath), $prefix));
+                $this->assertEquals($expected, $result,
+                    __('The list of documents for file "%s" (prefix "%s") is not correct.', basename($filepath), $prefix));
             }
         }
 
