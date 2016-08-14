@@ -4,6 +4,6 @@
  *
  * @package OaiPmhStaticRepository
  */
-class OaiPmhStaticRepository_BuilderException extends OaiPmhStaticRepository_Exception
+class OaiPmhStaticRepository_Exception extends Exception
 {
 }

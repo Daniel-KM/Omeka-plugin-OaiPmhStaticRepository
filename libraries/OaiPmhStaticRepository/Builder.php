@@ -173,6 +173,8 @@ class OaiPmhStaticRepository_Builder
             $this->_listDocuments();
         } catch (OaiPmhStaticRepository_BuilderException $e) {
             throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
+        } catch (OaiPmhStaticRepository_Exception $e) {
+            throw new OaiPmhStaticRepository_BuilderException($e->getMessage());
         } catch (Exception $e) {
             throw new OaiPmhStaticRepository_BuilderException(__('The static repository cannot be built: %s', $e->getMessage()));
         }

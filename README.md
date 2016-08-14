@@ -271,18 +271,30 @@ designed for xslt 2.0. The command can be configured in the configuration page
 of the plugin. Use "%1$s", "%2$s", "%3$s", without escape, for the file input,
 the stylesheet, and the output.
 
-Examples for Debian / Ubuntu / Mint:
+Examples for Debian 6, 7, 8 / Ubuntu / Mint (with the package "libsaxonb-java"):
 ```
-saxonb-xslt -ext:on -versionmsg:off -s:%1$s -xsl:%2$s -o:%3$s
-CLASSPATH=/usr/share/java/Saxon-HE.jar java net.sf.saxon.Transform -ext:on -versionmsg:off -s:%1$s -xsl:%2$s -o:%3$s
-```
-
-Example for Fedora / RedHat / Centos / Mandriva:
-```
-saxon -ext:on -versionmsg:off -s:%1$s -xsl:%2$s -o:%3$s
+saxonb-xslt -ext:on -versionmsg:off -warnings:silent -s:%1$s -xsl:%2$s -o:%3$s
 ```
 
-Note: Only saxon is currently supported.
+Examples for Debian 8 / Ubuntu / Mint (with the package "libsaxonhe-java"):
+```
+CLASSPATH=/usr/share/java/Saxon-HE.jar java net.sf.saxon.Transform -ext:on -versionmsg:off -warnings:silent -s:%1$s -xsl:%2$s -o:%3$s
+```
+
+Example for Fedora / RedHat / Centos / Mandriva / Mageia:
+```
+saxon -ext:on -versionmsg:off -warnings:silent -s:%1$s -xsl:%2$s -o:%3$s
+```
+
+Note: Only saxon is currently supported as xslt 2 processor. Because Saxon is a
+Java tool, a JRE should be installed, for example "openjdk-8-jre-headless".
+
+Note: Warnings are processed as errors. That's why the parameter "-warnings:silent"
+is important to be able to process an import with a bad xsl sheet. It can be
+removed with default xsl, that doesn't warn anything.
+
+Anyway, if there is no xslt2 processor installed, the command field should be
+cleared. The plugin will use the default xslt 1 processor of php, if installed.
 
 
 Formats of metadata
