@@ -204,6 +204,13 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
         $this->_helper->redirector->goto('browse');
     }
 
+    public function logsAction()
+    {
+        $folder = $this->_db->findById();
+
+        $this->view->folder = $folder;
+    }
+
     /**
      * Launch a process on a record.
      *
