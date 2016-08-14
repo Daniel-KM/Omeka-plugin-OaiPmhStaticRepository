@@ -80,9 +80,16 @@ class OaiPmhStaticRepository_Test_AppTestCase extends Omeka_Test_AppTestCase
             . DIRECTORY_SEPARATOR . '_files');
 
         $pluginHelper = new Omeka_Test_Helper_Plugin;
+
         // ArchiveDocument is a required plugin.
+        $path = PLUGIN_DIR
+            . DIRECTORY_SEPARATOR . 'ArchiveDocument'
+            . DIRECTORY_SEPARATOR . 'ArchiveDocumentPlugin.php';
+        $this->assertTrue(is_file($path) && filesize($path), __('This plugin requires ArchiveDocument.'));
         $pluginHelper->setUp('ArchiveDocument');
+
         $pluginHelper->setUp(self::PLUGIN_NAME);
+
         // OcrElementSet is an optional plugin, but required for some tests.
         try {
             $pluginHelper->setUp('OcrElementSet');
