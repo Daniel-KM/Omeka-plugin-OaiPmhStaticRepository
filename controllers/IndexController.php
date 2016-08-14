@@ -80,6 +80,7 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
                 if ($successMessage != '') {
                     $this->_helper->flashMessenger($successMessage, 'success');
                 }
+                set_option('oai_pmh_static_repository_unreferenced_files', $record->getParameter('unreferenced_files'));
                 $this->_redirectAfterAdd($record);
             } else {
                 $this->_helper->flashMessenger($record->getErrors());

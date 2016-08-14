@@ -53,6 +53,8 @@ class OaiPmhStaticRepositoryPlugin extends Omeka_Plugin_AbstractPlugin
         'oai_pmh_static_repository_memory_limit' => null,
         // With roles, in particular if Guest User is installed.
         'oai_pmh_static_repository_allow_roles' => 'a:1:{i:0;s:5:"super";}',
+        // Options for a new static repository.
+        'oai_pmh_static_repository_unreferenced_files' => 'by_file',
     );
 
     /**
