@@ -70,7 +70,8 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
     // Temporary unjsoned parameters.
     private $_parameters;
 
-    // Temporary total of items and files.
+    // Temporary total of collections, items and files.
+    private $_totalCollections;
     private $_totalItems;
     private $_totalFiles;
 
@@ -865,8 +866,8 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
         // Computes total.
         else {
             $this->countRecordsOfDocuments($documents);
-            $message = __('Result: %d items and %d files.',
-                $this->_totalItems, $this->_totalFiles);
+            $message = __('Result: %d collections, %d items and %d files.',
+                $this->_totalCollections, $this->_totalItems, $this->_totalFiles);
         }
         return $message;
     }
@@ -876,7 +877,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
      *
      * @param null|array $documents If null, computes for the existing
      * documents.
-     * @param string $recordType "Item" or "File", else all types.
+     * @param string $recordType "Collection", "Item" or "File", else all types.
      * @return integer The total of the selected record type.
      */
     public function countRecordsOfDocuments($documents = null, $recordType = null)
@@ -889,8 +890,20 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
         $type =  ucfirst(strtolower($recordType));
         $totalDocuments = 0;
         switch ($type) {
-            case 'Item':-
-                $totalDocuments = count($documents);
+            case 'Collection':
+                foreach ($documents as $document) {
+                    if ($document['record type'] == 'Collection') {
+                        ++$totalDocuments;
+                    }
+                }
+                $this->_totalCollections = $totalDocuments;
+                break;
+            case 'Item':
+                foreach ($documents as $document) {
+                    if ($document['record type'] == 'Item') {
+                        ++$totalDocuments;
+                    }
+                }
                 $this->_totalItems = $totalDocuments;
                 break;
             // In Omeka, files aren't full records because they depend of items.
@@ -903,9 +916,10 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
                 $this->_totalFiles = $totalDocuments;
                 break;
             default:
+                $totalCollections = $this->countRecordsOfDocuments($documents, 'Collection');
                 $totalItems = $this->countRecordsOfDocuments($documents, 'Item');
                 $totalFiles = $this->countRecordsOfDocuments($documents, 'File');
-                $totalDocuments = $totalItems + $totalFiles;
+                $totalDocuments = $totalCollections + $totalItems + $totalFiles;
                 break;
         }
 
