@@ -338,7 +338,7 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
 
                 // The path is not required if the file can be identified with
                 // another metadata, for example for update or deletion.
-                if (!strlen($file['process']['fullpath']) && !strlen($file['specific']['path'])) {
+                if (!strlen($file['path'])) {
                     // TODO Check other metadata (name...).
                     continue;
                 }
@@ -531,7 +531,7 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
     /**
      * Unzip a file to get the selected file content.
      *
-     *@uses Extension php-zip or command line unzip.
+     * @uses Extension php-zip or command line unzip.
      *
      * @param string $zipFile
      * @param string $filename The path to extract from the zip file.

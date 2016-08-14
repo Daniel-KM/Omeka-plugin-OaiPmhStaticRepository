@@ -606,7 +606,7 @@ class OaiPmhStaticRepository_Builder
                     $totalUnsetExtensions, implode('", "', $unsetExtensions));
             }
             $this->_folder->addMessage($message);
-            _log('[ArchiveFolder] ' . __('Folder #%d [%s]: %s',
+            _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s',
                 $this->_folder->id, $this->_folder->uri, $message));
         }
 
@@ -614,7 +614,7 @@ class OaiPmhStaticRepository_Builder
             $message = __('%d forbidden documents were skipped: "%s".',
                 count($unsetDocuments), '"' . implode('", "', $unsetDocuments) . '"');
             $this->_folder->addMessage($message);
-            _log('[ArchiveFolder] ' . __('Folder #%d [%s]: "%s"',
+            _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: "%s"',
                 $this->_folder->id, $this->_folder->uri, $message));
         }
     }

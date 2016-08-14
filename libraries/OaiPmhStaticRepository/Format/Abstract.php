@@ -168,7 +168,7 @@ abstract class OaiPmhStaticRepository_Format_Abstract
         }
 
         // Add default item type if not set.
-        if ($this->_document['process']['record type'] == 'Item') {
+        if (!isset($this->_document['record type']) || $this->_document['record type'] == 'Item') {
             $itemTypeName = $this->_getItemTypeName($this->_document);
             if ($itemTypeName) {
                 if (!isset($this->_document['metadata']['Dublin Core']['Type'])) {

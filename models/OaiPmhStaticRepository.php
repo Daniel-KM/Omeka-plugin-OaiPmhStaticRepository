@@ -6,14 +6,14 @@
 class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend_Acl_Resource_Interface
 {
     /**
-     * Notice message code, used for status messages.
-     */
-    const MESSAGE_CODE_NOTICE = 5;
-
-    /**
-     * Error message code, used for status messages.
+     * Error message codes, used for status messages.
+     *
+     * @see Zend_Log
      */
     const MESSAGE_CODE_ERROR = 3;
+    const MESSAGE_CODE_NOTICE = 5;
+    const MESSAGE_CODE_INFO = 6;
+    const MESSAGE_CODE_DEBUG = 7;
 
     // Build.
     const STATUS_ADDED = 'added';
@@ -731,7 +731,7 @@ class OaiPmhStaticRepository extends Omeka_Record_AbstractRecord implements Zend
     public function process($type = OaiPmhStaticRepository_Builder::TYPE_CHECK)
     {
         $message = __('Process "%s" started.', $type);
-        $this->addMessage($message, ArchiveFolder_Folder::MESSAGE_CODE_DEBUG);
+        $this->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_DEBUG);
         _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s', $this->id, $this->uri, $message), Zend_Log::DEBUG);
 
         $this->setStatus(OaiPmhStaticRepository::STATUS_PROGRESS);
