@@ -410,21 +410,24 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
     /**
      * Unzip a file to get the selected file content.
      *
+     *@uses Extension php-zip or command line unzip.
+     *
      * @param string $zipFile
      * @param string $filename The path to extract from the zip file.
      * @return string|null The content of the requested file. Null if error.
      */
     protected function _extractZippedContent($zipFile, $filename)
     {
+        // First, save the file in the temp directory, because ZipArchive and
+        // unzip don't manage url.
         $content = null;
-        if (class_exists('ZipArchive')) {
-            // First, save the file in the temp directory, because ZipArchive
-            // doesn't manage url.
-            $file = tempnam(sys_get_temp_dir(), basename($zipFile));
-            $result = file_put_contents($file, file_get_contents($zipFile));
-            if (!empty($result)) {
+        $input = tempnam(sys_get_temp_dir(), basename($zipFile));
+        $result = file_put_contents($input, file_get_contents($zipFile));
+        if (!empty($result)) {
+            // Unzip via php-zip.
+            if (class_exists('ZipArchive')) {
                 $zip = new ZipArchive;
-                if ($zip->open($file) === true) {
+                if ($zip->open($input) === true) {
                     $index = $zip->locateName($filename);
                     if ($index !== false) {
                         $content = $zip->getFromIndex($index);
@@ -432,7 +435,24 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
                     $zip->close();
                 }
             }
+
+            // Unzip via command line
+            else {
+                // Check if the zip command exists.
+                $this->_executeCommand('unzip', $status, $output, $errors);
+                // A return value of 0 indicates the convert binary is working correctly.
+                if ($status == 0) {
+                    $outputFile = tempnam(sys_get_temp_dir(), basename($zipFile));
+                    $command = 'unzip -p ' . escapeshellarg($input) . ' content.xml > ' . escapeshellarg($outputFile);
+                    $this->_executeCommand($command, $status, $output, $errors);
+                    if ($status == 0 && filesize($outputFile)) {
+                        $content = file_get_contents($outputFile);
+                    }
+                    unlink($outputFile);
+                }
+            }
         }
+        unlink($input);
         return $content;
     }
 
@@ -475,6 +495,40 @@ abstract class OaiPmhStaticRepository_Mapping_Abstract
                     }
                 }
             }
+        }
+    }
+
+    /**
+     * Execute a shell command without exec().
+     *
+     * @see Omeka_File_Derivative_Strategy_ExternalImageMagick::executeCommand()
+     *
+     * @param string $cmd
+     * @param integer $status
+     * @param string $output
+     * @param array $errors
+     * @throws OaiPmhStaticRepository_BuilderException
+     */
+    protected function _executeCommand($cmd, &$status, &$output, &$errors)
+    {
+        // Using proc_open() instead of exec() solves a problem where exec('convert')
+        // fails with a "Permission Denied" error because the current working
+        // directory cannot be set properly via exec().  Note that exec() works
+        // fine when executing in the web environment but fails in CLI.
+        $descriptorSpec = array(
+            0 => array("pipe", "r"), //STDIN
+            1 => array("pipe", "w"), //STDOUT
+            2 => array("pipe", "w"), //STDERR
+        );
+        if ($proc = proc_open($cmd, $descriptorSpec, $pipes, getcwd())) {
+            $output = stream_get_contents($pipes[1]);
+            $errors = stream_get_contents($pipes[2]);
+            foreach ($pipes as $pipe) {
+                fclose($pipe);
+            }
+            $status = proc_close($proc);
+        } else {
+            throw new OaiPmhStaticRepository_BuilderException(__('Failed to execute command: %s', $cmd));
         }
     }
 }
