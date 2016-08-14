@@ -157,7 +157,7 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
                 : OaiPmhStaticRepository_Builder::TYPE_CHECK;
 
             foreach ($folderIds as $folderId) {
-                $result = $this->_launchJob(OaiPmhStaticRepository_Builder::TYPE_UPDATE, $folderId);
+                $result = $this->_launchJob($action, $folderId);
             }
         }
 
