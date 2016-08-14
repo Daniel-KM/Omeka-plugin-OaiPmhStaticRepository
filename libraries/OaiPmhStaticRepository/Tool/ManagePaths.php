@@ -21,6 +21,10 @@ class OaiPmhStaticRepository_Tool_ManagePaths
      */
     public function __construct($uri, $parameters)
     {
+        if (empty($uri)) {
+            $message = __('The main uri should be set to use the class "OaiPmhStaticRepository_Tool_ManagePaths".');
+            throw new Exception($message);
+        }
         $this->_uri = $uri;
         $this->_parameters = $parameters;
     }
@@ -76,6 +80,67 @@ class OaiPmhStaticRepository_Tool_ManagePaths
         }
 
         return $relativeMetadataPaths[$this->_uri][$this->_metadataFilepath];
+    }
+
+    /**
+     * Returns the absolute encoded path or url.
+     *
+     * Five cases according to filepath and uri of fhe folder.
+     * - url => keep it as it, it is always encoded.
+     * - absolute path:
+     *      => for url: this is forbidden.
+     *      => for local: check it and keep it.
+     * - relative path:
+     *      => for url: encode it for # and ? and add the uri + relative.
+     *      => for local: add the uri + relative and check it.
+     *
+     * @todo Check under Windows.
+     * @todo Add an option to keep all paths inside the folder relative to it.
+     *
+     * @param string $filepath The path may be relative, absolute, local or url.
+     * @return string The absolute path or url. Empty if error.
+     */
+    public function getAbsoluteUri($filepath)
+    {
+        if (empty($filepath)) {
+            return '';
+        }
+
+        // Check if this is already an absolute url.
+        if ($this->isRemote($filepath)) {
+            return $filepath;
+        }
+
+        // Check if this is a relative or an absolute path.
+        $absolutePath = $this->getAbsolutePath($filepath);
+        if (empty($absolutePath)) {
+            return '';
+        }
+
+        // This is an absolute path.
+        if ($absolutePath == $filepath) {
+            if ($this->isRemote($this->_uri)) {
+                return '';
+            }
+            if (!$this->isInsideFolder($filepath)) {
+                return '';
+            }
+            return $absolutePath;
+        }
+
+        // The path is relative to the current document.
+        // Normalize the relative path.
+        $relativeFilepath = $this->getRelativePathToFolder($filepath);
+        if (empty($relativeFilepath)) {
+            return '';
+        }
+
+        if ($this->isRemote($this->_uri)) {
+            $path = $this->rawurlencodeRelativePath($relativeFilepath);
+            return $this->_uri . '/' . $path;
+        }
+
+        return $this->_uri . DIRECTORY_SEPARATOR . $relativeFilepath;
     }
 
     /**
@@ -136,13 +201,16 @@ class OaiPmhStaticRepository_Tool_ManagePaths
         }
 
         // Set and check real path for local paths (security).
-        if ($this->_getParameter('transfer_strategy') == 'Filesystem'
-                && (realpath($absolutePath) != $absolutePath
-                    || strpos($absolutePath, $this->_uri) !== 0
-                    || substr($absolutePath, strlen($this->_uri), 1) !=  '/'
-                )
-            ) {
-            $absolutePath = null;
+        if ($this->_getParameter('transfer_strategy') == 'Filesystem') {
+            $settings = Zend_Registry::get('oai_pmh_static_repository');
+            if ($settings->local_folders->check_realpath == '1'
+                    && realpath($absolutePath) != $absolutePath
+                ) {
+                $absolutePath = null;
+            }
+            elseif (!$this->isInsideFolder($absolutePath)) {
+                $absolutePath = null;
+            }
         }
 
         return $absolutePath;
@@ -271,13 +339,13 @@ class OaiPmhStaticRepository_Tool_ManagePaths
     }
 
     /**
-     * Determine if a uri is an external url or inside the folder.
+     * Determine if a uri is inside the folder (main uri).
      *
      * @param string $uri
      * @return boolean
      */
     public function isInsideFolder($uri)
     {
-        return strpos($uri, $this->_uri) === 0;
+        return strpos($uri, $this->_uri . DIRECTORY_SEPARATOR) === 0;
     }
 }
