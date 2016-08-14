@@ -43,7 +43,7 @@ class OaiPmhStaticRepository_SecurityTest extends OaiPmhStaticRepository_Test_Ap
 
         $folder = $this->_folder;
 
-        $this->assertStringEndsWith(__('The file "../file_2.png" is incorrect.'), $folder->messages);
+        $this->assertStringEndsWith(__('The path "../file_2.png" is forbidden or incorrect.'), $folder->messages);
     }
 
     public function testOutsideRealPath()

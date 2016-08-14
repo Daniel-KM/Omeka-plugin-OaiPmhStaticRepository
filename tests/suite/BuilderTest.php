@@ -6,6 +6,8 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
 {
     protected $_isAdminTest = true;
 
+    protected $expectedBaseDir = '';
+
     public function setUp()
     {
         parent::setUp();
@@ -13,19 +15,26 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
         // Authenticate and set the current user.
         $this->user = $this->db->getTable('User')->find(1);
         $this->_authenticateUser($this->user);
+
+        $this->_expectedBaseDir = TEST_FILES_DIR
+            . DIRECTORY_SEPARATOR . 'Results'
+            . DIRECTORY_SEPARATOR . 'StaticRepositories';
     }
 
     public function testConstruct()
     {
         $this->_prepareFolderTest();
 
-        $folder = $this->_folder;
+        $folder = &$this->_folder;
         $folders = $this->db->getTable('OaiPmhStaticRepository')->findAll();
         $this->assertEquals(1, count($folders), 'There should be one OAI-PMH static repository.');
 
         $parameters = $folder->getParameters();
 
         $this->assertEquals('by_file', $parameters['unreferenced_files']);
+        $this->assertEquals(TEST_FILES_DIR . DIRECTORY_SEPARATOR . 'Folder_Test', $folder->uri);
+        $this->assertEquals(OaiPmhStaticRepository::STATUS_ADDED, $folder->status);
+
         $this->assertEquals('short_name', $parameters['oai_identifier_format']);
         $this->assertEquals(
             '[' . TEST_FILES_DIR . DIRECTORY_SEPARATOR . 'Folder_Test' . ']',
@@ -53,8 +62,6 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
             . DIRECTORY_SEPARATOR . get_option('oai_pmh_static_repository_static_dir')
             . DIRECTORY_SEPARATOR . 'Folder_Test',
             $folder->getCacheFolder());
-
-        $this->assertEquals(OaiPmhStaticRepository::STATUS_ADDED, $folder->status);
     }
 
     public function testByFile()
@@ -68,13 +75,10 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
             'add_relations' => true,
         );
 
-        $expected = TEST_FILES_DIR
-            . DIRECTORY_SEPARATOR . 'Results'
-            . DIRECTORY_SEPARATOR . 'StaticRepositories'
+        $this->_expectedXml = $this->_expectedBaseDir
             . DIRECTORY_SEPARATOR . 'FolderTest_BasicByFile.xml';
 
         $this->_prepareFolderTest($uri, $parameters);
-        $this->_expectedXml = $expected;
         $this->_checkFolder();
     }
 
@@ -88,13 +92,11 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
             'repository_name' => 'Folder Test by File',
         );
 
-        $expected = TEST_FILES_DIR
-            . DIRECTORY_SEPARATOR . 'Results'
-            . DIRECTORY_SEPARATOR . 'StaticRepositories'
+        $this->_expectedXml = $this->_expectedBaseDir
             . DIRECTORY_SEPARATOR . 'FolderTest_BasicByFile.xml';
 
         $this->_prepareFolderTest($uri, $parameters);
-        $folder = $this->_folder;
+        $folder = &$this->_folder;
 
         // Update the folder (no change).
         $folder->process(OaiPmhStaticRepository_Builder::TYPE_UPDATE);
@@ -115,13 +117,10 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
             'add_relations' => true,
         );
 
-        $expected = TEST_FILES_DIR
-            . DIRECTORY_SEPARATOR . 'Results'
-            . DIRECTORY_SEPARATOR . 'StaticRepositories'
+        $this->_expectedXml = $this->_expectedBaseDir
             . DIRECTORY_SEPARATOR . 'FolderTest_BasicByDirectory.xml';
 
         $this->_prepareFolderTest($uri, $parameters);
-        $this->_expectedXml = $expected;
         $this->_checkFolder();
     }
 
@@ -136,13 +135,26 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
             'add_relations' => true,
         );
 
-        $expected = TEST_FILES_DIR
-            . DIRECTORY_SEPARATOR . 'Results'
-            . DIRECTORY_SEPARATOR . 'StaticRepositories'
+        $this->_expectedXml = $this->_expectedBaseDir
             . DIRECTORY_SEPARATOR . 'FolderTest_DirA.xml';
 
         $this->_prepareFolderTest($uri, $parameters);
-        $this->_expectedXml = $expected;
+        $this->_checkFolder();
+    }
+
+    public function testCollections()
+    {
+        $uri = TEST_FILES_DIR
+            . DIRECTORY_SEPARATOR . 'Folder_Test_Collections';
+
+        $parameters = array(
+            'repository_name' => 'Folder Test Collections',
+        );
+
+        $this->_expectedXml = $this->_expectedBaseDir
+            . DIRECTORY_SEPARATOR . 'FolderTest_Collections.xml';
+
+        $this->_prepareFolderTest($uri, $parameters);
         $this->_checkFolder();
     }
 
@@ -160,15 +172,13 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
         $parameters = array(
             'repository_name' => 'Folder Test Full',
             'unreferenced_files' => 'by_directory',
+            'add_relations' => true,
         );
 
-        $expected = TEST_FILES_DIR
-            . DIRECTORY_SEPARATOR . 'Results'
-            . DIRECTORY_SEPARATOR . 'StaticRepositories'
+        $this->_expectedXml = $this->_expectedBaseDir
             . DIRECTORY_SEPARATOR . 'FolderTest_Full.xml';
 
         $this->_prepareFolderTest($uri, $parameters);
-        $this->_expectedXml = $expected;
         $this->_checkFolder();
     }
 
@@ -192,15 +202,52 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
             'ocr_fill_process' => true,
         );
 
-        $expected = TEST_FILES_DIR
-            . DIRECTORY_SEPARATOR . 'Results'
-            . DIRECTORY_SEPARATOR . 'StaticRepositories'
+        $this->_expectedXml = $this->_expectedBaseDir
             . DIRECTORY_SEPARATOR . 'FolderTest_Mets_Alto.xml';
 
         $this->_prepareFolderTest($uri, $parameters);
-        $this->_expectedXml = $expected;
         $this->_checkFolder();
     }
+
+    public function testXmlOmeka()
+    {
+        $uri = TEST_FILES_DIR
+            . DIRECTORY_SEPARATOR . 'Folder_Test_Xml_Omeka';
+
+        $parameters = array(
+            'repository_name' => 'Folder Test Xml Omeka',
+            'extra_parameters' => array(
+                'base_url' => $uri,
+            ),
+        );
+
+        $this->_expectedXml = $this->_expectedBaseDir
+            . DIRECTORY_SEPARATOR . 'FolderTest_Xml_Omeka.xml';
+
+        $this->_prepareFolderTest($uri, $parameters);
+        $this->_checkFolder();
+    }
+
+    /*
+    public function testXmlMag()
+    {
+        $uri = TEST_FILES_DIR
+            . DIRECTORY_SEPARATOR . 'Folder_Test_Xml_Mag';
+
+        $parameters = array(
+            'repository_name' => 'Folder Test Xml Mag',
+            'extra_parameters' => array(
+                'base_url' => $uri,
+            ),
+        );
+
+        $this->_expectedXml = $this->_expectedBaseDir
+            . DIRECTORY_SEPARATOR . 'FolderTest_Xml_Mag.xml';
+
+        $this->_prepareFolderTest($uri, $parameters);
+        $this->_checkFolder();
+    }
+    */
 
     public function testNonLatinCharactersLocal()
     {
@@ -212,13 +259,10 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
             'add_relations' => true,
         );
 
-        $expected = TEST_FILES_DIR
-            . DIRECTORY_SEPARATOR . 'Results'
-            . DIRECTORY_SEPARATOR . 'StaticRepositories'
+        $this->_expectedXml = $this->_expectedBaseDir
             . DIRECTORY_SEPARATOR . 'FolderTest_CharactersLocal.xml';
 
         $this->_prepareFolderTest($uri, $parameters);
-        $this->_expectedXml = $expected;
         $this->_checkFolder();
     }
 
@@ -231,17 +275,14 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
             'repository_name' => 'Folder Test Characters Http',
         );
 
-        $expected = TEST_FILES_DIR
-            . DIRECTORY_SEPARATOR . 'Results'
-            . DIRECTORY_SEPARATOR . 'StaticRepositories'
+        $this->_expectedXml = $this->_expectedBaseDir
             . DIRECTORY_SEPARATOR . 'FolderTest_CharactersHttp.xml';
 
         $this->_prepareFolderTest($uri, $parameters);
-        $this->_expectedXml = $expected;
         $this->markTestSkipped(
             __('No test for non-latin characters via http.')
         );
-        // $this->_checkFolder();
+        $this->_checkFolder();
     }
 
     /**
@@ -254,130 +295,5 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
         $this->markTestSkipped(
             __('To be done: replace "document.xml" by the updated one.')
         );
-    }
-
-    protected function _checkFolder()
-    {
-        $folder = $this->_folder;
-
-        $folder->process(OaiPmhStaticRepository_Builder::TYPE_CHECK);
-        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED, $folder->status, 'Folder check failed: ' . $folder->messages);
-
-        $folder->process(OaiPmhStaticRepository_Builder::TYPE_UPDATE);
-        $this->assertEquals(OaiPmhStaticRepository::STATUS_COMPLETED, $folder->status, 'Folder update failed: ' . $folder->messages);
-
-        if ($folder->uri == TEST_FILES_DIR . DIRECTORY_SEPARATOR . 'Folder_Test') {
-            $this->_checkCache();
-        }
-
-        $this->_checkXml();
-    }
-
-    protected function _checkCache()
-    {
-        $folder = $this->_folder;
-        $cache = $folder->getCacheFolder();
-
-        $originalFilepaths = $this->_iterateDirectory($folder->uri);
-        $cachedFilepaths = $this->_iterateDirectory($cache);
-
-        $metadataFiles = $this->_metadataFilesByFolder[basename($folder->uri)];
-        $blackListedFiles = $this->_blackListedFilesByFolder[basename($folder->uri)];
-
-        $this->assertEquals(
-            count($originalFilepaths) - count($metadataFiles) - count($blackListedFiles),
-            count($cachedFilepaths));
-
-        foreach ($cachedFilepaths as $key => $filepath) {
-            $fileExists = file_exists($filepath);
-            if ($fileExists) {
-                $relativePath = substr($filepath, 1 + strlen($cache));
-                if (in_array($relativePath, $metadataFiles)) {
-                    continue;
-                }
-                $key = array_search($folder->uri . DIRECTORY_SEPARATOR . $relativePath, $originalFilepaths);
-                $this->assertEquals(file_get_contents($originalFilepaths[$key]),
-                    file_get_contents($filepath));
-            }
-        }
-    }
-
-    /**
-     * Assert true if two xml are equals.
-     */
-    protected function _checkXml()
-    {
-        $folder = $this->_folder;
-
-        $xmlpath = $folder->getLocalRepositoryFilepath();
-        $this->assertTrue(file_exists($xmlpath));
-
-        // The file can be saved to simplify update of the tests.
-        copy($xmlpath, sys_get_temp_dir() . '/' . basename($this->_expectedXml));
-
-        $message = sprintf('"%s" is different from "%s".', basename($this->_expectedXml), basename($xmlpath));
-
-        $this->assertEquals(filesize($this->_expectedXml), filesize($xmlpath), $message);
-
-        // Because the xml is known and small, it's possible to manipulate it
-        // via string functions. This is only used to clean dates.
-        $expected = file_get_contents($this->_expectedXml);
-        $actual = file_get_contents($xmlpath);
-
-        // Get the date from the original file.
-        $needle = '<oai:datestamp>';
-        $expectedDate = substr(strstr($expected, $needle), strlen($needle), 10);
-        $actualDate = substr(strstr($actual, $needle), strlen($needle), 10);
-        // Get the time from the previous one, specially for metsHdr, if needed.
-        $needle = 'CREATEDATE="';
-        $expectedTime = substr(strstr($expected, $needle . $expectedDate), strlen($needle), 20);
-        $actualTime = substr(strstr($actual, $needle . $actualDate), strlen($needle), 20);
-
-        // Use the new date and time in the original file.
-        $expected = str_replace(
-            array(
-                '<oai:datestamp>' . $expectedDate . '</oai:datestamp>',
-                'CREATEDATE="' . $expectedTime . '"',
-            ),
-            array(
-                '<oai:datestamp>' . $actualDate . '</oai:datestamp>',
-                'CREATEDATE="' . $actualTime . '"',
-            ),
-            $expected);
-
-        // Remove all whitespaces to manage different implementations of xml
-        // on different systems.
-        $expected = preg_replace('/\s+/', '', $expected);
-        $actual = preg_replace('/\s+/', '', $actual);
-
-        // This assert allows to quick check the value.
-        $this->assertEquals(strlen($expected), strlen($actual), $message);
-
-        $this->assertEquals($expected, $actual, $message);
-    }
-
-    /**
-     * List recursively a directory to get all files.
-     *
-     * @param string $path Path of the directory to check.
-     *
-     * @return associative array of dirpath / dirname and filepath / filename or
-     * false if error.
-     */
-    private function _iterateDirectory($path)
-    {
-        $filenames = array();
-
-        $path = realpath($path);
-        $directoryIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path));
-        foreach ($directoryIterator as $name => $pathObject) {
-            if (!$pathObject->isDir()) {
-                $filenames[] = $name;
-            }
-        }
-
-        ksort($filenames);
-
-        return $filenames;
     }
 }
