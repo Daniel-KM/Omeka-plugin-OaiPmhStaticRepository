@@ -46,10 +46,10 @@ class OaiPmhStaticRepositoryPlugin extends Omeka_Plugin_AbstractPlugin
      */
     protected $_options = array(
         'oai_pmh_static_repository_force_update' => true,
-        'oai_pmh_static_repository_memory_limit' => null,
-        'oai_pmh_static_repository_short_dispatcher' => null,
         'oai_pmh_static_repository_static_dir' => 'repositories',
         'oai_pmh_static_repository_processor' => '',
+        'oai_pmh_static_repository_short_dispatcher' => null,
+        'oai_pmh_static_repository_memory_limit' => null,
         // With roles, in particular if Guest User is installed.
         'oai_pmh_static_repository_allow_roles' => 'a:1:{i:0;s:5:"super";}',
     );

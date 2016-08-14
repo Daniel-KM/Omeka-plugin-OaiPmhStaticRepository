@@ -18,14 +18,16 @@
     </div>
     <div class="field">
         <div class="two columns alpha">
-            <?php echo $this->formLabel('oai_pmh_static_repository_memory_limit',
-                __('Memory Limit')); ?>
+            <?php echo $this->formLabel('oai_pmh_static_repository_processor',
+                __('Command of the processor')); ?>
         </div>
         <div class="inputs five columns omega">
             <p class="explanation">
-                <?php echo __('The memory limit for the background processes.'); ?>
+                <?php echo __('Command of the processor. Let empty to use the internal xslt processor of php.'); ?>
+                <?php echo __('This is required by some formats that need to parse a xslt 2 stylesheet.'); ?>
+                <?php echo __('See format of the command and examples in the readme.'); ?>
             </p>
-            <?php echo $this->formText('oai_pmh_static_repository_memory_limit', get_option('oai_pmh_static_repository_memory_limit'), null); ?>
+            <?php echo get_view()->formText('oai_pmh_static_repository_processor', get_option('oai_pmh_static_repository_processor'), null); ?>
         </div>
     </div>
     <div class="field">
@@ -47,16 +49,14 @@
     </div>
     <div class="field">
         <div class="two columns alpha">
-            <?php echo $this->formLabel('oai_pmh_static_repository_processor',
-                __('Command of the processor')); ?>
+            <?php echo $this->formLabel('oai_pmh_static_repository_memory_limit',
+                __('Memory Limit')); ?>
         </div>
         <div class="inputs five columns omega">
             <p class="explanation">
-                <?php echo __('Command of the processor. Let empty to use the internal xslt processor of php.'); ?>
-                <?php echo __('This is required by some formats that need to parse a xslt 2 stylesheet.'); ?>
-                <?php echo __('See format of the command and examples in the readme.'); ?>
+                <?php echo __('The memory limit for the background processes.'); ?>
             </p>
-            <?php echo get_view()->formText('oai_pmh_static_repository_processor', get_option('oai_pmh_static_repository_processor'), null); ?>
+            <?php echo $this->formText('oai_pmh_static_repository_memory_limit', get_option('oai_pmh_static_repository_memory_limit'), null); ?>
         </div>
     </div>
 </fieldset>
