@@ -65,6 +65,7 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
 
         $parameters = array(
             'repository_name' => 'Folder Test by File',
+            'add_relations' => true,
         );
 
         $expected = TEST_FILES_DIR
@@ -110,6 +111,7 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
             'repository_name' => 'Folder Test by Directory',
             'repository_identifier' => 'BasicByDirectory',
             'unreferenced_files' => 'by_directory',
+            'add_relations' => true,
         );
 
         $expected = TEST_FILES_DIR
@@ -131,6 +133,7 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
         $parameters = array(
             'repository_name' => 'Folder Test Simple',
             'element_delimiter' => '|',
+            'add_relations' => true,
         );
 
         $expected = TEST_FILES_DIR
@@ -183,10 +186,11 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
 
         $parameters = array(
             'repository_name' => 'Folder Test Mets Alto',
-            'fill_ocr_text' => true,
-            'fill_ocr_data' => true,
-            'fill_ocr_process' => true,
             'records_for_files' => true,
+            'add_relations' => true,
+            'ocr_fill_text' => true,
+            'ocr_fill_data' => true,
+            'ocr_fill_process' => true,
         );
 
         $expected = TEST_FILES_DIR
@@ -207,6 +211,7 @@ class OaiPmhStaticRepository_BuilderTest extends OaiPmhStaticRepository_Test_App
         $parameters = array(
             'repository_name' => 'Folder Test Characters Local',
             'element_delimiter' => '|',
+            'add_relations' => true,
         );
 
         $expected = TEST_FILES_DIR
