@@ -92,8 +92,8 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
     {
         $folder = $this->_db->findById();
         if (empty($folder)) {
-            $msg = __('Folder #%d does not exist.', $this->_getParam('id'));
-            $this->_helper->flashMessenger($msg, 'error');
+            $message = __('Folder #%d does not exist.', $this->_getParam('id'));
+            $this->_helper->flashMessenger($message, 'error');
             return $this->_helper->redirector->goto('browse');
         }
 
@@ -107,8 +107,8 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
     {
         $folder = $this->_db->findById();
         if (empty($folder)) {
-            $msg = __('Folder #%d does not exist.', $this->_getParam('id'));
-            $this->_helper->flashMessenger($msg, 'error');
+            $message = __('Folder #%d does not exist.', $this->_getParam('id'));
+            $this->_helper->flashMessenger($message, 'error');
             return $this->_helper->redirector->goto('browse');
         }
 
@@ -184,8 +184,8 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
 
         $folder = $this->_db->find($id);
         if (empty($folder)) {
-            $msg = __('Folder # %d does not exist.', $id);
-            $this->_helper->flashMessenger($msg, 'error');
+            $message = __('Folder # %d does not exist.', $id);
+            $this->_helper->flashMessenger($message, 'error');
             return false;
         }
 
@@ -217,12 +217,12 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
                 $folder->addMessage($message, OaiPmhStaticRepository::MESSAGE_CODE_ERROR);
                 _log('[OaiPmhStaticRepository] ' . __('Folder #%d [%s]: %s',
                     $folder->id, $folder->uri, $message), Zend_Log::ERR);
-                $this->_helper->flashMessenger($msg, 'error');
+                $this->_helper->flashMessenger($message, 'error');
                 return false;
             }
 
-            $msg = __('Folder "%s" has been updated.', $folder->uri);
-            $this->_helper->flashMessenger($msg, 'success');
+            $message = __('Folder "%s" has been updated.', $folder->uri);
+            $this->_helper->flashMessenger($message, 'success');
             return true;
         }
 
@@ -238,14 +238,14 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
     {
         $folder = $this->_db->findById();
         if (empty($folder)) {
-            $msg = __('Folder #%d does not exist.', $this->_getParam('id'));
-            $this->_helper->flashMessenger($msg, 'error');
+            $message = __('Folder #%d does not exist.', $this->_getParam('id'));
+            $this->_helper->flashMessenger($message, 'error');
             return $this->forward('browse');
         }
 
         if (!plugin_is_active('OaiPmhGateway')) {
-            $msg = __('The folder cannot be harvested: the plugin OAI-PMH Gateway is not enabled.');
-            $this->_helper->flashMessenger($msg, 'error');
+            $message = __('The folder cannot be harvested: the plugin OAI-PMH Gateway is not enabled.');
+            $this->_helper->flashMessenger($message, 'error');
             return $this->forward('browse');
         }
 
@@ -259,12 +259,12 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
         }
 
         if ($gateway) {
-            $msg = __('The gateway for folder "%" has been created.', $gateway->url);
-            $this->_helper->flashMessenger($msg, 'success');
+            $message = __('The gateway for folder "%" has been created.', $gateway->url);
+            $this->_helper->flashMessenger($message, 'success');
         }
         else {
-            $msg = __('The gateway for folder "%" cannot be created.', $folder->getStaticRepositoryUrl());
-            $this->_helper->flashMessenger($msg, 'error');
+            $message = __('The gateway for folder "%" cannot be created.', $folder->getStaticRepositoryUrl());
+            $this->_helper->flashMessenger($message, 'error');
         }
 
         $this->forward('browse');
@@ -274,20 +274,20 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
     {
         $folder = $this->_db->findById();
         if (empty($folder)) {
-            $msg = __('Folder #%d does not exist.', $this->_getParam('id'));
-            $this->_helper->flashMessenger($msg, 'error');
+            $message = __('Folder #%d does not exist.', $this->_getParam('id'));
+            $this->_helper->flashMessenger($message, 'error');
             return $this->forward('browse');
         }
 
         if (!plugin_is_active('OaiPmhGateway')) {
-            $msg = __('The folder cannot be harvested: the plugin OAI-PMH Gateway is not enabled.');
-            $this->_helper->flashMessenger($msg, 'error');
+            $message = __('The folder cannot be harvested: the plugin OAI-PMH Gateway is not enabled.');
+            $this->_helper->flashMessenger($message, 'error');
             return $this->forward('browse');
         }
 
         if (!plugin_is_active('OaipmhHarvester')) {
-            $msg = __('The folder cannot be harvested: the plugin OAI-PMH Harvester is not enabled.');
-            $this->_helper->flashMessenger($msg, 'error');
+            $message = __('The folder cannot be harvested: the plugin OAI-PMH Harvester is not enabled.');
+            $this->_helper->flashMessenger($message, 'error');
             return $this->forward('browse');
         }
 
@@ -311,8 +311,8 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
 
         // No harvest and no prefix, so go to select page.
         if ($harvest === false) {
-            $msg = __('A metadata prefix should be selected to harvest the repository "%s".', $gateway->url);
-            $this->_helper->flashMessenger($msg, 'success');
+            $message = __('A metadata prefix should be selected to harvest the repository "%s".', $gateway->url);
+            $this->_helper->flashMessenger($message, 'success');
             $url = absolute_url(array(
                     'module' => 'oaipmh-harvester',
                     'controller' => 'index',
@@ -323,9 +323,9 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
             $this->redirect($url);
         }
         elseif (is_null($harvest)) {
-            $msg = __('The repository "%s" cannot be harvested.', $gateway->url)
+            $message = __('The repository "%s" cannot be harvested.', $gateway->url)
                . ' ' . __('Check the gateway.');
-            $this->_helper->flashMessenger($msg, 'error');
+            $this->_helper->flashMessenger($message, 'error');
             $url = absolute_url(array(
                     'module' => 'oai-pmh-gateway',
                     'controller' => 'index',
@@ -337,8 +337,8 @@ class OaiPmhStaticRepository_IndexController extends Omeka_Controller_AbstractAc
         }
 
         // Else the harvest is launched.
-        $msg = __('The harvest of the folder "%" is launched.', $gateway->url);
-        $this->_helper->flashMessenger($msg, 'success');
+        $message = __('The harvest of the folder "%" is launched.', $gateway->url);
+        $this->_helper->flashMessenger($message, 'success');
         $this->forward('browse');
     }
 
