@@ -65,6 +65,7 @@ echo head(array(
                 <tr class="oai-pmh-static-repository <?php if (++$key%2 == 1) echo 'odd'; else echo 'even'; ?>">
                     <?php if (is_allowed('OaiPmhGateway_Index', 'edit')): ?>
                     <td class="batch-edit-check" scope="row">
+                    <td class="batch-edit-check" scope="row" href="<?php echo ADMIN_BASE_URL; ?>" id="oai-pmh-static-repository-<?php echo $folder->id; ?>">
                         <input type="checkbox" name="folders[]" value="<?php echo $folder->id; ?>" />
                     </td>
                     <?php endif; ?>
@@ -78,7 +79,7 @@ echo head(array(
                         <?php else: ?>
                             <ul class="action-links group">
                                 <li>
-                                   <a href="<?php echo ADMIN_BASE_URL; ?>" id="oai-pmh-static-repository-<?php echo $folder->id; ?>" class="oai-pmh-static-repository-details"><?php echo __('Last Messages'); ?></a>
+                                    <a href="<?php echo ADMIN_BASE_URL; ?>" class="oai-pmh-static-repository-details"><?php echo __('Last Messages'); ?></a>
                                 </li>
                                 <li>
                                     <a href="<?php echo ADMIN_BASE_URL . '/oai-pmh-static-repository/index/logs/id/' . $folder->id; ?>"><?php echo __('All Messages'); ?></a>
