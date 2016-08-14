@@ -37,7 +37,8 @@ class OaiPmhStaticRepositoryPlugin extends Omeka_Plugin_AbstractPlugin
         'admin_navigation_main',
         'oai_pmh_static_repository_oai_identifiers',
         'oai_pmh_static_repository_mappings',
-        'oai_pmh_static_repository_ingesters',
+        // See the plugin OcrElementSet for an example (import of Xml Alto).
+        // 'oai_pmh_static_repository_ingesters',
         'oai_pmh_static_repository_formats',
     );
 
@@ -335,27 +336,6 @@ class OaiPmhStaticRepositoryPlugin extends Omeka_Plugin_AbstractPlugin
         );
 
         return array_merge($oaiPmhStaticRepositoryMappings, $mappings);
-    }
-
-    /**
-     * Add the ingesters for associated files that are available.
-     *
-     * @internal The prefix is a value to allow multiple ways to format data.
-     *
-     * @param array $ingesters Ingesters array.
-     * @return array Filtered Ingesters array.
-    */
-    public function filterOaiPmhStaticRepositoryIngesters($ingesters)
-    {
-        // Available ingesters in the plugin at first place to keep order.
-        $oaiPmhStaticRepositoryIngesters = array();
-        $oaiPmhStaticRepositoryIngesters['alto'] = array(
-            'prefix' => 'alto',
-            'class' => 'OaiPmhStaticRepository_Ingester_Alto',
-            'description' => __('Alto xml files for OCR'),
-        );
-
-        return array_merge($oaiPmhStaticRepositoryIngesters, $ingesters);
     }
 
     /**
