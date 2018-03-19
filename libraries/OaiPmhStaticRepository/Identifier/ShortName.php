@@ -56,7 +56,7 @@ class OaiPmhStaticRepository_Identifier_ShortName extends OaiPmhStaticRepository
      *
      * @link https://php.net/manual/en/function.base-convert.php#106546
      *
-     * @see https://github.com/Daniel-KM/ArkForOmeka
+     * @see https://github.com/Daniel-KM/Omeka-plugin-ArkAndNoid
      *
      * @param integer $number Input number to convert as a string.
      * @param string $fromBaseInput base of the number to convert as a string.

@@ -714,8 +714,8 @@ Warning
 
 Use it at your own risk.
 
-It's always recommended to backup your files and database regularly so you can
-roll back if needed.
+It’s always recommended to backup your files and your databases and to check
+your archives regularly so you can roll back if needed.
 
 
 Troubleshooting
@@ -761,28 +761,28 @@ Copyright
 * Copyright Daniel Berthereau, 2015
 
 
-[OAI-PMH Static Repository]: https://github.com/Daniel-KM/OaiPmhStaticRepository
+[OAI-PMH Static Repository]: https://github.com/Daniel-KM/Omeka-plugin-OaiPmhStaticRepository
 [Omeka]: https://www.omeka.org
 [OAI-PMH static repository]: https://www.openarchives.org/OAI/2.0/guidelines-static-repository.htm
 [OAI-PMH Harvester]: https://omeka.org/add-ons/plugins/oai-pmh-harvester
-[OAI-PMH Gateway]: https://github.com/Daniel-KM/OaiPmhGateway
-[Archive Folder]: https://github.com/Daniel-KM/ArchiveFolder
-[fork of Csv Import]: https://github.com/Daniel-KM/CsvImport
-[Xml Import]: https://github.com/Daniel-KM/XmlImport
-[improved fork]: https://github.com/Daniel-KM/OaiPmhRepository
-[fork]: https://github.com/Daniel-KM/OaipmhHarvester
-[fixed release]: https://github.com/Daniel-KM/Geolocation
+[OAI-PMH Gateway]: https://github.com/Daniel-KM/Omeka-plugin-OaiPmhGateway
+[Archive Folder]: https://github.com/Daniel-KM/Omeka-plugin-ArchiveFolder
+[fork of Csv Import]: https://github.com/Daniel-KM/Omeka-plugin-CsvImport
+[Xml Import]: https://github.com/Daniel-KM/Omeka-plugin-XmlImport
+[improved fork]: https://github.com/Daniel-KM/Omeka-plugin-OaiPmhRepository
+[fork]: https://github.com/Daniel-KM/Omeka-plugin-OaipmhHarvester
+[fixed release]: https://github.com/Daniel-KM/Omeka-plugin-Geolocation
 [Mets]: https://www.loc.gov/standards/mets
 [Alto]: https://www.loc.gov/standards/alto
-[Ocr Element Set]: https://github.com/Daniel-KM/Ocr Element Set
+[Ocr Element Set]: https://github.com/Daniel-KM/Omeka-plugin-Ocr Element Set
 [Geolocation]: https://omeka.org/add-ons/plugins/geolocation
 [Apache httpd]: https://httpd.apache.org
 [Jpeg 2000]: http://www.jpeg.org/jpeg2000
 [refNum]: http://bibnum.bnf.fr/refNum
 [refNum2Mets]: https://github.com/Daniel-KM/refNum2Mets
-[Archive Document]: https://github.com/Daniel-KM/ArchiveDocument
+[Archive Document]: https://github.com/Daniel-KM/Omeka-plugin-ArchiveDocument
 [OAI-PMH Repository]: https://omeka.org/add-ons/plugins/oai-pmh-repository
-[plugin issues]: https://github.com/Daniel-KM/OaiPmhStaticRepository/issues
+[plugin issues]: https://github.com/Daniel-KM/Omeka-plugin-OaiPmhStaticRepository/issues
 [CeCILL v2.1]: https://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html
 [GNU/GPL]: https://www.gnu.org/licenses/gpl-3.0.html
 [FSF]: https://www.fsf.org
